@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>SkilledStudio</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -33,12 +33,20 @@
             .title {
                 font-size: 96px;
             }
+            .sub-title {
+                font-size: 32px;
+            }
+            .sub-title-description {
+                font-size: 20px;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">SkilledStudio</div>
+                <div class="sub-title">Soon</div>
+                <div style="padding-top: 300px;" class="sub-title-description">This website is under construction.</div>
             </div>
         </div>
     </body>
