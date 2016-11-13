@@ -40,6 +40,15 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+    /*
+     * En caso de querer cambiar el método de autenticación
+    public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'email';
+    }
+    */
+
+
     /**
      * Get a validator for an incoming registration request.
      *

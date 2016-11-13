@@ -15,8 +15,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-    #RewriteCond %{HTTP_HOST} ^skilledstudio.com [NC]
-    #RewriteRule ^(.*)$ http://localhost/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^skilledstudio.com [NC]
+
 
 
     # Handle Authorization Header
