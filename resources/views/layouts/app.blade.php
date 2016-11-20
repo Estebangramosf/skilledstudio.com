@@ -195,7 +195,7 @@
           <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         <li class="active">
-          <a href="{!! url('/Roles') !!}"><i class="fa fa-fw fa-dashboard"></i> Roles</a>
+          <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i> Roles</a>
         </li>
         {{--
         <li>
