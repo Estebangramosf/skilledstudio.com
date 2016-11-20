@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Requests\roles\RoleCreateRequest;
+use App\Http\Requests\roles\RoleUpdateRequest;
 Use App\Role;
 Use Session;
 use Redirect;
 
 class RoleController extends Controller
 {
-
+    private $role;
     public function __construct()
     {
       $this->middleware('auth');
@@ -73,7 +72,7 @@ class RoleController extends Controller
     {
         try
         {
-            $role = Role::findOrFail($id);
+            $this->role = Role::findOrFail($id);
             //dd($role);
         } // catch(Exception $e) catch any exception
         catch(ModelNotFoundException $e)
@@ -96,8 +95,9 @@ class RoleController extends Controller
     {
         try
         {
-            $role = Role::findOrFail($id);
-            dd($role);
+            $this->role = Role::findOrFail($id);
+            return view('roles.edit', ['role' => $this->role]);
+            //dd($role);
         } // catch(Exception $e) catch any exception
         catch(ModelNotFoundException $e)
         {
@@ -116,9 +116,25 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoleUpdateRequest $request, $id)
     {
-        //
+        try
+        {
+            $this->role = Role::findOrFail($id);
+            $this->role->fill($request->all());
+            $this->role->save();
+            Session::flash('message', 'Role editado correctamente');
+            return Redirect::to('/roles');
+
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El rol a modificar no existe.');
+            return Redirect::to('/roles');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 
     /**
@@ -129,6 +145,21 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $this->role = Role::findOrFail($id);
+            $this->role->delete();
+            Session::flash('message', 'Role eliminado correctamente');
+            return Redirect::to('/roles');
+
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El rol especificado no existe.');
+            return Redirect::to('/roles');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 }

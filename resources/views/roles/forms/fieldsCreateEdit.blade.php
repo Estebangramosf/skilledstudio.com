@@ -1,7 +1,7 @@
 <div class="list-group" >
   <div class="list-group-item">
     <h4>
-      Nuevo Rol
+      {{Request::path()=='roles/create'?'Nuevo rol':'Editar rol'}}
       <a href="{{url('/roles')}}" style="float:right;" class="btn btn-success">Volver al listado</a>
     </h4>
   </div><!-- /div .list-group-item -->
