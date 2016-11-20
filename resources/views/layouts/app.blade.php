@@ -31,16 +31,27 @@
   {!!Html::script('js/html5shiv.js')!!}
   {!!Html::script('js/respond.min.js')!!}
   <![endif]-->
-
   <style>
+    @font-face {
+      font-family: Coolvetica;
+      src: url(/fonts/coolvetica_rg.ttf);
+    }
+    body {
+      font-family: Coolvetica;
+      font-weight: 400;
+      font-size: 1.8em;
+    }
+  </style>
+  <style>
+    /*
     body {
       font-family: 'Lato';
     }
     .fa-btn {
       margin-right: 6px;
     }
+    */
   </style>
-
 </head>
 
 <body>
@@ -59,7 +70,13 @@
       </button>
       <!-- Branding Image -->
       <a class="navbar-brand" href="{{ url('/') }}">
-        SkilledStudio
+        <u style="color: #c43d23;">
+          <span style="font-family: Coolvetica;" class="brand-heading">Skilled</span>
+        </u>
+
+        <u style="color: #d5822d;">
+          <span style="font-family: Coolvetica;" class="brand-heading">Studio</span>
+        </u>
       </a>
     </div>
     <!-- Top Menu Items -->

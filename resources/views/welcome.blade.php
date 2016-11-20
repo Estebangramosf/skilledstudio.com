@@ -5,7 +5,7 @@
 @extends('layouts.clean')
 
 @section('content')
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="font-family: Coolvetica;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -14,14 +14,16 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
           Menu <i class="fa fa-bars"></i>
         </button>
+        {{--
         <a class="navbar-brand page-scroll" href="#page-top">
-          <i class="fa fa-play-circle"></i> <span class="light">SkilledStudio</span>
+          <i class="fa fa-play-circle"></i> <span class="light" style="font-family: Coolvetica;">SkilledStudio</span>
         </a>
+        --}}
 
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse" style="font-family: Coolvetica;">
         <ul class="nav navbar-nav">
           <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
           <li class="hidden">
@@ -36,6 +38,12 @@
           <li>
             <a class="page-scroll" href="#contact">Contacto</a>
           </li>
+          <li>
+            <a class="page-scroll" href="{!! url('/login') !!}">Acceso</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="{!! url('/register') !!}">Registro</a>
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -49,7 +57,15 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <h1 class="brand-heading">skilledstudio</h1>
+            <u style="color: #c43d23;">
+              <span style="font-family: Coolvetica;" class="brand-heading">Skilled</span>
+              &nbsp;&nbsp;
+            </u>
+
+            <u style="color: #d5822d;">
+              <span style="font-family: Coolvetica;" class="brand-heading">Studio</span>
+            </u>
+
             <p class="intro-text">Dembora project. <br> Comming Soon.
               <br></p>
             <a href="#about" class="btn btn-circle page-scroll">

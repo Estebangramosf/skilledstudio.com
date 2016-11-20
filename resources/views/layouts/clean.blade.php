@@ -9,7 +9,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <style>
+    @font-face {
+      font-family: Coolvetica;
+      src: url(/fonts/coolvetica_rg.ttf);
+    }
+    body {
+      font-weight: 200;
+      font-family: Coolvetica;
+
+    }
+  </style>
   <title>Skilled Studio</title>
+
+
 
   <!-- Bootstrap Core CSS -->
   {!!Html::style('css/style.css')!!}
@@ -39,9 +52,11 @@
   {!!Html::style('css/grayscale.css')!!}
 
   <style>
+    /*
     body {
       font-family: 'Lato';
     }
+    */
     .fa-btn {
       margin-right: 6px;
     }
