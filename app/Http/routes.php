@@ -20,11 +20,14 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('test', 'HomeController@test');
 
+Route::get('dashboard', 'UserController@dashboard');
+
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', function ()    {
+    //Route::get('/', function ()    {
         // Uses Auth Middleware
-        return view('welcome');
-    });
+        //return view('welcome');
+    //});
+    Route::get('dashboard', 'UserController@dashboard');
 
     Route::get('user/profile', function () {
         // Uses Auth Middleware
