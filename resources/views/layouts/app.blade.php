@@ -246,25 +246,31 @@
                   Para ver todo el contenido de nuestro sitio te debes
                 </small>
               </div>
+
+            </a>
               <div align="center">
                 <a href="{!! url('/register') !!}" class="btn btn-primary btn-sm">
                   Registrar
                 </a>
               </div>
+
               <hr>
+            <a href="#!">
               <div align="center">
                 <small>
                   Si ya posees una cuenta puedes
                 </small>
               </div>
+
               <div align="center">
                 <a href="{!! url('/login') !!}" class="btn btn-success btn-sm">
                   Iniciar Sesión
                 </a>
               </div>
             </a>
-
+            <hr>
           </li>
+
           <li class="">
             <i class="fa fa-fw fa-dashboard"></i>
             <a href="{!! url('/') !!}">
