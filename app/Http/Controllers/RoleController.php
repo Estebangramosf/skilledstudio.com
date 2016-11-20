@@ -73,6 +73,7 @@ class RoleController extends Controller
         try
         {
             $this->role = Role::findOrFail($id);
+            return view('roles.show', ['role'=>$this->role]);
             //dd($role);
         } // catch(Exception $e) catch any exception
         catch(ModelNotFoundException $e)
