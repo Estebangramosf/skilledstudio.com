@@ -199,6 +199,9 @@
           <li class="{!! Request::path()=="roles"?'active':'' !!}">
             <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i> Roles</a>
           </li>
+          <li class="{!! Request::path()=="roles"?'active':'' !!}">
+            <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i> Posts</a>
+          </li>
           {{--
           <li>
             <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
