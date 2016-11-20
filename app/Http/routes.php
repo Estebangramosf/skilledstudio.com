@@ -22,6 +22,15 @@ Route::get('test', 'HomeController@test');
 
 Route::get('dashboard', 'UserController@dashboard');
 
+
+Route::resource('admins', 'AdminController');
+Route::resource('moderators', 'ModeratorController');
+Route::resource('posts', 'PostController');
+Route::resource('comments', 'CommentController');
+Route::resource('roles', 'RoleController');
+
+
+
 Route::group(['middleware' => 'auth'], function () {
     //Route::get('/', function ()    {
         // Uses Auth Middleware
