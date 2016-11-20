@@ -243,7 +243,7 @@
             <a href="#!">
               <div align="center">
                 <small>
-                  Para ver todo el contenido de nuestro sitio
+                  Para ver todo el contenido de nuestro sitio te debes
                 </small>
               </div>
               <div align="center">
@@ -252,6 +252,11 @@
                 </a>
               </div>
               <hr>
+              <div align="center">
+                <small>
+                  Si ya posees una cuenta puedes
+                </small>
+              </div>
               <div align="center">
                 <a href="{!! url('/login') !!}" class="btn btn-success btn-sm">
                   Iniciar Sesión
