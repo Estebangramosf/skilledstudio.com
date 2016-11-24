@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   {!!Html::favicon('favicon.png')!!}
-  <title>Skilled Studio</title>
+  <title>@yield('title') | Skilled Studio</title>
 
   <!-- Bootstrap Core CSS -->
   {!!Html::style('css/style.css')!!}

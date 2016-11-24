@@ -20,8 +20,7 @@
       font-weight: 200;
     }
   </style>
-  <title>Skilled Studio</title>
-
+  <title>@yield('title') | Skilled Studio</title>
 
 
   <!-- Bootstrap Core CSS -->
