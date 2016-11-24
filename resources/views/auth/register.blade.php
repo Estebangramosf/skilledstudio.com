@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" style="padding-top:30px;">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 col-sm-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div style="background-color: #1c1c1c;" class="panel-heading"><span style="color:#fff;">Register</span></div>
                 <div style="background-color: #3d3d3d;" class="panel-body">

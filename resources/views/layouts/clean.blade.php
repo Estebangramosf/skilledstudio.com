@@ -13,11 +13,11 @@
     @font-face {
       font-family: Coolvetica;
       src: url(/fonts/coolvetica_rg.ttf);
+      font-weight: 100;
     }
     body {
-      font-weight: 200;
       font-family: Coolvetica;
-
+      font-weight: 200;
     }
   </style>
   <title>Skilled Studio</title>

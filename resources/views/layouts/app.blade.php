@@ -33,13 +33,15 @@
   <![endif]-->
   <style>
     @font-face {
+
       font-family: Coolvetica;
       src: url(/fonts/coolvetica_rg.ttf);
+      font-weight: 100;
     }
     body {
       font-family: Coolvetica;
-      font-weight: 400;
-      font-size: 1.8em;
+
+
     }
   </style>
   <style>
@@ -216,7 +218,7 @@
           <li class="{!! Request::path()=="roles"?'active':'' !!}">
             <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i> Roles</a>
           </li>
-          <li class="{!! Request::path()=="roles"?'active':'' !!}">
+          <li class="{!! Request::path()=="posts"?'active':'' !!}">
             <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i> Posts</a>
           </li>
           {{--
