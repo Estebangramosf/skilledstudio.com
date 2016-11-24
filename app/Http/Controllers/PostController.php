@@ -93,7 +93,20 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        try
+        {
+            $this->post = Post::findOrFail($id);
+            return view('posts.edit', ['post' => $this->post]);
+            //dd($role);
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El post buscado no existe.');
+            return Redirect::to('/posts');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 
     /**
@@ -105,7 +118,23 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, $id)
     {
-        //
+        try
+        {
+            $this->post = Post::findOrFail($id);
+            $this->post->fill($request->all());
+            $this->post->save();
+            Session::flash('message', 'Post editado correctamente');
+            return Redirect::to('/posts');
+
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El post a modificar no existe.');
+            return Redirect::to('/posts');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 
     /**
@@ -116,6 +145,21 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $this->post = Post::findOrFail($id);
+            $this->post->delete();
+            Session::flash('message', 'Post eliminado correctamente');
+            return Redirect::to('/posts');
+
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El post especificado no existe.');
+            return Redirect::to('/posts');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 }
