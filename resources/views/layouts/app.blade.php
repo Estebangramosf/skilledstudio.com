@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  {!!Html::favicon('favicon.png')!!}
   <title>Skilled Studio</title>
 
   <!-- Bootstrap Core CSS -->
@@ -87,7 +87,6 @@
         <u style="color: #c43d23;">
           <span style="font-family: Coolvetica;" class="brand-heading">Skilled</span>
         </u>
-
         <u style="color: #d5822d;">
           <span style="font-family: Coolvetica;" class="brand-heading">Studio</span>
         </u>
