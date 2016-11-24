@@ -14,7 +14,7 @@
             <div class="list-group">
               <div class="list-group-item">
                 <h4>
-                  Listado de Posts
+                  <a href="{{url('/posts')}}">Listado de Posts</a>
                   <a href="{{url('/posts/create')}}" style="float:right;" class="btn btn-success">Crear nuevo post</a>
                 </h4>
 
