@@ -3,11 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Http\Requests\posts\PostCreateRequest;
+use App\Http\Requests\posts\PostUpdateRequest;
+use App\Post;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
+    private $post;
+    public function __construct()
+    {
+        $this->middleware('auth');
+        /*
+        $this->middleware('log', ['only' => [
+          'fooAction',
+          'barAction',
+        ]]);
+        */
+        //This middleware apply only for
+        /*
+        $this->middleware('role', ['only' => [
+            //'show',
+        ]]);
+        */
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +38,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('posts.index', ['posts'=>Post::all()]); //change for class
     }
 
     /**
@@ -25,7 +48,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -34,9 +57,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
-        //
+        //Auth::user()->posts()->create($request->all());
+        $request->user()->posts()->create($request->all());
+        /*
+        dd($request->user()->posts()->create([
+            'title'=>$request->title,
+            'body'=>$request->body,
+            'user_id'=>'',
+        ])
+        );*/
+        //Post::create($request->all());
+
+        Session::flash('message', 'Post creado correctamente');
+        return Redirect::to('/posts/create');
     }
 
     /**
@@ -68,7 +103,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostUpdateRequest $request, $id)
     {
         //
     }

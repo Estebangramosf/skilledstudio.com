@@ -1,4 +1,3 @@
-@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $role->name !!} @stop
 @extends('layouts.app')
 @section('content')

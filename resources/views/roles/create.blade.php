@@ -1,5 +1,4 @@
-@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
-{{--@section('title') New role @endsection--}}
+@section('title') New role @endsection
 @extends('layouts.app')
 @section('content')
   <div class=" page-wrapper{{-- jumbotron --}}">
