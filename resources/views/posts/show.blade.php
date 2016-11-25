@@ -30,6 +30,34 @@
                   {!!Form::textarea('description',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}
                 </div><!-- -->
               </div><!-- -->
+              <div class="list-group-item">
+                <h4>
+                  Comentarios
+                  <span style="float:right;">{{$c = count($comments)}}</span>
+                </h4>
+              </div><!-- /div .list-group-item -->
+
+              @if($c>0)
+                <div class="list-group-item">
+
+                  @foreach($comments as $key => $comment)
+
+                  @endforeach
+
+                </div><!-- /div .list-group-item -->
+              @endif
+
+              <div class="list-group-item">
+                <h6>
+                  Deja un comentario
+                </h6>
+              </div><!-- /div .list-group-item -->
+              <div class="list-group-item">
+                {!!Form::open(['route'=>'comments.store', 'method'=>'POST'])!!}
+                  {!!Form::textarea('comment',null,['class'=>'form-control','rows' => '1'])!!}
+                  {!!Form::submit('Enviar', ['class'=>'btn btn-success', 'style'=>''])!!}
+                {!!Form::close()!!}
+              </div><!-- -->
             </div><!-- -->
 
 

@@ -36,7 +36,20 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->user()->posts());
+        //Auth::user()->posts()->create($request->all());
+        $request->user()->posts()->create($request->all());
+        /*
+        dd($request->user()->posts()->create([
+            'title'=>$request->title,
+            'body'=>$request->body,
+            'user_id'=>'',
+        ])
+        );*/
+        //Post::create($request->all());
+
+        Session::flash('message', 'Post creado correctamente');
+        return Redirect::to('/posts/create');
     }
 
     /**

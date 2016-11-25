@@ -85,7 +85,7 @@ class PostController extends Controller
         try
         {
             $this->post = Post::findOrFail($id);
-            return view('posts.show', ['post'=>$this->post]);
+            return view('posts.show', ['post'=>$this->post, 'comments'=>$this->post->comments]);
             //dd($role);
         } // catch(Exception $e) catch any exception
         catch(ModelNotFoundException $e)
