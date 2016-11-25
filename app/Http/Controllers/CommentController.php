@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class CommentController extends Controller
 {
@@ -34,11 +38,35 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        dd($request->user()->posts());
+        try
+        {
+            $this->post = Post::findOrFail($id);
+            $this->post->comments()->create([
+                'user_id'=>Auth::user()->id,
+                'title'=>$request->title,
+                'body'=>$request->body,
+            ]);
+            Session::flash('message', 'Comentario agregado correctamente');
+            return Redirect::to('/posts/'.$this->post->id);
+
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El post buscado no existe.');
+            return Redirect::to('/post');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
+
+        //dd($id);
+        //$comment = $post->comments()->save($comment);
+        //dd($request);
+        //dd($request->user()->posts());
         //Auth::user()->posts()->create($request->all());
-        $request->user()->posts()->create($request->all());
+        //$request->user()->posts()->create($request->all());
         /*
         dd($request->user()->posts()->create([
             'title'=>$request->title,
@@ -47,9 +75,6 @@ class CommentController extends Controller
         ])
         );*/
         //Post::create($request->all());
-
-        Session::flash('message', 'Post creado correctamente');
-        return Redirect::to('/posts/create');
     }
 
     /**

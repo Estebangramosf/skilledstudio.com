@@ -23,11 +23,11 @@
               <div class="list-group-item">
                 <div class="form-group has-feedback has-feedback-left">
                   {!!Form::label('Nombre:')!!}
-                  {!!Form::text('name',$parameters = $post->title,['class'=>'form-control', 'disabled'])!!}
+                  {!!Form::text('posttitle',$parameters = $post->title,['class'=>'form-control', 'disabled'])!!}
                 </div><!-- -->
                 <div class="form-group has-feedback has-feedback-left">
                   {!!Form::label('Descripción:')!!}
-                  {!!Form::textarea('description',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}
+                  {!!Form::textarea('postbody',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}
                 </div><!-- -->
               </div><!-- -->
               <div class="list-group-item">
@@ -41,7 +41,20 @@
                 <div class="list-group-item">
 
                   @foreach($comments as $key => $comment)
-
+                    <small style="float: right;">El usuario {{$comment->user->name}} comentó</small>
+                    <div>
+                      <h6>
+                        <b>Titulo : </b>
+                        <span>{{$comment->title}}</span>
+                      </h6>
+                    </div>
+                    <div>
+                      <h6>
+                        <b>Comentario : </b>
+                        <span>{{$comment->body}}</span>
+                      </h6>
+                    </div>
+                    <hr>
                   @endforeach
 
                 </div><!-- /div .list-group-item -->
@@ -53,8 +66,9 @@
                 </h6>
               </div><!-- /div .list-group-item -->
               <div class="list-group-item">
-                {!!Form::open(['route'=>'comments.store', 'method'=>'POST'])!!}
-                  {!!Form::textarea('comment',null,['class'=>'form-control','rows' => '1'])!!}
+                {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST'])!!}
+                  {!!Form::text('title',null,['class'=>'form-control'])!!}
+                  {!!Form::textarea('body',null,['class'=>'form-control','rows' => '1'])!!}
                   {!!Form::submit('Enviar', ['class'=>'btn btn-success', 'style'=>''])!!}
                 {!!Form::close()!!}
               </div><!-- -->
