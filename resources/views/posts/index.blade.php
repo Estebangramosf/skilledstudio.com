@@ -31,7 +31,12 @@
                     <td>{!!$post->title!!}</td>
                     <td>{!!$post->body!!}</td>
                     <td>{!!$post->user->name!!}</td>
-                    <td>{!!link_to_route('posts.edit', $title = 'Editar', $parameters = $post->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+                    <td>
+                      {!!link_to_route('posts.edit', $title = 'Editar', $parameters = $post->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    </td>
+                    <td>
+                      {!!link_to_route('posts.show', $title = 'Ir a ver este post', $parameters = $post->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    </td>
                     </tbody>
                   @endforeach
                 </table><!-- -->

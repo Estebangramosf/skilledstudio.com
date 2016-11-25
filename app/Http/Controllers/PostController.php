@@ -82,7 +82,20 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        try
+        {
+            $this->post = Post::findOrFail($id);
+            return view('posts.show', ['post'=>$this->post]);
+            //dd($role);
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El post buscado no existe.');
+            return Redirect::to('/post');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 
     /**
