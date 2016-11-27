@@ -62,6 +62,17 @@
 
           </div><!-- -->
 
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="list-group">
+              <div class="list-group-item">
+                Espacio publicitario
+              </div><!-- -->
+              <div class="list-group-item">
+                Sugerencias, relateds, etc.
+              </div><!-- -->
+            </div><!-- -->
+          </div><!-- -->
+
         </div><!-- -->
       </div><!-- -->
     </div>

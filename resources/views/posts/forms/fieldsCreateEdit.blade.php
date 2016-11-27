@@ -19,5 +19,14 @@
       {!!Form::label('Contenido:')!!}
       {!!Form::textarea('body',null,['class'=>'form-control','placeholder'=>'Ingrese contenido del post','rows' => '5','maxlenght'=>'5000'])!!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+    <div class="form-group has-feedback has-feedback-left">
+      {!!Form::submit('Enviar', ['class'=>'btn btn-success'])!!}
+      @if(strpos(Request::path(),'edit', 8))
+        {!!Form::open(['action'=> ['PostController@destroy', $post->id], 'method'=>'DELETE'])!!}
+        {!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'id'=>'eliminar'])!!}﻿
+        {!!Form::close()!!}
+      @endif
+    </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->

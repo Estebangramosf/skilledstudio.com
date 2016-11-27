@@ -348,7 +348,7 @@
   <!-- /#page-wrapper -->
 
 
-  <div class="container-fluid" style="background-color: #fff;">
+  <div class="container-fluid" style="background-color: #fff;padding: 80px;padding-bottom: 20px;border-top:1px solid #f5f5f5;">
     <footer class="site-footer">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
