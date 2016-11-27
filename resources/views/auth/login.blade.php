@@ -2,9 +2,28 @@
 
 @section('content')
 
-<div class="container" style="padding-top:30px;">
+<div class="container-fluid">
+
+
+    <!-- Page Heading -->
     <div class="row">
-        <div class="col-md-6 col-md-offset-2">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Iniciar Sesión <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-dashboard"></i> Inicio de sesión
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div align="center" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        </div>
+        <div align="center" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div style="background-color: #1c1c1c;" class="panel-heading"><span style="color:#fff;">Login</span></div>
                 <div style="background-color: #3d3d3d;" class="panel-body">
@@ -51,7 +70,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button style="background-color: #c43d23;color:#fff;border:1px solid #c43d23;" type="submit" class="btn btn-primary">
+                                <button style="background-color: #c43d23;color:#fff;border:1px solid #c43d23;" type="submit" class="btn btn-primary form-control">
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 

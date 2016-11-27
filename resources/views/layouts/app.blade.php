@@ -347,6 +347,41 @@
 
   <!-- /#page-wrapper -->
 
+
+  <div class="container-fluid" style="background-color: #fff;">
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          {{--
+           <img style="padding: 0;" width="240" alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
+          --}}
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+          {{--
+          <span><a href="#!"></a></span>
+          <span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a></span>
+          <span><a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class=""/></a></span>
+          <span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class=""/></a></span>
+          --}}
+          <br>
+          <br>
+          <span><a class="btn-link" href="{!!URL::to('/faq/')!!}">Centro de Ayuda</a></span>
+          <span class="required">\</span>
+          <span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></span>
+          <span class="required">\</span>
+          <span><a class="btn-link" href="{!!URL::to('/contacto/')!!}">Contacto</a></span>
+          <span class="required">\</span>
+          <span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos y Condiciones</a></span>
+          <span class="required">\</span>
+          <span><a class="btn-link" href="{!!URL::to('/trabajaconnosotros/')!!}">Trabaja con Nosotros</a></span>
+          <span class="required">\</span>
+          <span><a class="btn-link" href="{!!URL::to('/skilledstudio/')!!}">Sobre SkilledStudio</a></span>
+          <br><span> - Copyright© ~ SkilledStudio.com - {!! date('Y') !!} </span>
+        </div>
+      </div><!-- /div row -->
+    </footer><!-- /footer -->
+  </div> <!-- /container -->
+
 </div>
 <!-- /#wrapper -->
 

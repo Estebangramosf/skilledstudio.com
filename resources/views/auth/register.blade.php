@@ -1,7 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="padding-top:30px;">
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Registro <small>Crear una nueva cuenta</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-dashboard"></i> Registro
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
     <div class="row">
         <div class="col-md-6 col-sm-8 col-md-offset-2">
             <div class="panel panel-default">
