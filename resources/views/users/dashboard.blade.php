@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title') Dashboard @endsection
 @section('content')
-  <div id="page-wrapper">
+  <div id="">
 
     <div class="container-fluid">
 

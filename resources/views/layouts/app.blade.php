@@ -221,16 +221,35 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
     @if (!Auth::guest())
+      {!!Html::style('css/style.css')!!}
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
           <li class="{!! Request::path()=="dashboard"?'active':'' !!}">
-            <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                   src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-43-pie-chart.png') !!}" alt="">
+                Dashboard
+              </div>
+            </a>
           </li>
           <li class="{!! Request::path()=="roles"?'active':'' !!}">
-            <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i> Roles</a>
+            <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-137-cogwheel.png') !!}" alt="">
+                Roles
+              </div>
+            </a>
           </li>
           <li class="{!! Request::path()=="posts"?'active':'' !!}">
-            <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i> Posts</a>
+            <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-40-notes.png') !!}" alt="">
+                Posts
+              </div>
+            </a>
           </li>
           {{--
           <li>
@@ -322,7 +341,9 @@
     <!-- /.navbar-collapse -->
   </nav>
 
-  @yield('content')
+  <div id="page-wrapper">
+    @yield('content')
+  </div>
 
   <!-- /#page-wrapper -->
 
