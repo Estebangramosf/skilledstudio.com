@@ -4,9 +4,10 @@
   <div class=" page-wrapper{{-- jumbotron --}}">
     <div class="container-fluid">
       <div class="">
+
         <!-- Page Heading -->
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
               Posts <small>Crear nuevo post</small>
             </h1>
@@ -23,12 +24,12 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @include('alerts.allAlerts')
           </div><!-- -->
-          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
             {!!Form::open(['route'=>'posts.store', 'method'=>'POST'])!!}
             @include('posts.forms.fieldsCreateEdit')
             {!!Form::close()!!}
           </div><!-- -->
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">
               <div class="list-group-item">
                 Espacio publicitario

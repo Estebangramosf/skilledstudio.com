@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
               Posts <small>Contenido público</small>
             </h1>
@@ -25,7 +25,9 @@
           <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             @include('alerts.allAlerts')
           </div><!-- -->
-          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+
+          <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
             <div class="list-group">
               <div class="list-group-item">
@@ -62,7 +64,7 @@
 
           </div><!-- -->
 
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">
               <div class="list-group-item">
                 Espacio publicitario

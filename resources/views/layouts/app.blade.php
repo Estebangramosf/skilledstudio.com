@@ -348,7 +348,7 @@
   <!-- /#page-wrapper -->
 
 
-  <div class="container-fluid" style="background-color: #fff;padding: 80px;padding-bottom: 20px;border-top:1px solid #f5f5f5;">
+  <div class="container-fluid" style="background-color: #fff;padding: 280px;padding-bottom: 20px;">
     <footer class="site-footer">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -356,7 +356,7 @@
            <img style="padding: 0;" width="240" alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
           --}}
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;border-top:1px solid #f5f5f5;">
           {{--
           <span><a href="#!"></a></span>
           <span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a></span>
