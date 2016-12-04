@@ -15,7 +15,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        return view('gallery.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('gallery.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('gallery.show');
     }
 
     /**
@@ -58,7 +58,7 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('gallery.edit');
     }
 
     /**

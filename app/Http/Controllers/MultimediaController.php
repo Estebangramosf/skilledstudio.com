@@ -15,7 +15,7 @@ class MultimediaController extends Controller
      */
     public function index()
     {
-        //
+        return view('multimedia.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class MultimediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('multimedia.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class MultimediaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('multimedia.show');
     }
 
     /**
@@ -58,7 +58,7 @@ class MultimediaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('multimedia.edit');
     }
 
     /**
