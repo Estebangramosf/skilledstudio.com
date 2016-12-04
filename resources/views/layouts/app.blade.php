@@ -224,6 +224,17 @@
       {!!Html::style('css/style.css')!!}
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
+
+          <li class="{!! Request::path()=="profile"?'active':'' !!}">
+            <a href="{!! url('/profile') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-4-user.png') !!}" alt="">
+                Perfil
+              </div>
+            </a>
+          </li>
+
           <li class="{!! Request::path()=="dashboard"?'active':'' !!}">
             <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -233,6 +244,7 @@
               </div>
             </a>
           </li>
+
           <li class="{!! Request::path()=="roles"?'active':'' !!}">
             <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -242,6 +254,7 @@
               </div>
             </a>
           </li>
+
           <li class="{!! Request::path()=="posts"?'active':'' !!}">
             <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -251,6 +264,27 @@
               </div>
             </a>
           </li>
+
+          <li class="{!! Request::path()=="multimedia"?'active':'' !!}">
+            <a href="{!! url('/multimedia') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-9-film.png') !!}" alt="">
+                Multimedia
+              </div>
+            </a>
+          </li>
+
+          <li class="{!! Request::path()=="gallery"?'active':'' !!}">
+            <a href="{!! url('/gallery') !!}"><i class="fa fa-fw fa-dashboard"></i>
+              <div align="center">
+                <img class="out-dashboard-item" style="float:left;"
+                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">
+                Galerias
+              </div>
+            </a>
+          </li>
+
           {{--
           <li>
             <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>

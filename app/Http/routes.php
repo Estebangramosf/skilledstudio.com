@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('test', 'HomeController@test');
 
 Route::get('dashboard', 'UserController@dashboard');
+Route::get('profile', 'UserController@show');//aqui tiene que tomar el id de Auth -> la sesión
 
 
 Route::resource('admins', 'AdminController');
@@ -29,6 +30,8 @@ Route::resource('posts', 'PostController');
 //Route::resource('comments', 'CommentController');
 Route::resource('posts.comments', 'CommentController');
 Route::resource('roles', 'RoleController');
+Route::resource('multimedia', 'MultimediaController');
+Route::resource('gallery', 'GalleryController');
 
 
 
