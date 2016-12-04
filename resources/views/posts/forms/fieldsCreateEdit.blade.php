@@ -11,6 +11,7 @@
     </h4>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
+    {!!Form::open(['route'=>'posts.store', 'method'=>'POST'])!!}
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::label('Titulo:')!!}
       {!!Form::text('title',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del post','maxlenght'=>'255'])!!}
@@ -21,6 +22,8 @@
     </div><!-- /div .form-group .has-feedback .has-feedback-left -->
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::submit('Enviar', ['class'=>'btn btn-success'])!!}
+      {!!Form::close()!!}
+
       @if(strpos(Request::path(),'edit', 8))
         {!!Form::open(['action'=> ['PostController@destroy', $post->id], 'method'=>'DELETE'])!!}
         {!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'id'=>'eliminar'])!!}﻿

@@ -25,9 +25,7 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
-            {!!Form::open(['route'=>'posts.store', 'method'=>'POST'])!!}
             @include('posts.forms.fieldsCreateEdit')
-            {!!Form::close()!!}
           </div><!-- -->
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">
