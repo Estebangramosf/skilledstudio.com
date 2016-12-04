@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('test', 'HomeController@test');
 
 Route::get('dashboard', 'UserController@dashboard');
-Route::get('profile', 'UserController@show');//aqui tiene que tomar el id de Auth -> la sesión
+
 
 
 Route::resource('admins', 'AdminController');
@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
         //return view('welcome');
     //});
     Route::get('dashboard', 'UserController@dashboard');
+    Route::get('profile', 'UserController@profile');//aqui tiene que tomar el id de Auth -> la sesión
 
     Route::get('user/profile', function () {
         // Uses Auth Middleware

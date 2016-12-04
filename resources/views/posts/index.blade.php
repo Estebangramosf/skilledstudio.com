@@ -14,6 +14,7 @@
             <ol class="breadcrumb">
               <li class="active">
                 <i class="fa fa-dashboard"></i> Posts
+                <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
               </li>
             </ol>
           </div>
