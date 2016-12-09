@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGalleriesTable extends Migration
+class CreateGalleryCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('galleries');
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('gallery_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title',255);
-            $table->string('body',5000);
+            $table->string('body',2000);
             $table->integer('user_id');
+            $table->integer('gallery_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('galleries');
+        Schema::drop('gallery_comments');
     }
 }

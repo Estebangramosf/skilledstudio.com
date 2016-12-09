@@ -1,4 +1,4 @@
-@section('title') Posts @endsection
+@section('title') Galerias @endsection
 @extends('layouts.app')
 @section('content')
   <div class="{{-- jumbotron --}}">
@@ -9,12 +9,12 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Posts <small>Contenido público</small>
+              Galerias <small>Contenido público</small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
                 <i class="fa fa-dashboard"></i> Posts
-                <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
+                <a class="btn-link" href="{{url('/galleries/create')}}">Nueva galería</a>
               </li>
             </ol>
           </div>
@@ -30,7 +30,7 @@
 
           <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
-            @foreach($posts as $key => $post)
+            @foreach($galleries as $key => $gallery)
 
               <div class="list-group">
 
@@ -45,36 +45,40 @@
                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 
                       <div class="form-group has-feedback has-feedback-left">
-                        <h3>{{$post->title}}</h3>
+                        <h3>{{$gallery->title}}</h3>
                       </div><!-- -->
                       <div class="form-group has-feedback has-feedback-left">
-                        <h4>{{$post->body}}</h4>
+                        <h4>{{$gallery->body}}</h4>
                       </div><!-- -->
 
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
                     <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-primary btn-sm">Editar</a>
+                      <a href="{{url('/galleries/'.$gallery->id.'/edit')}}" style="" class="btn btn-primary btn-sm">Editar</a>
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div>
                   <small>
-                    Escrito por {{$post->user->name}}
+                    Escrito por {{$gallery->user->name}}
                     <span style="float:right;">
-                      <a href="{{url('/posts/'.$post->id)}}">{{$post->created_at}}</a>
+                      <a href="{{url('/galleries/'.$gallery->id)}}">{{$gallery->created_at}}</a>
                     </span>
                   </small>
                 </div>
                 <div class="{{--list-group-item--}}">
                   Comentarios
                   <span style="float:right;">
-                    {{$count_comments = $post->comments->count()}}
+
+                    {{--
+                    {{$count_comments = $gallery->comments->count()}}
                     @if($count_comments>0)
                       <a href="{{url('/posts/'.$post->id)}}">
                         · <small>Ver comentarios</small>
                       </a>
                     @endif
+                    --}}
+
                   </span>
                 </div><!-- .list-group-item -->
                 <hr>

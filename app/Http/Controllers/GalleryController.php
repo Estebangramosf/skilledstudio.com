@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Gallery;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
 class GalleryController extends Controller
 {
+    private $galleries;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('gallery.index');
+        $this->galleries = Gallery::all();
+        return view('gallery.index', ['galleries' => $this->galleries]);
     }
 
     /**

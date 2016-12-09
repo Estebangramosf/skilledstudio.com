@@ -275,8 +275,8 @@
             </a>
           </li>
 
-          <li class="{!! Request::path()=="gallery"?'active':'' !!}">
-            <a href="{!! url('/gallery') !!}"><i class="fa fa-fw fa-dashboard"></i>
+          <li class="{!! Request::path()=="galleries"?'active':'' !!}">
+            <a href="{!! url('/galleries') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
                 <img class="out-dashboard-item" style="float:left;"
                      src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">

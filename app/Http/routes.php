@@ -31,7 +31,7 @@ Route::resource('posts', 'PostController');
 Route::resource('posts.comments', 'CommentController');
 Route::resource('roles', 'RoleController');
 Route::resource('multimedia', 'MultimediaController');
-Route::resource('gallery', 'GalleryController');
+Route::resource('galleries', 'GalleryController');
 
 
 
