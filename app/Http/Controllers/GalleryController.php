@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\Http\Requests\galleries\GalleryCreateRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class GalleryController extends Controller
 {
@@ -37,9 +40,11 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GalleryCreateRequest $request)
     {
-        //
+      $request->user()->galleries()->create($request->all());
+      Session::flash('message', 'Galería creada correctamente');
+      return Redirect::to('/posts/create');
     }
 
     /**

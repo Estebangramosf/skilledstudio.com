@@ -11,7 +11,7 @@
     </h4>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-    {!!Form::open(['route'=>'posts.store', 'method'=>'POST'])!!}
+    {!!Form::open(['route'=>'galleries.store', 'method'=>'POST'])!!}
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::label('Titulo:')!!}
       {!!Form::text('title',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo de la galería','maxlenght'=>'255'])!!}
