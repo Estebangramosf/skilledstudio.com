@@ -25,7 +25,7 @@
       {!!Form::close()!!}
 
       @if(strpos(Request::path(),'edit', 8))
-        {!!Form::open(['action'=> ['GalleryController@destroy', $Gallery->id], 'method'=>'DELETE'])!!}
+        {!!Form::open(['action'=> ['GalleryController@destroy', $gallery->id], 'method'=>'DELETE'])!!}
         {!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'id'=>'eliminar'])!!}﻿
         {!!Form::close()!!}
       @endif
