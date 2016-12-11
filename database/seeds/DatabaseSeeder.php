@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         //Aca se agrega la lista de seeders creados
-        //$this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
 
         Model::reguard();
