@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\multimedia\MultimediaCreateRequest;
+use App\Http\Requests\multimedia\MultimediaUpdateRequest;
+use App\Multimedia;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use PhpParser\Node\Expr\BinaryOp\Mul;
 
 class MultimediaController extends Controller
 {
+    private $multimedia;
+    private $multimedias;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,8 @@ class MultimediaController extends Controller
      */
     public function index()
     {
-        return view('multimedia.index');
+        $this->multimedias = Multimedia::all();
+        return view('multimedia.index', ['multimedias' => $this->multimedias]);
     }
 
     /**
@@ -34,9 +43,11 @@ class MultimediaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MultimediaCreateRequest $request)
     {
-        //
+        $this->multimedia = $request->user()->multimedia()->create($request->all());
+        Session::flash('message', 'Contenido multimedia creado correctamente');
+        return Redirect::to('/multimedia/'.$this->multimedia->id);
     }
 
     /**
@@ -47,7 +58,16 @@ class MultimediaController extends Controller
      */
     public function show($id)
     {
-        return view('multimedia.show');
+        try
+        {
+            $this->multimedia = Multimedia::findOrFail($id);
+            return view('multimedia.show', ['multimedia'=>$this->multimedia /*,'comments'=>$this->post->comments*/]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El contenido multimedia buscado no existe.');
+            return Redirect::to('/multimedia');
+        }
     }
 
     /**
@@ -58,7 +78,16 @@ class MultimediaController extends Controller
      */
     public function edit($id)
     {
-        return view('multimedia.edit');
+        try
+        {
+            $this->multimedia = Multimedia::findOrFail($id);
+            return view('multimedia.edit', ['multimedia' => $this->multimedia]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El contenido multimedia no existe.');
+            return Redirect::to('/multimedia');
+        }
     }
 
     /**
@@ -68,9 +97,22 @@ class MultimediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MultimediaUpdateRequest $request, $id)
     {
-        //
+        try
+        {
+            $this->multimedia = Multimedia::findOrFail($id);
+            $this->multimedia->fill($request->all());
+            $this->multimedia->save();
+            Session::flash('message', 'Contenido multimedia editado correctamente');
+            return Redirect::to('/multimedia');
+
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'Contenido multimedia a modificar no existe.');
+            return Redirect::to('/multimedia');
+        }
     }
 
     /**
@@ -81,6 +123,18 @@ class MultimediaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $this->multimedia = Multimedia::findOrFail($id);
+            $this->multimedia->delete();
+            Session::flash('message', 'Contenido multimedia eliminado correctamente');
+            return Redirect::to('/multimedia');
+
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El contenido multimedia especificado no existe.');
+            return Redirect::to('/multimedia');
+        }
     }
 }

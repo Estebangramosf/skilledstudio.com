@@ -44,9 +44,9 @@ class GalleryController extends Controller
      */
     public function store(GalleryCreateRequest $request)
     {
-      $gallery = $request->user()->galleries()->create($request->all());
+      $this->gallery = $request->user()->galleries()->create($request->all());
       Session::flash('message', 'Galería creada correctamente');
-      return Redirect::to('/galleries/'.$gallery->id);
+      return Redirect::to('/galleries/'.$this->gallery->id);
     }
 
     /**

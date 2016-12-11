@@ -9,11 +9,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Posts <small>Editar post {{$post->title}}</small>
+              Multimedia <small>Editar contenido multimedia {{$multimedia->title}}</small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts
+                <i class="fa fa-dashboard"></i> Multimedia
               </li>
             </ol>
           </div>
@@ -24,8 +24,8 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
-            {!!Form::model($post, ['method'=>'PUT', 'route' => ['posts.update', $post->id] ])!!}
-            @include('posts.forms.fieldsCreateEdit')
+            {!!Form::model($multimedia, ['method'=>'PUT', 'route' => ['multimedia.update', $multimedia->id] ])!!}
+            @include('multimedia.forms.fieldsCreateEdit')
           </div><!-- -->
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">

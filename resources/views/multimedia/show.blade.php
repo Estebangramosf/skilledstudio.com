@@ -9,11 +9,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Posts <small>Ver post {{$post->title}}</small>
+              Multimedia <small>Ver contenido multimedia {{$multimedia->title}}</small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts
+                <i class="fa fa-dashboard"></i> Multimedia
               </li>
             </ol>
           </div>
@@ -30,9 +30,9 @@
               <div class="list-group-item">
                 <h4>
                   Mostrando post
-                  <a href="{{url('/roles/'.$post->id.'/edit')}}" style="float:right;" class="btn btn-primary">Editar</a>
+                  <a href="{{url('/multimedia/'.$multimedia->id.'/edit')}}" style="float:right;" class="btn btn-primary">Editar</a>
 
-                  <a href="{{url('/roles')}}" style="float:right;" class="btn btn-success">Volver a posts</a>
+                  <a href="{{url('/multimedia')}}" style="float:right;" class="btn btn-success">Volver a contenido multimedia</a>
 
                 </h4>
               </div><!-- /div .list-group-item -->
@@ -40,12 +40,12 @@
                 <div class="form-group has-feedback has-feedback-left">
                   {{--{!!Form::label('Nombre:')!!}--}}
                   {{--{!!Form::text('posttitle',$parameters = $post->title,['class'=>'form-control', 'disabled'])!!}--}}
-                  <h2>{{$post->title}}</h2>
+                  <h2>{{$multimedia->title}}</h2>
                 </div><!-- -->
                 <div class="form-group has-feedback has-feedback-left">
                   {{--{!!Form::label('Descripción:')!!}--}}
                   {{--{!!Form::textarea('postbody',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}--}}
-                  <h4>{{$post->body}}</h4>
+                  <h4>{{$multimedia->body}}</h4>
                 </div><!-- -->
               </div><!-- -->
             </div>
@@ -53,10 +53,10 @@
               <div class="list-group-item">
                 <h4>
                   Comentarios ·
-                  <span style="">{{$c = count($comments)}}</span>
+                  {{--<span style="">{{$c = count($comments)}}</span>--}}
                 </h4>
               </div><!-- /div .list-group-item -->
-
+              {{--
               @if($c>0)
                 <div class="list-group-item">
 
@@ -64,13 +64,11 @@
                     <small style="float: right;">{{$comment->user->name}} comentó</small>
                     <div>
                       <h5>
-                        {{--<b>Titulo : </b>--}}
-                        <span>{{$comment->title}}</span>
+                      <span>{{$comment->title}}</span>
                       </h5>
                     </div>
                     <div>
                       <h6>
-                        {{--<b>Comentario : </b>--}}
                         <span>{{$comment->body}}</span>
                       </h6>
                     </div>
@@ -79,7 +77,7 @@
 
                 </div><!-- /div .list-group-item -->
               @endif
-
+              --}}
             </div>
             <div class="list-group">
               <div class="list-group-item">
@@ -88,7 +86,7 @@
                 </h4>
               </div><!-- /div .list-group-item -->
               <div class="list-group-item">
-                {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST'])!!}
+                {!!Form::open(['route'=>['posts.comments.store',$multimedia->id], 'method'=>'POST'])!!}
                 {!!Form::label('Título')!!}
                 <div class="form-group has-feedback has-feedback-left">
                   {!!Form::text('title',null,['class'=>'form-control'])!!}

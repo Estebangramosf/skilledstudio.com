@@ -32,6 +32,10 @@ class User extends Authenticatable
         return $this->hasMany(Gallery::class,'user_id');
     }
 
+    public function multimedia(){
+        return $this->hasMany(Multimedia::class,'user_id');
+    }
+
     public function comments(){
         return $this->hasMany(Comment::class,'user_id');
     }
