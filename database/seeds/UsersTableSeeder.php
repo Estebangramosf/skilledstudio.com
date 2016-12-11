@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
         App\Post::truncate();
         App\Gallery::truncate();
         App\Multimedia::truncate();
+        App\Comment::truncate();
 
         //Ejecutamos la funcion factory especificando las clases a tratar y dentro se pueden ejecutar callbacks
         //para asociar a algun modelo o usuario algun post -> opcionalmente
@@ -33,9 +34,21 @@ class UsersTableSeeder extends Seeder
             $post = factory(App\Post::class)->make();
             $gallery = factory(App\Gallery::class)->make();
             $multimedia = factory(App\Multimedia::class)->make();
+            $postComment = factory(App\Comment::class)->make();
             $user->posts()->save($post);
             $user->galleries()->save($gallery);
             $user->multimedia()->save($multimedia);
+            $post->comments()->save($postComment);
+
+            /*
+            //En caso de crear comentarios manuales
+            $post->comments()->create([
+              'user_id'=>rand(1,49),
+              'title'=>$postComment->title,
+              'body'=>$postComment->body,
+            ]);
+            */
+
         });
     }
 }

@@ -56,3 +56,11 @@ $factory->define(App\Multimedia::class, function (Faker\Generator $faker) {
       'body' => $faker->paragraph(),
     ];
 });
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    return [
+      'title' => $faker->sentence(),
+      'body' => $faker->paragraph(),
+      'user_id' => rand(1,49),
+    ];
+});
