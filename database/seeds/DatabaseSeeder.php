@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
         //Luego mediante la consola se pueden ejecutar como -> php artisan db:seed
         // ó
         // migrando o refrescando la tabla -> php artisan migrate --seed | php artisan migrate:refresh --seed
+
         Model::unguard();
 
         //Aca se agrega la lista de seeders creados
-        
         //$this->call(UsersTableSeeder::class);
+
 
         Model::reguard();
     }
