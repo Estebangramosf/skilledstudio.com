@@ -11,6 +11,8 @@
 |
 */
 
+//Aca definimos como crearemos los datos, aca se define la forma como se crean
+
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
