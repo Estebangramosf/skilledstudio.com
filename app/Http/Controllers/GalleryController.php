@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use App\Http\Requests\galleries\GalleryCreateRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\galleries\GalleryUpdateRequest;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 class GalleryController extends Controller
 {
     private $galleries;
+    private $gallery;
     /**
      * Display a listing of the resource.
      *
@@ -42,9 +44,9 @@ class GalleryController extends Controller
      */
     public function store(GalleryCreateRequest $request)
     {
-      $request->user()->galleries()->create($request->all());
+      $gallery = $request->user()->galleries()->create($request->all());
       Session::flash('message', 'Galería creada correctamente');
-      return Redirect::to('/posts/create');
+      return Redirect::to('/galleries/'.$gallery->id);
     }
 
     /**
@@ -55,7 +57,16 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        return view('gallery.show');
+        try
+        {
+            $this->gallery = Gallery::findOrFail($id);
+            return view('gallery.show', ['gallery'=>$this->gallery /*,'comments'=>$this->post->comments*/]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'La galería buscada no existe.');
+            return Redirect::to('/galleries');
+        }
     }
 
     /**
@@ -66,7 +77,16 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        return view('gallery.edit');
+        try
+        {
+            $this->gallery = Gallery::findOrFail($id);
+            return view('gallery.edit', ['gallery' => $this->gallery]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'La galeria buscada no existe.');
+            return Redirect::to('/galleries');
+        }
     }
 
     /**
@@ -76,9 +96,22 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(GalleryUpdateRequest $request, $id)
     {
-        //
+        try
+        {
+            $this->gallery = Gallery::findOrFail($id);
+            $this->gallery->fill($request->all());
+            $this->gallery->save();
+            Session::flash('message', 'Galería editada correctamente');
+            return Redirect::to('/galleries');
+
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'La galería modificar no existe.');
+            return Redirect::to('/galleries');
+        }
     }
 
     /**
@@ -89,6 +122,18 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $this->gallery = Gallery::findOrFail($id);
+            $this->gallery->delete();
+            Session::flash('message', 'Galería eliminada correctamente');
+            return Redirect::to('/galleries');
+
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'La galería especificada no existe.');
+            return Redirect::to('/galleries');
+        }
     }
 }

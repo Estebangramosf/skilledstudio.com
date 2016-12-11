@@ -1,4 +1,4 @@
-@section('title') Galerias @endsection
+@section('title') Galerías @endsection
 @extends('layouts.app')
 @section('content')
   <div class="{{-- jumbotron --}}">
@@ -9,11 +9,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Galerias <small>Contenido público</small>
+              Galerías <small>Contenido público</small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts
+                <i class="fa fa-dashboard"></i> Galerías ·
                 <a class="btn-link" href="{{url('/galleries/create')}}">Nueva galería</a>
               </li>
             </ol>

@@ -13,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Galerias
+                <i class="fa fa-dashboard"></i> Galerías
               </li>
             </ol>
           </div>
