@@ -1,4 +1,4 @@
-@section('title') Edit {!! $role->name !!} @stop
+@section('title') Showing @stop
 @extends('layouts.app')
 @section('content')
   <div class=" page-wrapper{{-- jumbotron --}}">
@@ -9,11 +9,17 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Roles <small>Administrador de roles</small>
+              Roles
+              <small>
+                Administrador de roles
+                ·
+                {!! $role->name !!}
+              </small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Roles
+                <i class="fa fa-dashboard"></i> Roles ·
+                <a href="{{url('/roles')}}" class="btn-link">Volver al listado</a>
               </li>
             </ol>
           </div>
@@ -24,32 +30,40 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @include('alerts.allAlerts')
           </div><!-- -->
-          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
             <div class="list-group" >
               <div class="list-group-item">
                 <h4>
-                  Mostrando rol
-                  <a href="{{url('/roles/'.$role->id.'/edit')}}" style="float:right;" class="btn btn-primary">Editar</a>
-
-                  <a href="{{url('/roles')}}" style="float:right;" class="btn btn-success">Volver al listado</a>
-
+                  Mostrando rol ·
+                  {!! $role->name !!}
+                  <a href="{{url('/roles/'.$role->id.'/edit')}}" style="float:right;" class="btn-link">Editar</a>
                 </h4>
               </div><!-- /div .list-group-item -->
               <div class="list-group-item">
                 <div class="form-group has-feedback has-feedback-left">
-                  {!!Form::label('Nombre:')!!}
-                  {!!Form::text('name',$parameters = $role->name,['class'=>'form-control', 'disabled'])!!}
+                  <h2>{{$role->name}}</h2>
                 </div><!-- -->
                 <div class="form-group has-feedback has-feedback-left">
-                  {!!Form::label('Descripción:')!!}
-                  {!!Form::textarea('description',$parameters = $role->description,['class'=>'form-control', 'disabled','rows' => '5'])!!}
+                  <h4>{{$role->description}}</h4>
                 </div><!-- -->
               </div><!-- -->
             </div><!-- -->
 
 
           </div><!-- -->
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="list-group">
+              <div class="list-group-item">
+                Espacio publicitario
+              </div><!-- -->
+              <div class="list-group-item">
+                Sugerencias, relateds, etc.
+              </div><!-- -->
+            </div><!-- -->
+          </div><!-- -->
+
         </div><!-- -->
       </div><!-- -->
     </div>

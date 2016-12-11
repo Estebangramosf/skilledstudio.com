@@ -1,4 +1,4 @@
-@section('title') Show @stop
+@section('title') Showing @stop
 @extends('layouts.app')
 @section('content')
   <div class=" page-wrapper{{-- jumbotron --}}">
@@ -9,11 +9,12 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
             <h1 class="page-header">
-              Posts <small>Ver post {{$post->title}}</small>
+              Posts <small>Ver post · {{$post->title}}</small>
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts
+                <i class="fa fa-dashboard"></i> Posts ·
+                <a href="{{url('/posts')}}" class="btn-link">Volver al listado</a>
               </li>
             </ol>
           </div>
@@ -29,11 +30,8 @@
             <div class="list-group">
               <div class="list-group-item">
                 <h4>
-                  Mostrando post
-                  <a href="{{url('/roles/'.$post->id.'/edit')}}" style="float:right;" class="btn btn-primary">Editar</a>
-
-                  <a href="{{url('/roles')}}" style="float:right;" class="btn btn-success">Volver a posts</a>
-
+                  Mostrando post · {{$post->title}}
+                  <a href="{{url('/posts/'.$post->id.'/edit')}}" style="float:right;" class="btn-link">Editar</a>
                 </h4>
               </div><!-- /div .list-group-item -->
               <div class="list-group-item">

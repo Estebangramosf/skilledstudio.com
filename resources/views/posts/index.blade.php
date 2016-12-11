@@ -45,7 +45,7 @@
                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 
                       <div class="form-group has-feedback has-feedback-left">
-                        <h3>{{$post->title}}</h3>
+                        <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
                       </div><!-- -->
                       <div class="form-group has-feedback has-feedback-left">
                         <h4>{{$post->body}}</h4>

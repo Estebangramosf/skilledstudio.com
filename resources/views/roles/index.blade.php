@@ -45,7 +45,7 @@
                   </thead>
                   @foreach($roles as $role)
                     <tbody>
-                    <td>{!!$role->name!!}</td>
+                    <td><a href="{{url('/roles/'.$role->id)}}">{!!$role->name!!}</a></td>
                     <td>{!!$role->description!!}</td>
                     <td>{!!link_to_route('roles.edit', $title = 'Editar', $parameters = $role->id, $attributes = ['class'=>'btn btn-link'])!!}</td>
                     </tbody>
