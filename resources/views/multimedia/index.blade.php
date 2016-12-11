@@ -13,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Multimedia
+                <i class="fa fa-dashboard"></i> Multimedia ·
                 <a class="btn-link" href="{{url('/multimedia/create')}}">Nuevo contenido multimedia</a>
               </li>
             </ol>
@@ -54,13 +54,13 @@
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
                     <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/multimedia/'.$multimedia->id.'/edit')}}" style="" class="btn btn-primary btn-sm">Editar</a>
+                      <a href="{{url('/multimedia/'.$multimedia->id.'/edit')}}" style="" class="btn btn-link">Editar</a>
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div>
                   <small>
-                    Escrito por {{$multimedia->user->name}}
+                    Publicado por {{$multimedia->user->name}}
                     <span style="float:right;">
                       <a href="{{url('/multimedia/'.$multimedia->id)}}">{{$multimedia->created_at}}</a>
                     </span>

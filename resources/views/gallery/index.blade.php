@@ -54,13 +54,13 @@
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
                     <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/galleries/'.$gallery->id.'/edit')}}" style="" class="btn btn-primary btn-sm">Editar</a>
+                      <a href="{{url('/galleries/'.$gallery->id.'/edit')}}" style="" class="btn btn-link">Editar</a>
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div>
                   <small>
-                    Escrito por {{$gallery->user->name}}
+                    Publicado por {{$gallery->user->name}}
                     <span style="float:right;">
                       <a href="{{url('/galleries/'.$gallery->id)}}">{{$gallery->created_at}}</a>
                     </span>

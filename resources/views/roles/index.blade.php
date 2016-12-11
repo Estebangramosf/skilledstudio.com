@@ -13,7 +13,8 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Roles
+                <i class="fa fa-dashboard"></i> Roles ·
+                <a class="btn-link" href="{{url('/roles/create')}}">Nuevo rol</a>
               </li>
             </ol>
           </div>
@@ -31,7 +32,7 @@
               <div class="list-group-item">
                 <h4>
                   Listado de Roles
-                  <a href="{{url('/roles/create')}}" style="float:right;" class="btn btn-success">Crear nuevo rol</a>
+                  {{--<a href="{{url('/roles/create')}}" style="float:right;" class="btn btn-success">Crear nuevo rol</a>--}}
                 </h4>
 
               </div>
@@ -46,7 +47,7 @@
                     <tbody>
                     <td>{!!$role->name!!}</td>
                     <td>{!!$role->description!!}</td>
-                    <td>{!!link_to_route('roles.edit', $title = 'Editar', $parameters = $role->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+                    <td>{!!link_to_route('roles.edit', $title = 'Editar', $parameters = $role->id, $attributes = ['class'=>'btn btn-link'])!!}</td>
                     </tbody>
                   @endforeach
                 </table><!-- -->

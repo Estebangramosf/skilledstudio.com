@@ -13,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts
+                <i class="fa fa-dashboard"></i> Posts ·
                 <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
               </li>
             </ol>
@@ -54,13 +54,13 @@
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
                     <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-primary btn-sm">Editar</a>
+                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">Editar</a>
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div>
                   <small>
-                    Escrito por {{$post->user->name}}
+                    Publicado por {{$post->user->name}}
                     <span style="float:right;">
                       <a href="{{url('/posts/'.$post->id)}}">{{$post->created_at}}</a>
                     </span>
