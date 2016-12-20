@@ -165,19 +165,33 @@
       <div class="">
         <h2>UNETE A NUESTRAS REDES SOCIALES</h2>
         <p>Y entérate de todo lo que sucede con nuestro equipo</p>
-        <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+        <p><a href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
         </p>
+
         <ul class="list-inline banner-social-buttons">
+
           <li>
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
           </li>
+
           <li>
-            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
           </li>
+
           <li>
-            <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
           </li>
+
+          <li>
+            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
+          </li>
+
+          <li>
+            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
+          </li>
+
         </ul>
+
       </div>
     </div>
   </section>
