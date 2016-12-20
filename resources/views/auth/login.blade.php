@@ -24,8 +24,8 @@
         <div align="center" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         </div>
         <div align="center" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="panel panel-default">
-                <div style="background-color: #1c1c1c;" class="panel-heading"><span style="color:#fff;">Login</span></div>
+            <div class="panel panel-default" style="border: 1px solid #d5822d;">
+                <div style="background-color: #1c1c1c;border: 1px solid #d5822d;" class="panel-heading"><span style="color:#d5822d;"><h3 style="padding: 0px;margin: 0px;">INICIAR SESIÓN</h3></span></div>
                 <div style="background-color: #3d3d3d;" class="panel-body">
                     <form style="color:#d5822d;" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
