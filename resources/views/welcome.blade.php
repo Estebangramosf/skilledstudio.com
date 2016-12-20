@@ -10,6 +10,16 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
           Menu <i class="fa fa-bars"></i>
         </button>
+
+        <a class="navbar-brand" href="{{ url('/') }}">
+          <u style="color: #c43d23;">
+            <span style="font-family: Coolvetica;font-size: 1.6em; text-transform: capitalize;" class="brand-heading">{{ucfirst('Skilled')}}</span>
+          </u>
+          <u style="color: #d5822d;">
+            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.6em;" class="brand-heading">{{ucfirst('Studio')}}</span>
+          </u>
+        </a>
+
         {{--
         <a class="navbar-brand page-scroll" href="#page-top">
           <i class="fa fa-play-circle"></i> <span class="light" style="font-family: Coolvetica;">SkilledStudio</span>
@@ -68,10 +78,15 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
+
+{{--
               <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
               <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
+--}}
+            <img width="50%" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
+
             <p class="intro-text">
-              Dembora project.
+
             </p>
             <a href="#about" class="btn btn-circle page-scroll">
               <i class="fa fa-angle-double-down animated"></i>
@@ -87,8 +102,7 @@
     <div id="about">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-          <h1 style="text-transform: none;font-family: Coolvetica;">Dembora</h1>
-          <h2 style="text-transform: none;font-family: Coolvetica;">The Secret of Magic</h2>
+
           <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
             Samin, un joven Chamán debe emprender un viaje, que le permitirá entender el asesinato de su maestro Sulay. Para obtener respuestas de la muerte Samin deberá adquirir los cuatro amuletos de los Dioses Elementales, pero la búsqueda no será fácil, ya que deberá enfrentar a las diferentes criaturas elementales.
           </h3>
