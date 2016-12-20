@@ -167,31 +167,45 @@
         <p>Y entérate de todo lo que sucede con nuestro equipo</p>
         <p><a href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
         </p>
-
         <ul class="list-inline banner-social-buttons">
 
           <li>
-            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
+            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
+              </span>
+            </a>
           </li>
-
           <li>
-            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
+            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
+              </span>
+            </a>
           </li>
-
           <li>
-            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
+            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
+              </span>
+            </a>
           </li>
-
           <li>
-            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
+            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
+              </span>
+            </a>
           </li>
-
           <li>
-            <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
+            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
+              </span>
+            </a>
           </li>
 
         </ul>
-
       </div>
     </div>
   </section>
