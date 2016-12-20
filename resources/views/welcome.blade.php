@@ -103,9 +103,25 @@
   <section id="news" class="content-section text-center">
     <div class="download-section" style="background: url(../img/backgrounds/Fondos.png) no-repeat center center scroll;">
       <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-12 ">
           <h2>Noticias</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+          <p>¡Enterate de los últimos posts agregados por nuestros periodistas, no te los pierdas!.</p>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h3>Post prueba 1</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h3>Post prueba 2</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h3>Post prueba 3</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h3>Post prueba 4</h3>
+            </div>
+          </div>
+
           <a href="#!" class="btn btn-default btn-lg">
             Ver los últimos posts
           </a>
