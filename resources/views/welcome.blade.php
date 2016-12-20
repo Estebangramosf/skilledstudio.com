@@ -108,22 +108,58 @@
           <p>¡Enterate de los últimos posts agregados por nuestros periodistas, no te los pierdas!.</p>
 
           <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!">
+                <div class="thumbnail">
+                  <img class="" src="{!! asset('img/postsTests/image.img.jpg') !!}" alt="">
+                </div>
+              </a>
               <h3>Post prueba 1</h3>
+              <h5>Contenido breve post prueba 1</h5>
+              <a href="#!" class="btn btn-default btn-xs">
+                Ver más
+              </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!">
+                <div class="thumbnail">
+                  <img class="" src="{!! asset('img/postsTests/image.img2.jpg') !!}" alt="">
+                </div>
+              </a>
               <h3>Post prueba 2</h3>
+              <h5>Contenido breve post prueba 2</h5>
+              <a href="#!" class="btn btn-default btn-xs">
+                Ver más
+              </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!">
+                <div class="thumbnail">
+                  <img class="" src="{!! asset('img/postsTests/image.img3.jpg') !!}" alt="">
+                </div>
+              </a>
               <h3>Post prueba 3</h3>
+              <h5>Contenido breve post prueba 3</h5>
+              <a href="#!" class="btn btn-default btn-xs">
+                Ver más
+              </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!">
+                <div class="thumbnail">
+                  <img class="" src="{!! asset('img/postsTests/image.img.jpg') !!}" alt="">
+                </div>
+              </a>
               <h3>Post prueba 4</h3>
+              <h5>Contenido breve post prueba 4</h5>
+              <a href="#!" class="btn btn-default btn-xs">
+                Ver más
+              </a>
             </div>
           </div>
-
+          <br><br>
           <a href="#!" class="btn btn-default btn-lg">
-            Ver los últimos posts
+            Ver todos los últimos posts
           </a>
         </div>
       </div>
