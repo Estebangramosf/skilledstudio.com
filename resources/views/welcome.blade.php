@@ -101,12 +101,14 @@
 
   <!-- Download Section -->
   <section id="news" class="content-section text-center">
-    <div class="download-section">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Noticias</h2>
           <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <a href="#!" class="btn btn-default btn-lg">
+            Ver los últimos posts
+          </a>
         </div>
       </div>
     </div>
@@ -114,12 +116,14 @@
 
   <!-- Develop Section -->
   <section id="develop" class="content-section text-center">
-    <div class="download-section">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos7.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Desarrollo</h2>
           <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <a href="#!" class="btn btn-default btn-lg">
+            Conoce a nuestro Equipo
+          </a>
         </div>
       </div>
     </div>
@@ -127,12 +131,14 @@
 
   <!-- Multimedia Section -->
   <section id="multimedia" class="content-section text-center">
-    <div class="download-section">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Multimedia</h2>
           <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <a href="#!" class="btn btn-default btn-lg">
+            Mira nuestras galerías
+          </a>
         </div>
       </div>
     </div>
@@ -140,23 +146,25 @@
 
   <!-- Join Section -->
   <section id="joincommunity" class="content-section text-center">
-    <div class="download-section">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos12.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Unete a Nuestra Comunidad</h2>
           <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <a href="#!" class="btn btn-default btn-lg">
+            Unete a nuestra comunidad
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="container content-section text-center">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2>Contact Start Bootstrap</h2>
-        <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+  <section id="contact" class="content-section text-center">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos10.png) no-repeat center center scroll;"  >
+      <div class="">
+        <h2>UNETE A NUESTRAS REDES SOCIALES</h2>
+        <p>Y entérate de todo lo que sucede con nuestro equipo</p>
         <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
         </p>
         <ul class="list-inline banner-social-buttons">
@@ -175,12 +183,12 @@
   </section>
 
   <!-- Map Section -->
-  <div id="map"></div>
+  {{--<div id="map"></div>--}}
 
   <!-- Footer -->
   <footer>
     <div class="container text-center">
-      <p>Copyright &copy; Your Website 2016</p>
+      <p>Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
     </div>
   </footer>
 
