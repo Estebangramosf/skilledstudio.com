@@ -74,6 +74,7 @@
                   <span style="float:right;">
 
                     {{--
+                    DEPRECATED *<25-12-2016
                     {{$count_comments = $gallery->comments->count()}}
                     @if($count_comments>0)
                       <a href="{{url('/posts/'.$post->id)}}">

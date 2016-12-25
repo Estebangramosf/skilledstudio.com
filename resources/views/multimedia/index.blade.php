@@ -72,6 +72,7 @@
                 <div class="list-group-item">
                   Comentarios
                   {{--
+                  DEPRECATED *<25-12-2016
                   <span style="float:right;">
                     {{$count_comments = $post->comments->count()}}
                     @if($count_comments>0)
