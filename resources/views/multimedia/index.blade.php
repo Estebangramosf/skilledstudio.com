@@ -121,7 +121,7 @@
           </div>
         </div>
             --}}
-
+          {{$multimedias->render()}}
           </div><!-- -->
 
           {{--

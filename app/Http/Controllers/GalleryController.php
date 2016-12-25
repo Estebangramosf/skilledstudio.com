@@ -22,7 +22,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $this->galleries = Gallery::all();
+        $this->galleries = Gallery::orderBy('created_at', 'desc')->paginate(12);
         return view('gallery.index', ['galleries' => $this->galleries]);
     }
 

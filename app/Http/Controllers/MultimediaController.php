@@ -23,7 +23,7 @@ class MultimediaController extends Controller
      */
     public function index()
     {
-        $this->multimedias = Multimedia::all();
+        $this->multimedias = Multimedia::orderBy('created_at','desc')->paginate(12);
         return view('multimedia.index', ['multimedias' => $this->multimedias]);
     }
 

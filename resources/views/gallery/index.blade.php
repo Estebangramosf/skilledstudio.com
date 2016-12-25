@@ -123,7 +123,7 @@
           </div>
         </div>
             --}}
-
+          {{$galleries->render()}}
           </div><!-- -->
 
           {{--

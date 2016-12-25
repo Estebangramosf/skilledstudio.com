@@ -39,7 +39,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index', ['posts'=>Post::all()]); //change for class
+        return view('posts.index', ['posts'=>Post::orderBy('created_at','desc')->paginate(12)]); //change for class
     }
 
     /**
