@@ -27,23 +27,25 @@
             @include('alerts.allAlerts')
           </div><!-- -->
 
-          <div class="col-xs-12 col-sm-0 col-md-2 col-lg-2"></div>
-          
-          <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
+
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             @foreach($posts as $key => $post)
 
               <div class="list-group">
 
-                <div class="{{--list-group-item--}}">
+                <div class="list-group-item {{--list-group-item--}}">
 
                   <div class="row">
 
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                      IMAGEN
+                    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+
+                      Imagen del post
+
                     </div>
 
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
 
                       <div class="form-group has-feedback has-feedback-left">
                         <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
@@ -59,7 +61,7 @@
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
-                <div>
+                <div class="list-group-item">
                   <small>
                     Publicado por {{$post->user->name}}
                     <span style="float:right;">
@@ -67,7 +69,7 @@
                     </span>
                   </small>
                 </div>
-                <div class="{{--list-group-item--}}">
+                <div class="list-group-item{{--list-group-item--}}">
                   Comentarios
                   <span style="float:right;">
                     {{$count_comments = $post->comments->count()}}
@@ -78,8 +80,9 @@
                     @endif
                   </span>
                 </div><!-- .list-group-item -->
-                <hr>
+
               </div><!-- .list-group -->
+              <hr>
             @endforeach
 
             {{--
@@ -119,6 +122,7 @@
           </div><!-- -->
 
           <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            {{--
             <div class="list-group">
               <div class="list-group-item">
                 Espacio publicitario
@@ -127,6 +131,7 @@
                 Sugerencias, relateds, etc.
               </div><!-- -->
             </div><!-- -->
+            --}}
           </div><!-- -->
 
         </div><!-- -->
