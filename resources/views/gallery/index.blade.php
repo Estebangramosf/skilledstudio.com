@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h1 class="page-header">
               Galerías <small>Contenido público</small>
             </h1>
@@ -23,30 +23,33 @@
 
         <div class="row">
 
-          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @include('alerts.allAlerts')
           </div><!-- -->
 
 
-          <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             @foreach($galleries as $key => $gallery)
 
               <div class="list-group">
 
-                <div class="{{--list-group-item--}}">
+                <div class="list-group-item">
 
                   <div class="row">
 
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                      IMAGEN
+                    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+
+                      Imagen del post
+
                     </div>
 
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
 
                       <div class="form-group has-feedback has-feedback-left">
                         <h3><a href="{{url('/galleries/'.$gallery->id)}}">{{$gallery->title}}</a></h3>
                       </div><!-- -->
+                      <hr>
                       <div class="form-group has-feedback has-feedback-left">
                         <h4>{{$gallery->body}}</h4>
                       </div><!-- -->
@@ -58,7 +61,7 @@
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
-                <div>
+                <div class="list-group-item">
                   <small>
                     Publicado por {{$gallery->user->name}}
                     <span style="float:right;">
@@ -66,7 +69,7 @@
                     </span>
                   </small>
                 </div>
-                <div class="{{--list-group-item--}}">
+                <div class="list-group-item">
                   Comentarios
                   <span style="float:right;">
 
@@ -81,12 +84,13 @@
 
                   </span>
                 </div><!-- .list-group-item -->
-                <hr>
               </div><!-- .list-group -->
+              <hr>
             @endforeach
 
             {{--
-<div class="list-group">
+            DEPRECATED *<25-12-2016
+            <div class="list-group">
               <div class="list-group-item">
                 <h4>
                   <a href="{{url('/posts')}}">Listado de Posts</a>
@@ -121,6 +125,8 @@
 
           </div><!-- -->
 
+          {{--
+          DEPRECATED 25-12-2016
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">
               <div class="list-group-item">
@@ -131,6 +137,7 @@
               </div><!-- -->
             </div><!-- -->
           </div><!-- -->
+          --}}
 
         </div><!-- -->
       </div><!-- -->

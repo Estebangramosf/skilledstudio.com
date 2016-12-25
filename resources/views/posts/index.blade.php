@@ -28,14 +28,13 @@
           </div><!-- -->
 
 
-
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             @foreach($posts as $key => $post)
 
               <div class="list-group">
 
-                <div class="list-group-item {{--list-group-item--}}">
+                <div class="list-group-item">
 
                   <div class="row">
 
@@ -50,6 +49,7 @@
                       <div class="form-group has-feedback has-feedback-left">
                         <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
                       </div><!-- -->
+                      <hr>
                       <div class="form-group has-feedback has-feedback-left">
                         <h4>{{$post->body}}</h4>
                       </div><!-- -->
@@ -69,7 +69,7 @@
                     </span>
                   </small>
                 </div>
-                <div class="list-group-item{{--list-group-item--}}">
+                <div class="list-group-item">
                   Comentarios
                   <span style="float:right;">
                     {{$count_comments = $post->comments->count()}}
@@ -86,7 +86,8 @@
             @endforeach
 
             {{--
-<div class="list-group">
+            DEPRECATED *<25-12-2016
+            <div class="list-group">
               <div class="list-group-item">
                 <h4>
                   <a href="{{url('/posts')}}">Listado de Posts</a>
@@ -121,8 +122,9 @@
 
           </div><!-- -->
 
-          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            {{--
+          {{--
+          DEPRECATED 25-12-2016
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
             <div class="list-group">
               <div class="list-group-item">
                 Espacio publicitario
@@ -131,8 +133,8 @@
                 Sugerencias, relateds, etc.
               </div><!-- -->
             </div><!-- -->
-            --}}
           </div><!-- -->
+          --}}
 
         </div><!-- -->
       </div><!-- -->
