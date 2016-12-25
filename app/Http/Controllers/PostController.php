@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PostImage;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -61,7 +62,14 @@ class PostController extends Controller
     public function store(PostCreateRequest $request)
     {
         //Auth::user()->posts()->create($request->all());
-        $request->user()->posts()->create($request->all());
+        $post = $request->user()->posts()->create($request->all());
+
+        PostImage::create([
+          'image'=>$request->image,
+          'user_id'=>$post->user_id,
+          'post_id'=>$post->id,
+        ]);
+
         /*
         dd($request->user()->posts()->create([
             'title'=>$request->title,

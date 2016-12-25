@@ -431,6 +431,25 @@
 {!!Html::script('js/plugins/morris/morris.min.js')!!}
 {!!Html::script('js/plugins/morris/morris-data.js')!!}
 
+<script>
+  $('#image').change(function(){
+
+    console.log('Se agregó una imagen');
+     var formato = this.value;
+     var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+     formato = formato.split('.');
+     var sizeByte = this.files[0].size;
+     var siezekiloByte = parseInt(sizeByte / 1024);
+     if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size'))) {
+        alert('Formato de imagen invalido o tamaño supera los 2 Megas, seleccione otra imagen con tamaño menor');
+        this.value = '';
+     }else{
+        $('#imagePathValue').text(this.value);
+     }
+  });
+</script>
+
+
 </body>
 
 </html>

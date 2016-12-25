@@ -21,6 +21,14 @@
       {!!Form::textarea('body',null,['class'=>'form-control','placeholder'=>'Ingrese contenido del post','rows' => '5','maxlenght'=>'5000'])!!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left -->
     <div class="form-group has-feedback has-feedback-left">
+      <label class="btn btn-default btn-file">
+        <span class="glyphicon glyphicon-camera "></span>
+        Buscar imagen ...
+        <input type="file" style="display: none;" name="image" id="image" maxlength="1000" size="2048" />
+        <span id="imagePathValue"></span>
+      </label>
+    </div>
+    <div class="form-group has-feedback has-feedback-left">
       {!!Form::submit('Enviar', ['class'=>'btn btn-success'])!!}
       {!!Form::close()!!}
 

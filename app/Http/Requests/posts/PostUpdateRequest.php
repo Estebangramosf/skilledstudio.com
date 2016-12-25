@@ -25,7 +25,8 @@ class PostUpdateRequest extends Request
     {
         return [
           'title'=>'required',
-          'body'=>'required'
+          'body'=>'required',
+          'image' => 'required',
         ];
     }
 }

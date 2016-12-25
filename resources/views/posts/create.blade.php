@@ -25,7 +25,7 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {!!Form::open(['route'=>'posts.store', 'method'=>'POST'])!!}
+            {!!Form::open(['route'=>'posts.store', 'method'=>'POST', 'files' => true])!!}
             @include('posts.forms.fieldsCreateEdit')
           </div><!-- -->
 

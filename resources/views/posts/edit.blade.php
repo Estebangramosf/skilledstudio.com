@@ -24,7 +24,7 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {!!Form::model($post, ['method'=>'PUT', 'route' => ['posts.update', $post->id] ])!!}
+            {!!Form::model($post, ['method'=>'PUT', 'route' => ['posts.update', $post->id], 'files' => true ])!!}
             @include('posts.forms.fieldsCreateEdit')
           </div><!-- -->
 
