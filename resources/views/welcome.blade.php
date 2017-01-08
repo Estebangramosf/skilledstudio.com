@@ -44,9 +44,11 @@
           <li>
             <a class="page-scroll" href="#develop">Desarrollo</a>
           </li>
+{{--
           <li>
             <a class="page-scroll" href="#multimedia">Multimedia</a>
           </li>
+--}}
           <li>
             <a class="page-scroll" href="#joincommunity">Comunidad</a>
           </li>
@@ -104,7 +106,7 @@
         <div class="col-lg-8 col-lg-offset-2">
 
           <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
-            Samin, un joven Chamán debe emprender un viaje, que le permitirá entender el asesinato de su maestro Sulay. Para obtener respuestas de la muerte Samin deberá adquirir los cuatro amuletos de los Dioses Elementales, pero la búsqueda no será fácil, ya que deberá enfrentar a las diferentes criaturas elementales.
+            {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras el asesinato de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
           </h3>
 
           <h4>Coming Soon.</h4>
@@ -119,7 +121,7 @@
       <div class="container">
         <div class="col-lg-12 ">
           <h2>Noticias</h2>
-          <p>¡Enterate de los últimos posts agregados por nuestros periodistas, no te los pierdas!.</p>
+          <p>¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!.</p>
 
           <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
@@ -186,7 +188,9 @@
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Desarrollo</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+          <p>
+            {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios.'))}}
+          </p>
           <a href="#!" class="btn btn-default btn-lg">
             Conoce a nuestro Equipo
           </a>
@@ -195,6 +199,7 @@
     </div>
   </section>
 
+{{--
   <!-- Multimedia Section -->
   <section id="multimedia" class="content-section text-center">
     <div class="download-section" style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
@@ -209,6 +214,7 @@
       </div>
     </div>
   </section>
+--}}
 
   <!-- Join Section -->
   <section id="joincommunity" class="content-section text-center">
@@ -229,42 +235,45 @@
   <section id="contact" class="content-section text-center">
     <div class="download-section" style="background: url(../img/backgrounds/Fondos10.png) no-repeat center center scroll;"  >
       <div class="">
-        <h2>UNETE A NUESTRAS REDES SOCIALES</h2>
-        <p>Y entérate de todo lo que sucede con nuestro equipo</p>
-        <p><a href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
-        </p>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES - PARA QUE PUEDAS SUMERGIRTE EN UN MUNDO DOMINADO POR FUERZAS ELEMENTALES.</h2>
+          </div>
+        </div>
+
+        {{--<p>Y entérate de todo lo que sucede con nuestro equipo</p>--}}
         <ul class="list-inline banner-social-buttons">
 
           <li>
-            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a href="https://www.youtube.com/user/VideojuegosXL" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
               </span>
@@ -272,7 +281,10 @@
           </li>
 
         </ul>
+        <p>contacto : <a href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
+        </p>
       </div>
+
     </div>
   </section>
 

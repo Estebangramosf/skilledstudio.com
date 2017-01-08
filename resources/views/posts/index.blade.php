@@ -38,13 +38,31 @@
 
                   <div class="row">
 
-                    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" align="middle">
 
-                      Imagen del post
+                      @foreach($post->image as $key => $image)
+
+                          <a href="#!" class="thumbnail" style="padding:0px;">
+                            {{Html::image('/posts_images/'.$image->image,
+                              $alt="Photo", $attributes = array('style'=>
+                              'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                          </a>
+
+                      @endforeach
+                      @if(count($post->image)==0)
+                        <a href="#!" class="thumbnail" style="padding:0px;">
+                          {{Html::image('/img/backgrounds/iconoCargando.gif',
+                            $alt="Photo", $attributes = array('style'=>
+                            'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                          <div class="caption">
+                            Este post no tiene imagen.
+                          </div>
+                        </a>
+                      @endif
 
                     </div>
 
-                    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
+                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
                       <div class="form-group has-feedback has-feedback-left">
                         <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
@@ -56,8 +74,13 @@
 
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
-                    <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">Editar</a>
+                    <div align="" class="">
+                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">
+                        {{Html::image('/img/glyphicons/glyphicons/png/glyphicons-31-pencil.png',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:15px;height:15px;')) }}
+                        Editar
+                      </a>
                     </div>
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
