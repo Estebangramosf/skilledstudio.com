@@ -34,6 +34,28 @@
                   <a href="{{url('/posts/'.$post->id.'/edit')}}" style="float:right;" class="btn-link">Editar</a>
                 </h4>
               </div><!-- /div .list-group-item -->
+
+              <div class="list-group-item">
+                  @foreach($post->image as $key => $image)
+
+                    <a href="#!" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/posts_images/'.$image->image,
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                    </a>
+
+                  @endforeach
+                  @if(count($post->image)==0)
+                    <a href="#!" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/img/backgrounds/iconoCargando.gif',
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                      <div class="caption">
+                        Este post no tiene imagen.
+                      </div>
+                    </a>
+                  @endif
+              </div>
               <div class="list-group-item">
                 <div class="form-group has-feedback has-feedback-left">
                   {{-- DEPRECATED *<25-12-2016 --}}
