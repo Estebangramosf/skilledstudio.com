@@ -265,6 +265,7 @@
             </a>
           </li>
 
+{{--
           <li class="{!! Request::path()=="multimedia"?'active':'' !!}">
             <a href="{!! url('/multimedia') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -285,6 +286,8 @@
             </a>
           </li>
 
+--}}
+          
           {{--
           <li>
             <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>

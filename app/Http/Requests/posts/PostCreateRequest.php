@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Requests\posts;
-
 use App\Http\Requests\Request;
 
 class PostCreateRequest extends Request
@@ -26,7 +25,7 @@ class PostCreateRequest extends Request
         return [
           'title'=>'required',
           'body'=>'required',
-          'image' => 'required',
+          'image' => 'required|image|image-size:400,300',
         ];
     }
 }

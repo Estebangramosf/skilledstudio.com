@@ -245,35 +245,35 @@
         <ul class="list-inline banner-social-buttons">
 
           <li>
-            <a href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/user/VideojuegosXL" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://www.youtube.com/user/VideojuegosXL" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
-            <a href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
               </span>
