@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Session;
 class PostController extends Controller
 {
     private $post;
+    private $postImage;
     public function __construct()
     {
         $this->middleware('auth');
@@ -144,6 +145,11 @@ class PostController extends Controller
         {
             $this->post = Post::findOrFail($id);
             $this->post->fill($request->all());
+
+            $this->postImage = PostImage::where('post_id', $this->post->id)->first();
+            $this->postImage->image = $request->image;
+            $this->postImage->save();
+
             $this->post->save();
             Session::flash('message', 'Post editado correctamente');
             return Redirect::to('/posts');

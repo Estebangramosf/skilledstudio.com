@@ -26,7 +26,7 @@ class PostUpdateRequest extends Request
         return [
           'title'=>'required',
           'body'=>'required',
-          'image' => 'required',
+          'image' => 'required|image|image-size:>900,>300|image-size:<1280,<720',
         ];
     }
 }
