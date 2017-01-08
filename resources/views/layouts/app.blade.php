@@ -287,7 +287,7 @@
           </li>
 
 --}}
-          
+
           {{--
           <li>
             <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
@@ -442,9 +442,9 @@
      var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
      formato = formato.split('.');
      var sizeByte = this.files[0].size;
-     var siezekiloByte = parseInt(sizeByte / 1024);
+     var siezekiloByte = parseInt(sizeByte / 1536);
      if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size'))) {
-        alert('Formato de imagen invalido o tamaño supera los 2 Megas, seleccione otra imagen con tamaño menor');
+        alert('Formato de imagen invalido o tamaño supera 1.5 Megas, seleccione otra imagen con tamaño menor');
         this.value = '';
      }else{
         $('#imagePathValue').text(this.value);
