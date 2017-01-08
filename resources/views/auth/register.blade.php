@@ -106,6 +106,7 @@
                     </form>
                 </div>
             </div>
+            ©{{date('Y')}} Skilled Studio. <br> Todos los derechos reservados. <br> Skilled Studio y todos los videojuegos son marcas comerciales, marcas de servicio o marcas registradas por Skilled Studio.
         </div>
     </div>
 </div>
