@@ -6,6 +6,7 @@
 
 
     <!-- Page Heading -->
+{{--
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
@@ -18,24 +19,25 @@
             </ol>
         </div>
     </div>
+--}}
     <!-- /.row -->
 
     <div class="row">
         <div align="center" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         </div>
         <div align="center" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="panel panel-default" style="border: 1px solid #d5822d;">
-                <div style="background-color: #1c1c1c;border: 1px solid #d5822d;" class="panel-heading"><span style="color:#d5822d;"><h3 style="padding: 0px;margin: 0px;">INICIAR SESIÓN</h3></span></div>
-                <div style="background-color: #3d3d3d;" class="panel-body">
-                    <form style="color:#d5822d;" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <div class="panel panel-default" style="border: 1px solid #fc6000;">
+                <div style="background-color: #010a13;border: 1px solid #fc6000;" class="panel-heading"><span style="color:#fcc367;"><h3 style="padding: 0px;margin: 0px;">INICIAR SESIÓN</h3></span></div>
+                <div style="background-color: #010a13;border: 1px solid #fc6000;padding-bottom: 0px;" class="panel-body">
+                    <form style="color:#fcc367;" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <div class="col-md-2"></div>
                             <label for="email" class="control-label"></label>
                             <div class="col-md-8">
-                                <div align="left">E-Mail Address</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <div align="left">Dirección De Correo</div>
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -51,7 +53,7 @@
                             <label for="password" class="control-label"></label>
                             <div class="col-md-8">
                                 <div align="left">Password</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="password" type="password" class="form-control" name="password">
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -77,17 +79,20 @@
                         <div class="form-group">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <button style="background-color: #c43d23;color:#fff;border:1px solid #c43d23;" type="submit" class="btn btn-primary form-control">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
+                                <button style="background-color: #c43d23;color:#fff;border:1px solid #fcc367;font-size: 1.25em;" type="submit" class="btn btn-primary form-control">
+                                    Iniciar Sesión
                                 </button>
 
-                                <a class="btn btn-link" style="color:#fff;" href="{{ url('/password/reset') }}">Olvidaste tu contraseña?</a>
+                                <a class="btn btn-link" style="color:#fcc367;padding-bottom: 0px;" href="{{ url('/password/reset') }}">Olvidaste tu contraseña?</a>
+                                <a class="btn btn-link" style="color:#fcc367;padding-bottom: 0px;" href="{{ url('/register') }}">Aún no tienes una cuenta?</a>
                             </div>
                             <div class="col-md-2"></div>
+
                         </div>
                     </form>
                 </div>
             </div>
+            ©{{date('Y')}} Skilled Studio. <br> Todos los derechos reservados. <br> Skilled Studio y todos los videojuegos son marcas comerciales, marcas de servicio o marcas registradas por Skilled Studio.
         </div>
     </div>
 </div>
