@@ -24,18 +24,18 @@
         <div align="center" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         </div>
         <div align="center" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="panel panel-default">
-                <div style="background-color: #1c1c1c;" class="panel-heading"><span style="color:#fff;">Register</span></div>
-                <div style="background-color: #3d3d3d;" class="panel-body">
-                    <form style="color:#d5822d;" class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+            <div class="panel panel-default" style="border: 1px solid #fc6000;">
+                <div style="background-color: #010a13;border: 1px solid #fc6000;" class="panel-heading"><span style="color:#fcc367;"><h3 style="padding: 0px;margin: 0px;">REGISTRO</h3></span></div>
+                <div style="background-color: #010a13;border: 1px solid #fc6000;" class="panel-body">
+                    <form style="color:#fcc367;" class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label"></label>
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <div align="left">Name</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <div align="left">Nombre</div>
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -50,8 +50,8 @@
                             <label for="email" class="control-label"></label>
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <div align="left">E-Mail Address</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <div align="left">Dirección De Correo</div>
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -67,7 +67,7 @@
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <div align="left">Password</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="password" type="password" class="form-control" name="password">
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -83,7 +83,7 @@
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <div align="left">Confirm Password</div>
-                                <input style="background-color: #1c1c1c;color:#d5822d;" id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input style="background-color: #24282c;color:#fcc367;border: solid 1px #fc6000;border-radius: 1px;" id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
@@ -97,7 +97,7 @@
                         <div class="form-group">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <button style="background-color: #c43d23;color:#fff;border:1px solid #c43d23;" type="submit" class="btn btn-primary">
+                                <button style="background-color: #c43d23;color:#fff;border:1px solid #fcc367;font-size: 1.25em;" type="submit" class="btn btn-primary form-control">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
                             </div>

@@ -42,15 +42,18 @@
 
                       @foreach($post->image as $key => $image)
 
-                          <a href="#!" class="thumbnail" style="padding:0px;">
+                          <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
                             {{Html::image('/posts_images/'.$image->image,
                               $alt="Photo", $attributes = array('style'=>
                               'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                            <div class="caption">
+                              {{$post->title}}
+                            </div>
                           </a>
 
                       @endforeach
                       @if(count($post->image)==0)
-                        <a href="#!" class="thumbnail" style="padding:0px;">
+                        <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
                           {{Html::image('/img/backgrounds/iconoCargando.gif',
                             $alt="Photo", $attributes = array('style'=>
                             'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
@@ -74,14 +77,17 @@
 
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
-                    <div align="" class="">
-                      <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">
-                        {{Html::image('/img/glyphicons/glyphicons/png/glyphicons-31-pencil.png',
-                          $alt="Photo", $attributes = array('style'=>
-                          'width:15px;height:15px;')) }}
-                        Editar
-                      </a>
-                    </div>
+                    @if($post->user_id==Auth::user()->id)
+                      <div align="" class="">
+                        <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">
+                          {{Html::image('/img/glyphicons/glyphicons/png/glyphicons-31-pencil.png',
+                            $alt="Photo", $attributes = array('style'=>
+                            'width:15px;height:15px;')) }}
+                          Editar
+                        </a>
+                      </div>
+                    @endif
+
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div class="list-group-item">

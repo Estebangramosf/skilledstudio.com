@@ -119,6 +119,10 @@ class PostController extends Controller
         try
         {
             $this->post = Post::findOrFail($id);
+            if($this->post->user_id != Auth::user()->id){
+                Session::flash('message-error', 'No tiene los permisos para modificar este contenido.');
+                return view('posts.show', ['post'=>$this->post, 'comments'=>$this->post->comments]);
+            }
             return view('posts.edit', ['post' => $this->post]);
             //dd($role);
         } // catch(Exception $e) catch any exception
