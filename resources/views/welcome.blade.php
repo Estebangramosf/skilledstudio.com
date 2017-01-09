@@ -155,7 +155,7 @@
 
           </div>
           <br><br>
-          <a href="#!" class="btn btn-default btn-lg">
+          <a href="{{url('/posts')}}" class="btn btn-default btn-lg">
             Ver todos los últimos posts
           </a>
         </div>
