@@ -145,7 +145,7 @@
                   </a>
                 @endif
 
-                <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
+                <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
                 <h6>{{substr($post->body, 0,40).'...'}}</h6>
                 <a href="{{url('/posts/'.$post->id)}}" style="color:#fc6000;border:solid 1px #fc6000;" class="btn btn-default btn-xs">
                   Ver más
