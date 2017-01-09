@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,6 +13,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+    private $posts;
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this->posts = Post::orderBy('created_at', 'desc')->limit(4)->get();
+        return view('welcome', ['posts'=>$this->posts]);
     }
     public function test(){
         return view('layouts.test');

@@ -245,7 +245,8 @@
             </a>
           </li>
 
-          <li class="{!! Request::path()=="roles"?'active':'' !!}">
+{{--
+           <li class="{!! Request::path()=="roles"?'active':'' !!}">
             <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
                 <img class="out-dashboard-item" style="float:left;"
@@ -254,6 +255,7 @@
               </div>
             </a>
           </li>
+--}}
 
           <li class="{!! Request::path()=="posts"?'active':'' !!}">
             <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i>

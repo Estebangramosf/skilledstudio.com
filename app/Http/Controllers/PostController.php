@@ -51,6 +51,10 @@ class PostController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role=="user"){
+            Session::flash('message-error', 'No tiene los permisos para crear contenido.');
+            return $this->index();
+        }
         return view('posts.create');
     }
 

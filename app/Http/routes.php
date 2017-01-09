@@ -10,13 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('test', 'HomeController@test');
 
@@ -29,10 +27,12 @@ Route::resource('moderators', 'ModeratorController');
 Route::resource('posts', 'PostController');
 //Route::resource('comments', 'CommentController');
 Route::resource('posts.comments', 'CommentController');
+
+/*
 Route::resource('roles', 'RoleController');
 Route::resource('multimedia', 'MultimediaController');
 Route::resource('galleries', 'GalleryController');
-
+*/
 
 
 Route::group(['middleware' => 'auth'], function () {

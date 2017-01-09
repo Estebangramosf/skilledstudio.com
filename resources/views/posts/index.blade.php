@@ -13,10 +13,14 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Posts ·
-                <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
+                <i class="fa fa-dashboard"></i> Posts
+                @if(Auth::user()->role!='user')
+                  ·
+                  <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
+                @endif
               </li>
             </ol>
+
           </div>
         </div>
         <!-- /.row -->

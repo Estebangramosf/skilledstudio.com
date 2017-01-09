@@ -124,54 +124,35 @@
           <p>¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!.</p>
 
           <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!">
-                <div class="thumbnail">
-                  <img class="" src="{!! asset('img/postsTests/image.img.jpg') !!}" alt="">
-                </div>
-              </a>
-              <h3>Post prueba 1</h3>
-              <h5>Contenido breve post prueba 1</h5>
-              <a href="#!" class="btn btn-default btn-xs">
-                Ver más
-              </a>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!">
-                <div class="thumbnail">
-                  <img class="" src="{!! asset('img/postsTests/image.img2.jpg') !!}" alt="">
-                </div>
-              </a>
-              <h3>Post prueba 2</h3>
-              <h5>Contenido breve post prueba 2</h5>
-              <a href="#!" class="btn btn-default btn-xs">
-                Ver más
-              </a>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!">
-                <div class="thumbnail">
-                  <img class="" src="{!! asset('img/postsTests/image.img3.jpg') !!}" alt="">
-                </div>
-              </a>
-              <h3>Post prueba 3</h3>
-              <h5>Contenido breve post prueba 3</h5>
-              <a href="#!" class="btn btn-default btn-xs">
-                Ver más
-              </a>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!">
-                <div class="thumbnail">
-                  <img class="" src="{!! asset('img/postsTests/image.img.jpg') !!}" alt="">
-                </div>
-              </a>
-              <h3>Post prueba 4</h3>
-              <h5>Contenido breve post prueba 4</h5>
-              <a href="#!" class="btn btn-default btn-xs">
-                Ver más
-              </a>
-            </div>
+
+            @foreach($posts as $key => $post)
+              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+
+                @foreach($post->image as $key => $image)
+
+                  <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                    {{Html::image('/posts_images/'.$image->image,
+                      $alt="Photo", $attributes = array('style'=>
+                      'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                  </a>
+
+                @endforeach
+                @if(count($post->image)==0)
+                  <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                    {{Html::image('/img/backgrounds/iconoCargando.gif',
+                      $alt="Photo", $attributes = array('style'=>
+                      'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                  </a>
+                @endif
+
+                <h3><a href="{{url('/posts/'.$post->id)}}">{{$post->title}}</a></h3>
+                <h6>{{substr($post->body, 0,40).'...'}}</h6>
+                <a href="{{url('/posts/'.$post->id)}}" style="color:#fc6000;border:solid 1px #fc6000;" class="btn btn-default btn-xs">
+                  Ver más
+                </a>
+              </div>
+            @endforeach
+
           </div>
           <br><br>
           <a href="#!" class="btn btn-default btn-lg">
