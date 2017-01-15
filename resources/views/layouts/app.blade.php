@@ -458,6 +458,7 @@
   $('.send-post').click(function(){
     $(this).attr('disabled', 'disabled');
     $(this).attr('value','Enviando comentario').fadeIn(1000);
+    $('#formComments').submit();
   });
 
 </script>
