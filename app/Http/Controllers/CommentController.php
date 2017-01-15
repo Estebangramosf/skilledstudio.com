@@ -42,6 +42,7 @@ class CommentController extends Controller
     {
         try
         {
+            sleep(1);
             $this->post = Post::findOrFail($id);
             $this->post->comments()->create([
                 'user_id'=>Auth::user()->id,
