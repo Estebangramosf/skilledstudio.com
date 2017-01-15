@@ -14,6 +14,8 @@
 Route::get('quienessomos', 'FrontController@QuienesSomos');
 
 Route::get('/', 'HomeController@index');
+Route::resource('posts', 'PostController');
+
 
 Route::auth();
 
@@ -28,7 +30,7 @@ Route::get('dashboard', 'UserController@dashboard');
 
 Route::resource('admins', 'AdminController');
 Route::resource('moderators', 'ModeratorController');
-Route::resource('posts', 'PostController');
+
 //Route::resource('comments', 'CommentController');
 Route::resource('posts.comments', 'CommentController');
 
