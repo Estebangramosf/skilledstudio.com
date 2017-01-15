@@ -13,9 +13,11 @@
 
 Route::get('quienessomos', 'FrontController@QuienesSomos');
 
+Route::get('/', 'HomeController@index');
+
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+
 
 Route::get('test', 'HomeController@test');
 
