@@ -457,7 +457,7 @@
   $('.send-post').removeAttr('disabled');
   $('.send-post').click(function(){
     $(this).attr('disabled', 'disabled');
-    $(this).fadeIn(1000).attr('value','Enviando comentario');
+    $(this).attr('value','Enviando comentario').fadeIn(1000);
   });
 
 </script>
