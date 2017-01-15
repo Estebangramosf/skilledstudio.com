@@ -283,7 +283,7 @@
             </a>
           </li>
           <li>
-            <a style="padding: 0px;" href="https://www.youtube.com/user/VideojuegosXL" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://www.youtube.com/c/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
                 <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
               </span>
