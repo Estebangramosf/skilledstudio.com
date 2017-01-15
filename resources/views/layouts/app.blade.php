@@ -406,7 +406,7 @@
           <br>
           <span><a class="btn-link" href="{!!URL::to('/faq/')!!}">Centro de Ayuda</a></span>
           <span class="required">\</span>
-          <span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></span>
+          <span><a class="btn-link" href="{!!URL::to('/quienessomos/')!!}">Nuestra empresa</a></span>
           <span class="required">\</span>
           <span><a class="btn-link" href="{!!URL::to('/contacto/')!!}">Contacto</a></span>
           <span class="required">\</span>
@@ -414,7 +414,7 @@
           <span class="required">\</span>
           <span><a class="btn-link" href="{!!URL::to('/trabajaconnosotros/')!!}">Trabaja con Nosotros</a></span>
           <span class="required">\</span>
-          <span><a class="btn-link" href="{!!URL::to('/skilledstudio/')!!}">Sobre SkilledStudio</a></span>
+          <span><a class="btn-link" href="{!!URL::to('/quienessomos/')!!}">Sobre SkilledStudio</a></span>
           <br><span> - Copyright© ~ SkilledStudio.com - {!! date('Y') !!} </span>
         </div>
       </div><!-- /div row -->

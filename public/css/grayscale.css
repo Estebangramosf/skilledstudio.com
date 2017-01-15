@@ -39,7 +39,7 @@ p {
   }
 }
 a {
-  color: #fc6000;
+  color: #FFF;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -47,7 +47,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #fc6000;
+  color: #FFF;
 }
 .light {
   font-weight: 400;

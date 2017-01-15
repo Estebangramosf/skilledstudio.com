@@ -137,6 +137,7 @@
                   </a>
 
                 @endforeach
+
                 @if(count($post->image)==0)
                   <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
                     {{Html::image('/img/backgrounds/iconoCargando.gif',
@@ -147,7 +148,10 @@
 
                 <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
                 <h6>{{substr($post->body, 0,40).'...'}}</h6>
-                <a href="{{url('/posts/'.$post->id)}}" style="color:#fc6000;border:solid 1px #fc6000;" class="btn btn-default btn-xs">
+
+                <a href="{{url('/posts/'.$post->id)}}"
+                   style="color:#fc6000;border:solid 1px #fc6000;"
+                   class="btn btn-default btn-xs">
                   Ver más
                 </a>
               </div>
@@ -169,6 +173,45 @@
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Desarrollo</h2>
+
+          <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+
+              <a href="#!" class="thumbnail" style="padding:0px;">
+                {{Html::image('/posts_images/'.$image->image,
+                  $alt="Photo", $attributes = array('style'=>
+                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+              </a>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!" class="thumbnail" style="padding:0px;">
+                {{Html::image('/posts_images/'.$image->image,
+                  $alt="Photo", $attributes = array('style'=>
+                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+              </a>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!" class="thumbnail" style="padding:0px;">
+                {{Html::image('/posts_images/'.$image->image,
+                  $alt="Photo", $attributes = array('style'=>
+                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+              </a>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!" class="thumbnail" style="padding:0px;">
+                {{Html::image('/posts_images/'.$image->image,
+                  $alt="Photo", $attributes = array('style'=>
+                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+              </a>
+
+            </div>
+
+          </div>
+
           <p>
             {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios.'))}}
           </p>
@@ -202,10 +245,9 @@
     <div class="download-section" style="background: url(../img/backgrounds/Fondos12.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
-          <h2>Unete a Nuestra Comunidad</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+          <h2>&Uacute;nete a Nuestra Comunidad</h2>
           <a href="#!" class="btn btn-default btn-lg">
-            Unete a nuestra comunidad
+            &Uacute;nete a nuestra comunidad
           </a>
         </div>
       </div>
@@ -214,49 +256,50 @@
 
   <!-- Contact Section -->
   <section id="contact" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos10.png) no-repeat center center scroll;"  >
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos3.5.png) no-repeat center center scroll;"  >
       <div class="">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-            <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES - PARA QUE PUEDAS SUMERGIRTE EN UN MUNDO DOMINADO POR FUERZAS ELEMENTALES.</h2>
+            <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
+            <span style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales.</span>
           </div>
         </div>
-
+        <br>
         {{--<p>Y entérate de todo lo que sucede con nuestro equipo</p>--}}
         <ul class="list-inline banner-social-buttons">
 
           <li>
             <a style="padding: 0px;" href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
             <a style="padding: 0px;" href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
             <a style="padding: 0px;" href="https://www.youtube.com/user/VideojuegosXL" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
             <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
               </span>
             </a>
           </li>
           <li>
             <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
               </span>
             </a>
           </li>

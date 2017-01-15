@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('quienessomos', 'FrontController@QuienesSomos');
 
 Route::auth();
 
@@ -19,6 +20,7 @@ Route::get('/', 'HomeController@index');
 Route::get('test', 'HomeController@test');
 
 Route::get('dashboard', 'UserController@dashboard');
+
 
 
 

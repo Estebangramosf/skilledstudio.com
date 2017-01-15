@@ -679,3 +679,16 @@
   -moz-transition: 0.8s;
   /* width and height can be anything, as long as they're equal */
 }
+
+.social-images {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+}
+.social-images:hover {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+}
