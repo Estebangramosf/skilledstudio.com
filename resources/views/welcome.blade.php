@@ -242,7 +242,7 @@
 
   <!-- Join Section -->
   <section id="joincommunity" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos12.png) no-repeat center center scroll;">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos8.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>&Uacute;nete a Nuestra Comunidad</h2>

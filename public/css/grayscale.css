@@ -131,6 +131,22 @@ a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
+.quienes-somos {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: url(../img/backgrounds/Fondos12.png) no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
 .intro .intro-body {
   display: table-cell;
   vertical-align: middle;

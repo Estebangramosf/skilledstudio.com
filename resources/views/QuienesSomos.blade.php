@@ -75,7 +75,7 @@
   </nav>
 
   <!-- Intro Header -->
-  <header class="intro">
+  <header class="quienes-somos">
     <div class="intro-body">
       <div class="container">
         <div class="row">
@@ -85,7 +85,7 @@
                           <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
                           <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
             --}}
-            <img width="15%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
+            <img width="35%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
 
             <h2>Quienes Somos</h2>
             <span style="font-size: 1.6em;">
