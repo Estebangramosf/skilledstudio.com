@@ -14,7 +14,7 @@
             <ol class="breadcrumb">
               <li class="active">
                 <i class="fa fa-dashboard"></i> Posts
-                @if(Auth::user()->role!='user')
+                @if(Auth::check()&&Auth::user()->role!='user')
                   ·
                   <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
                 @endif
@@ -81,7 +81,7 @@
 
                     </div><!-- .col-xs\sm\md\lg-8 -->
 
-                    @if($post->user_id==Auth::user()->id)
+                    @if(Auth::check()&&$post->user_id==Auth::user()->id)
                       <div align="" class="">
                         <a href="{{url('/posts/'.$post->id.'/edit')}}" style="" class="btn btn-link">
                           {{Html::image('/img/glyphicons/glyphicons/png/glyphicons-31-pencil.png',

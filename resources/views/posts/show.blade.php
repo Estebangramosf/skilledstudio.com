@@ -97,33 +97,44 @@
                         <span>{{$comment->body}}</span>
                       </h6>
                     </div>
-                    <hr>
+
+                    @if($key == 0 && $key < $comments->count())
+                      <hr>
+                    @endif
                   @endforeach
 
                 </div><!-- /div .list-group-item -->
               @endif
 
             </div>
+
             <div class="list-group">
-              <div class="list-group-item">
-                <h4>
-                  Deja un comentario
-                </h4>
-              </div><!-- /div .list-group-item -->
-              <div class="list-group-item">
-                {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST'])!!}
-                {!!Form::label('Título')!!}
-                <div class="form-group has-feedback has-feedback-left">
-                  {!!Form::text('title',null,['class'=>'form-control'])!!}
-                </div>
-                {!!Form::label('Contenido del comentario')!!}
-                <div class="form-group has-feedback has-feedback-left">
-                  {!!Form::textarea('body',null,['class'=>'form-control','rows' => '1'])!!}
-                </div>
+
+              @if(Auth::check())
+                <div class="list-group-item">
+                  <h4>
+                    Deja un comentario
+                  </h4>
+                </div><!-- /div .list-group-item -->
+                <div class="list-group-item">
+                  {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST'])!!}
+                  {!!Form::label('Título')!!}
+                  <div class="form-group has-feedback has-feedback-left">
+                    {!!Form::text('title',null,['class'=>'form-control'])!!}
+                  </div>
+                  {!!Form::label('Contenido del comentario')!!}
+                  <div class="form-group has-feedback has-feedback-left">
+                    {!!Form::textarea('body',null,['class'=>'form-control','rows' => '1'])!!}
+                  </div>
                   {!!Form::submit('Enviar', ['class'=>'btn btn-success', 'style'=>''])!!}
-                {!!Form::close()!!}
-              </div><!-- -->
+                  {!!Form::close()!!}
+                </div><!-- -->
+              @else
+                Para dejar un comentario debes iniciar sesión.
+              @endif
+
             </div><!-- -->
+
 
 
           </div><!-- -->
