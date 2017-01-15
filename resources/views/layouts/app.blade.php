@@ -453,7 +453,14 @@
      }
   });
 </script>
+<script>
+  $('.send-post').removeAttr('disabled');
+  $('.send-post').click(function(){
+    $(this).attr('disabled', 'disabled');
+    $(this).fadeIn(1000).attr('value','Enviando comentario');
+  });
 
+</script>
 
 </body>
 

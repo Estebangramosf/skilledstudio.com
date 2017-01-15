@@ -117,7 +117,7 @@
                   </h4>
                 </div><!-- /div .list-group-item -->
                 <div class="list-group-item">
-                  {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST'])!!}
+                  {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST', 'id'=>'formComments'])!!}
                   {!!Form::label('Título')!!}
                   <div class="form-group has-feedback has-feedback-left">
                     {!!Form::text('title',null,['class'=>'form-control'])!!}
@@ -126,7 +126,7 @@
                   <div class="form-group has-feedback has-feedback-left">
                     {!!Form::textarea('body',null,['class'=>'form-control','rows' => '1'])!!}
                   </div>
-                  {!!Form::submit('Enviar', ['class'=>'btn btn-success', 'style'=>''])!!}
+                  {!!Form::submit('Enviar', ['class'=>'btn btn-success send-post', 'style'=>''])!!}
                   {!!Form::close()!!}
                 </div><!-- -->
               @else
