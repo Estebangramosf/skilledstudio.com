@@ -16,7 +16,7 @@ class HomeController extends Controller
     private $posts;
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**

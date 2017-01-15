@@ -19,6 +19,7 @@ class PostController extends Controller
     private $postImage;
     public function __construct()
     {
+
         //$this->middleware('auth');
         /*
         $this->middleware('log', ['only' => [
