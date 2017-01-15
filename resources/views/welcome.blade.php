@@ -179,7 +179,7 @@
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 
               <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/posts_images/'.$image->image,
+                {{Html::image('/img/backgrounds/iconoCargando.gif',
                   $alt="Photo", $attributes = array('style'=>
                   'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
               </a>
@@ -187,7 +187,7 @@
 
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
               <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/posts_images/'.$image->image,
+                {{Html::image('/img/backgrounds/iconoCargando.gif',
                   $alt="Photo", $attributes = array('style'=>
                   'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
               </a>
@@ -195,7 +195,7 @@
 
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
               <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/posts_images/'.$image->image,
+                {{Html::image('/img/backgrounds/iconoCargando.gif',
                   $alt="Photo", $attributes = array('style'=>
                   'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
               </a>
@@ -203,7 +203,7 @@
 
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
               <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/posts_images/'.$image->image,
+                {{Html::image('/img/backgrounds/iconoCargando.gif',
                   $alt="Photo", $attributes = array('style'=>
                   'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
               </a>
@@ -305,7 +305,7 @@
           </li>
 
         </ul>
-        <p>contacto : <a href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
+        <p style="color:#fc6000;" >contacto : <a style="color:#fc6000;"  href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
         </p>
       </div>
 
