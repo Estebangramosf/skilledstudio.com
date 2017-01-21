@@ -14,7 +14,7 @@
             <ol class="breadcrumb">
               <li class="active">
                 <i class="fa fa-dashboard"></i> Posts
-                @if(Auth::check()&&Auth::user()->role!='user')
+                @if(Auth::check()&&Auth::user()->role!='user'&&Auth::user()->role!='admin')
                   ·
                   <a class="btn-link" href="{{url('/posts/create')}}">Nuevo post</a>
                 @endif
