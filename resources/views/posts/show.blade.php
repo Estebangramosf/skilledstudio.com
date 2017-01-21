@@ -122,11 +122,11 @@
                   {!!Form::open(['route'=>['posts.comments.store',$post->id], 'method'=>'POST', 'id'=>'formComments'])!!}
                   {!!Form::label('Título')!!}
                   <div class="form-group has-feedback has-feedback-left">
-                    {!!Form::text('title',null,['class'=>'form-control'])!!}
+                    {!!Form::text('title',null,['class'=>'form-control form-comment-input', 'required'])!!}
                   </div>
                   {!!Form::label('Contenido del comentario')!!}
                   <div class="form-group has-feedback has-feedback-left">
-                    {!!Form::textarea('body',null,['class'=>'form-control','rows' => '1'])!!}
+                    {!!Form::textarea('body',null,['class'=>'form-control form-comment-input','rows' => '1', 'required'])!!}
                   </div>
                   {!!Form::submit('Enviar', ['class'=>'btn btn-success send-post', 'style'=>''])!!}
                   {!!Form::close()!!}

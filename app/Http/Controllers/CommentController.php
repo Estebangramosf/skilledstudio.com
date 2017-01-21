@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\comments\CommentCreateRequest;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(CommentCreateRequest $request, $id)
     {
         try
         {

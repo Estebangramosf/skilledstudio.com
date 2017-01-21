@@ -456,9 +456,21 @@
 <script>
   $('.send-post').removeAttr('disabled');
   $('.send-post').click(function(){
+
     $(this).attr('disabled', 'disabled');
     $(this).attr('value','Enviando comentario').fadeIn(1000);
     $('#formComments').submit();
+
+    $('.form-comment-input').each(function (key, element){
+      if(!element.value){
+        //console.log(element.value);
+        $('.send-post').removeAttr('disabled');
+        $('.send-post').attr('value','Enviar').fadeIn(1000);
+      }
+    });
+
+
+
   });
 
 </script>
