@@ -31,7 +31,9 @@
               <div class="list-group-item">
                 <h4>
                   Mostrando post · {{$post->title}}
-                  <a href="{{url('/posts/'.$post->id.'/edit')}}" style="float:right;" class="btn-link">Editar</a>
+                  @if(Auth::check()&&Auth::user()->role!='user'&&Auth::user()->role!='admin'&&$post->user_id==Auth::user()->id)
+                    <a href="{{url('/posts/'.$post->id.'/edit')}}" style="float:right;" class="btn-link">Editar</a>
+                  @endif
                 </h4>
               </div><!-- /div .list-group-item -->
 

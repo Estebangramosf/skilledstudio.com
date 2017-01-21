@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\PostImage;
+use Exception;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\posts\PostCreateRequest;
@@ -42,7 +44,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index', ['posts'=>Post::orderBy('created_at','desc')->paginate(12)]); //change for class
+      try{
+        return view('posts.index',
+          ['posts'=>Post::orderBy('created_at','desc')->paginate(12)]); //change for class
+      }catch(Exception $e){
+        dd($e);
+      }
     }
 
     /**
@@ -52,11 +59,17 @@ class PostController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->role=="user"){
-            Session::flash('message-error', 'No tiene los permisos para crear contenido.');
-            return $this->index();
+      try{
+        if(Auth::user()->role=="user" || Auth::user()->role=="admin"){
+          Session::flash('message-error', 'No tiene los permisos para crear contenido.');
+          return $this->index();
         }
         return view('posts.create');
+      }catch(Exception $e){
+        Session::flash('message-error', 'No tiene los permisos para crear contenido.');
+        return $this->index();
+        dd($e);
+      }
     }
 
     /**
@@ -67,15 +80,14 @@ class PostController extends Controller
      */
     public function store(PostCreateRequest $request)
     {
+      try{
         //Auth::user()->posts()->create($request->all());
         $post = $request->user()->posts()->create($request->all());
-
         PostImage::create([
           'image'=>$request->image,
           'user_id'=>$post->user_id,
           'post_id'=>$post->id,
         ]);
-
         /*
         dd($request->user()->posts()->create([
             'title'=>$request->title,
@@ -84,9 +96,12 @@ class PostController extends Controller
         ])
         );*/
         //Post::create($request->all());
-
         Session::flash('message', 'Post creado correctamente');
         return Redirect::to('/posts/create');
+      }catch(Exception $e){
+        Session::flash('message-error', 'No tiene los permisos para crear contenido.');
+        return $this->index();
+      }
     }
 
     /**
@@ -97,20 +112,17 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        try
-        {
-            $this->post = Post::findOrFail($id);
-            return view('posts.show', ['post'=>$this->post, 'comments'=>$this->post->comments]);
-            //dd($role);
-        } // catch(Exception $e) catch any exception
-        catch(ModelNotFoundException $e)
-        {
-            Session::flash('message-error', 'El post buscado no existe.');
-            return Redirect::to('/post');
-            //dd($e->getMessage());
-            //dd(get_class_methods($e)); // lists all available methods for exception object
-            //dd($e);
-        }
+      try{
+        $this->post = Post::findOrFail($id);
+        return view('posts.show',
+          ['post'=>$this->post, 'comments'=>$this->post->comments]);
+      }catch(ModelNotFoundException $e){ // catch(Exception $e) catch any exception
+        Session::flash('message-error', 'El post buscado no existe.');
+        return Redirect::to('/posts');
+        //dd($e->getMessage());
+        //dd(get_class_methods($e)); // lists all available methods for exception object
+        //dd($e);
+      }
     }
 
     /**
@@ -121,24 +133,24 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        try
-        {
-            $this->post = Post::findOrFail($id);
-            if($this->post->user_id != Auth::user()->id){
-                Session::flash('message-error', 'No tiene los permisos para modificar este contenido.');
-                return view('posts.show', ['post'=>$this->post, 'comments'=>$this->post->comments]);
-            }
-            return view('posts.edit', ['post' => $this->post]);
-            //dd($role);
-        } // catch(Exception $e) catch any exception
-        catch(ModelNotFoundException $e)
-        {
-            Session::flash('message-error', 'El post buscado no existe.');
-            return Redirect::to('/posts');
-            //dd($e->getMessage());
-            //dd(get_class_methods($e)); // lists all available methods for exception object
-            //dd($e);
+      try
+      {
+        $this->post = Post::findOrFail($id);
+        if(!Auth::check() || $this->post->user_id != Auth::user()->id){
+          Session::flash('message-error', 'No tiene los permisos para modificar este contenido.');
+          return view('posts.show', ['post'=>$this->post, 'comments'=>$this->post->comments]);
         }
+        return view('posts.edit', ['post' => $this->post]);
+        //dd($role);
+      } // catch(Exception $e) catch any exception
+      catch(ModelNotFoundException $e)
+      {
+        Session::flash('message-error', 'El post buscado no existe.');
+        return Redirect::to('/posts');
+        //dd($e->getMessage());
+        //dd(get_class_methods($e)); // lists all available methods for exception object
+        //dd($e);
+      }
     }
 
     /**
@@ -150,28 +162,25 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, $id)
     {
-        try
-        {
-            $this->post = Post::findOrFail($id);
-            $this->post->fill($request->all());
+      try{
+        $this->post = Post::findOrFail($id);
+        $this->post->fill($request->all());
 
-            $this->postImage = PostImage::where('post_id', $this->post->id)->first();
-            $this->postImage->image = $request->image;
-            $this->postImage->save();
+        $this->postImage = PostImage::where('post_id', $this->post->id)->first();
+        $this->postImage->image = $request->image;
+        $this->postImage->save();
 
-            $this->post->save();
-            Session::flash('message', 'Post editado correctamente');
-            return Redirect::to('/posts');
+        $this->post->save();
+        Session::flash('message', 'Post editado correctamente');
+        return Redirect::to('/posts');
 
-        } // catch(Exception $e) catch any exception
-        catch(ModelNotFoundException $e)
-        {
-            Session::flash('message-error', 'El post a modificar no existe.');
-            return Redirect::to('/posts');
-            //dd($e->getMessage());
-            //dd(get_class_methods($e)); // lists all available methods for exception object
-            //dd($e);
-        }
+      }catch(ModelNotFoundException $e){ // catch(Exception $e) catch any exception
+        Session::flash('message-error', 'El post a modificar no existe.');
+        return Redirect::to('/posts');
+        //dd($e->getMessage());
+        //dd(get_class_methods($e)); // lists all available methods for exception object
+        //dd($e);
+      }
     }
 
     /**
