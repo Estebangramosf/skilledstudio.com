@@ -77,11 +77,28 @@
                       <hr>
                       <div class="form-group has-feedback has-feedback-left">
                         <h4>
-                          {!!
-                            strip_tags(preg_replace("/href=\"www/", 'href="http://www',
-                              preg_replace("/((http|https|www)[^\s]+)/", '<a target="_blank" href="$1">$0</a>', $post->body)
-                            ), '<a>')
-                           !!}
+                          <?php
+
+                              $post->body =
+                                preg_replace("/((http|https|www)[^\s]+)/",
+                                  '<a target=\"_blank\" href="$1">$0</a>',
+                                  $post->body);
+                              $post->body =
+                                preg_replace("/href=\"www/",
+                                  'href="http://www',
+                                  $post->body);
+                              $post->body =
+                                preg_replace("/(@[^\s]+)/",
+                                  '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                                  $post->body);
+                              $post->body =
+                                preg_replace("/( #[^\s]+)/",
+                                  '<a class="hashtag" target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
+                                  $post->body);
+
+                          ?>
+                          {!!strip_tags($post->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+
                         </h4>
                       </div><!-- -->
 
