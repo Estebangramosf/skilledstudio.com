@@ -99,7 +99,7 @@
 
                           {!! Form::open(
                             ['method' => 'DELETE',
-                              'id' => 'formDeleteComment',
+                              'id' => 'formDeleteComment'.$comment->id,
                               'route'=>['posts.comments.destroy',$comment->post_id,$comment->id],
                             ])!!}
 
