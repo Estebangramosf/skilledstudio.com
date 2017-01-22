@@ -472,21 +472,33 @@
 <script>
   $('.detele-comment').click(function(){
     //console.log(this.children[0].value+'|'+$('#_token').val());
-    var inputData = $('#formDeleteComment').serialize();
-    //console.log($('#formDeleteComment')[0].action);
+    var inputData = $('#formDeleteComment'+atob(this.children[1].value)).serialize();
+    //console.log(atob(this.children[1].value));
     //console.log(inputData);
     var token = $("#_token").val();
     //var post_id = this.children[0].value;
-    //var comment_id = this.children[1].value;
-    var route = $('#formDeleteComment')[0].action; //"{!! url('/posts') !!}" + '/' + post_id + '/comments' + '/' + comment_id;
+    var comment_id = this.children[1].value;
+    var route = $('#formDeleteComment'+atob(this.children[1].value))[0].action; //"{!! url('/posts') !!}" + '/' + post_id + '/comments' + '/' + comment_id;
+    //atob()->decode base64
+    //btoa()->encode base64
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
       type: 'POST',
       //dataType: 'json',
       data: inputData,
-      success:function(msg){
-        console.log('true:'+msg);
+      success:function(response){
+        //console.log(JSON.stringify(response.result_detail));
+        //console.log(JSON.stringify(response.status));
+        if(JSON.stringify(response.status)==0){
+          $('#textDeleteComment'+atob(comment_id)).text('Comentario eliminado').fadeIn(200);
+          //$('#formDeleteComment'+atob(comment_id)).fadeOut(100);
+          $('#comment-'+atob(comment_id)).fadeOut(2000);
+
+        }else{
+          alert('Ocurrio un error al eliminar el comentario');
+        }
+
       },
       error:function(msg){
         console.log('false:'+msg);

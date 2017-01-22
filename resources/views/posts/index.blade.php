@@ -76,7 +76,13 @@
                       </div><!-- -->
                       <hr>
                       <div class="form-group has-feedback has-feedback-left">
-                        <h4>{{$post->body}}</h4>
+                        <h4>
+                          {!!
+                            strip_tags(preg_replace("/href=\"www/", 'href="http://www',
+                              preg_replace("/((http|https|www)[^\s]+)/", '<a target="_blank" href="$1">$0</a>', $post->body)
+                            ), '<a>')
+                           !!}
+                        </h4>
                       </div><!-- -->
 
                     </div><!-- .col-xs\sm\md\lg-8 -->

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Requests\comments\CommentCreateRequest;
+use App\Http\Requests\comments\CommentDestroyRequest;
 use App\Post;
+use Exception;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -121,8 +124,53 @@ class CommentController extends Controller
      */
     public function destroy(Request $request)
     {
+      try{
+        //return $request->user()->id;
+        if ( $request->ajax() ) {
 
-      
-      return response()->json(['comment_id'=>base64_decode($request->comment_id)]);
+          $this->comment_id=(int)base64_decode($request->comment_id);
+          $this->post_id=(int)base64_decode($request->post_id);
+
+          if(is_numeric($this->comment_id) && is_numeric($this->post_id)){
+            $this->post = Post::findOrFail($this->post_id);
+            $this->comment = Comment::findOrFail($this->comment_id);
+
+            if(Auth::check() &&
+              (Auth::user()->role=='editor' &&
+              $this->comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
+              $this->comment->user_id==Auth::user()->id ||
+              Auth::user()->role=='admin'){
+
+                if ($this->comment->delete() ){
+                  return response()->json(json_decode(json_encode([ 'result_detail' => 'Comentario elimiando','status' => 0,])));
+                }else{
+                  return response()->json(json_decode(json_encode([ 'result_detail' => 'Error al eliminar','status' => 1,])));
+                }
+
+
+            }
+          }
+
+
+
+        }
+
+
+      }catch(Exception $e){
+
+      }
+
+
+
+
+
+
+      /*
+      return response()->json(
+        [
+          'comment_id'=>base64_decode($request->comment_id),
+          'post_id'=>base64_decode($request->post_id)
+        ]);
+      */
     }
 }

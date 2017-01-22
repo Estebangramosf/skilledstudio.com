@@ -89,23 +89,33 @@
 
                     <div id="comment-{{$comment->id}}" class="">
                       <small style="font-size:.8em;display: block;">
+                        @if($comment->user->role=='admin')
+                          <span style="font-size:1em;" class="label label-primary">Admin</span>
+                        @elseif($comment->user->role=='editor')
+                          <span style="font-size:1em;" class="label label-info">Editor</span>
+                        @elseif($comment->user->role=='user')
+                          <span style="font-size:1em;" class="label label-success">Usuario</span>
+                        @endif
                         {{$comment->user->name}} comentó
 
                         @if(Auth::check() &&
-                          ($comment->user_id==Auth::user()->id ||
-                            Auth::user()->role=='editor' ||
-                              Auth::user()->role=='admin'))
+                          ((Auth::user()->role=='editor' &&
+                          $comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
+                          $comment->user_id==Auth::user()->id ||
+                          Auth::user()->role=='admin'))
 
                           {!! Form::open(
                             ['method' => 'DELETE',
-                              'id' => 'formDeleteComment',
+                              'id' => 'formDeleteComment'.$comment->id,
                               'route'=>['posts.comments.destroy',$comment->post_id,$comment->id],
                             ])!!}
 
                             <a href="#!" class="detele-comment" style="float:right;">
                               <input name="post_id" type="hidden" value="{{base64_encode($comment->post_id)}}">
                               <input name="comment_id" type="hidden" value="{{base64_encode($comment->id)}}">
-                              Eliminar Comentario
+                              <span id="textDeleteComment{{$comment->id}}">
+                                Eliminar Comentario
+                              </span>
                             </a>
 
                           {!! Form::close() !!}
@@ -120,7 +130,17 @@
                       <div>
                         <h6>
                           {{--<b>Comentario : </b>--}}
-                          <span>{{$comment->body}}</span>
+
+
+
+                          {!!
+                            strip_tags(preg_replace("/href=\"www/", 'href="http://www',
+                              preg_replace("/((http|https|www)[^\s]+)/", '<a target="_blank" href="$1">$0</a>', $comment->body)
+                            ), '<a>')
+                           !!}
+
+
+
                         </h6>
                       </div>
 
