@@ -89,13 +89,20 @@
 
                     <div id="comment-{{$comment->id}}" class="">
                       <small style="font-size:.8em;display: block;">
+                        @if($comment->user->role=='admin')
+                          <span style="font-size:1em;" class="label label-primary">Admin</span>
+                        @elseif($comment->user->role=='editor')
+                          <span style="font-size:1em;" class="label label-info">Editor</span>
+                        @elseif($comment->user->role=='user')
+                          <span style="font-size:1em;" class="label label-success">Usuario</span>
+                        @endif
                         {{$comment->user->name}} comentó
 
                         @if(Auth::check() &&
-                          (Auth::user()->role=='editor' &&
+                          ((Auth::user()->role=='editor' &&
                           $comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
                           $comment->user_id==Auth::user()->id ||
-                          Auth::user()->role=='admin')
+                          Auth::user()->role=='admin'))
 
                           {!! Form::open(
                             ['method' => 'DELETE',
