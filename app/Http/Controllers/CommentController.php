@@ -122,7 +122,7 @@ class CommentController extends Controller
     public function destroy(Request $request)
     {
 
-      
+
       return response()->json(['comment_id'=>base64_decode($request->comment_id)]);
     }
 }

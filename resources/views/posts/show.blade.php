@@ -92,9 +92,10 @@
                         {{$comment->user->name}} comentó
 
                         @if(Auth::check() &&
-                          ($comment->user_id==Auth::user()->id ||
-                            Auth::user()->role=='editor' ||
-                              Auth::user()->role=='admin'))
+                          (Auth::user()->role=='editor' &&
+                          $comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
+                          $comment->user_id==Auth::user()->id ||
+                          Auth::user()->role=='admin')
 
                           {!! Form::open(
                             ['method' => 'DELETE',
