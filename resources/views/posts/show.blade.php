@@ -130,7 +130,17 @@
                       <div>
                         <h6>
                           {{--<b>Comentario : </b>--}}
-                          <span>{{$comment->body}}</span>
+
+
+
+                          {!!
+                            strip_tags(preg_replace("/href=\"www/", 'href="http://www',
+                              preg_replace("/((http|https|www)[^\s]+)/", '<a target="_blank" href="$1">$0</a>', $comment->body)
+                            ), '<a>')
+                           !!}
+
+
+
                         </h6>
                       </div>
 
