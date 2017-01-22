@@ -131,14 +131,27 @@
                         <h6>
                           {{--<b>Comentario : </b>--}}
 
+                          <?php
 
+                            $comment->body =
+                              preg_replace("/((http|https|www)[^\s]+)/",
+                                '<a target=\"_blank\" href="$1">$0</a>',
+                                $comment->body);
+                            $comment->body =
+                              preg_replace("/href=\"www/",
+                                'href="http://www',
+                                $comment->body);
+                            $comment->body =
+                              preg_replace("/(@[^\s]+)/",
+                                '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                                $comment->body);
+                            $comment->body =
+                              preg_replace("/( #[^\s]+)/",
+                                '<a target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
+                                $comment->body);
 
-                          {!!
-                            strip_tags(preg_replace("/href=\"www/", 'href="http://www',
-                              preg_replace("/((http|https|www)[^\s]+)/", '<a target="_blank" href="$1">$0</a>', $comment->body)
-                            ), '<a>')
-                           !!}
-
+                          ?>
+                          {!!strip_tags($comment->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
 
 
                         </h6>

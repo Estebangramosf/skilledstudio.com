@@ -506,6 +506,14 @@
     });
   });
 </script>
+<script>
+  //setInterval(function(){
+    $('.hashtag').each(function(){
+      $(this).attr('href', $(this).attr('href').replace(' ',''));
+    });
+  //},1000);
+</script>
+
 
 </body>
 
