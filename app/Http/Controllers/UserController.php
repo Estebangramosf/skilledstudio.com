@@ -48,7 +48,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return "profile";
+        return view('users.show', ['user'=>Auth::user()]);
     }
     public function profile(){
         return $this->show(Auth::user()->id);
