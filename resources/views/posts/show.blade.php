@@ -70,7 +70,29 @@
                   {{--{!!Form::label('Descripción:')!!}--}}
                   {{--{!!Form::textarea('postbody',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}--}}
 
-                  <h4>{{$post->body}}</h4>
+                  <h4>
+                    <?php
+
+                    $post->body =
+                      preg_replace("/((http|https|www)[^\s]+)/",
+                        '<a target=\"_blank\" href="$1">$0</a>',
+                        $post->body);
+                    $post->body =
+                      preg_replace("/href=\"www/",
+                        'href="http://www',
+                        $post->body);
+                    $post->body =
+                      preg_replace("/(@[^\s]+)/",
+                        '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                        $post->body);
+                    $post->body =
+                      preg_replace("/( #[^\s]+)/",
+                        '<a class="hashtag" target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
+                        $post->body);
+
+                    ?>
+                    {!!strip_tags($post->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+                  </h4>
                 </div><!-- -->
               </div><!-- -->
             </div>
@@ -147,7 +169,7 @@
                                 $comment->body);
                             $comment->body =
                               preg_replace("/( #[^\s]+)/",
-                                '<a target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
+                                '<a class="hashtag" target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
                                 $comment->body);
 
                           ?>
