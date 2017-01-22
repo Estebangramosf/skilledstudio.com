@@ -137,14 +137,17 @@ class CommentController extends Controller
 
             if(Auth::check() &&
               (Auth::user()->role=='editor' &&
-                $this->comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
+              $this->comment->user->role!='admin') || //si se saca esta linea se puede permitir eliminar el post del admin
               $this->comment->user_id==Auth::user()->id ||
               Auth::user()->role=='admin'){
+              
+                if ($this->comment->delete() ){
+                  return response()->json(json_decode(json_encode([ 'result_detail' => 'Comentario elimiando','status' => 0,])));
+                }else{
+                  return response()->json(json_decode(json_encode([ 'result_detail' => 'Error al eliminar','status' => 1,])));
+                }
 
-              if ($this->comment->delete() ){
-                return response(['result_detail' => 'Comentario elimiando', 'status' => 0]);
-              }
-              //return 'el comentario fue eliminado';
+
             }
           }
 

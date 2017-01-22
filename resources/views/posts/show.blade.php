@@ -106,7 +106,9 @@
                             <a href="#!" class="detele-comment" style="float:right;">
                               <input name="post_id" type="hidden" value="{{base64_encode($comment->post_id)}}">
                               <input name="comment_id" type="hidden" value="{{base64_encode($comment->id)}}">
-                              Eliminar Comentario
+                              <span id="textDeleteComment{{$comment->id}}">
+                                Eliminar Comentario
+                              </span>
                             </a>
 
                           {!! Form::close() !!}
