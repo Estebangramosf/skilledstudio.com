@@ -93,7 +93,7 @@
                                   $post->body);
                               $post->body =
                                 preg_replace("/( #[^\s]+)/",
-                                  '<a class="hashtag" target=\"_blank\" href="http://twitter.com/search?q=$1">$0</a>',
+                                  '<a class="hashtag" target=\"_blank\" href="https://twitter.com/hashtag/$1?src=tren">$0</a>',
                                   $post->body);
 
                           ?>
