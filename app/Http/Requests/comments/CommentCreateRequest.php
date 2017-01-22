@@ -13,7 +13,7 @@ class CommentCreateRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class CommentCreateRequest extends Request
     public function rules()
     {
         return [
-            //
+          'title'=>'required',
+          'body'=>'required',
         ];
     }
 }
