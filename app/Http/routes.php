@@ -46,7 +46,9 @@ Route::group(['middleware' => 'auth'], function () {
         // Uses Auth Middleware
         //return view('welcome');
     //});
+
     Route::get('dashboard', 'UserController@dashboard');
+
     Route::get('profile', 'UserController@profile');//aqui tiene que tomar el id de Auth -> la sesión
 
     Route::get('user/profile', function () {
