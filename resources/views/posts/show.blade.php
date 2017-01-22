@@ -86,25 +86,50 @@
                 <div class="list-group-item">
 
                   @foreach($comments as $key => $comment)
-                    <small style="float: right;">{{$comment->user->name}} comentó</small>
-                    <div>
-                      <h5>
-                        {{--<b>Titulo : </b>--}}
-                        <span>{{$comment->title}}</span>
-                      </h5>
-                    </div>
-                    <div>
-                      <h6>
-                        {{--<b>Comentario : </b>--}}
-                        <span>{{$comment->body}}</span>
-                      </h6>
-                    </div>
 
-                    @if($key == 0 || $key+1 < $comments->count())
-                      <hr>
-                    @endif
+                    <div id="comment-{{$comment->id}}" class="">
+                      <small style="font-size:.8em;display: block;">
+                        {{$comment->user->name}} comentó
+
+                        @if(Auth::check() &&
+                          ($comment->user_id==Auth::user()->id ||
+                            Auth::user()->role=='editor' ||
+                              Auth::user()->role=='admin'))
+
+                          {!! Form::open(
+                            ['method' => 'DELETE',
+                              'id' => 'formDeleteComment',
+                              'route'=>['posts.comments.destroy',$comment->post_id,$comment->id],
+                            ])!!}
+
+                            <a href="#!" class="detele-comment" style="float:right;">
+                              <input name="post_id" type="hidden" value="{{base64_encode($comment->post_id)}}">
+                              <input name="comment_id" type="hidden" value="{{base64_encode($comment->id)}}">
+                              Eliminar Comentario
+                            </a>
+
+                          {!! Form::close() !!}
+                        @endif
+                      </small>
+                      <div>
+                        <h5>
+                          {{--<b>Titulo : </b>--}}
+                          <span>{{$comment->title}}</span>
+                        </h5>
+                      </div>
+                      <div>
+                        <h6>
+                          {{--<b>Comentario : </b>--}}
+                          <span>{{$comment->body}}</span>
+                        </h6>
+                      </div>
+
+                      @if($key == 0 || $key+1 < $comments->count())
+                        <hr>
+                      @endif
+                    </div>
                   @endforeach
-
+                    <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
                 </div><!-- /div .list-group-item -->
               @endif
 

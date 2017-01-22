@@ -463,16 +463,36 @@
 
     $('.form-comment-input').each(function (key, element){
       if(!element.value){
-        //console.log(element.value);
         $('.send-post').removeAttr('disabled');
         $('.send-post').attr('value','Enviar').fadeIn(1000);
       }
     });
-
-
-
   });
-
+</script>
+<script>
+  $('.detele-comment').click(function(){
+    //console.log(this.children[0].value+'|'+$('#_token').val());
+    var inputData = $('#formDeleteComment').serialize();
+    //console.log($('#formDeleteComment')[0].action);
+    //console.log(inputData);
+    var token = $("#_token").val();
+    //var post_id = this.children[0].value;
+    //var comment_id = this.children[1].value;
+    var route = $('#formDeleteComment')[0].action; //"{!! url('/posts') !!}" + '/' + post_id + '/comments' + '/' + comment_id;
+    $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'POST',
+      //dataType: 'json',
+      data: inputData,
+      success:function(msg){
+        console.log('true:'+msg);
+      },
+      error:function(msg){
+        console.log('false:'+msg);
+      }
+    });
+  });
 </script>
 
 </body>
