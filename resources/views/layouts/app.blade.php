@@ -512,6 +512,10 @@
       $(this).attr('href', $(this).attr('href').replace(' ',''));
       $(this).attr('href', $(this).attr('href').replace('#',''));
     });
+    $('.searchTwitter').each(function(){
+      $(this).attr('href', $(this).attr('href').replace(' ',''));
+      $(this).attr('href', $(this).attr('href').replace('&',''));
+    });
   //},1000);
 </script>
 
