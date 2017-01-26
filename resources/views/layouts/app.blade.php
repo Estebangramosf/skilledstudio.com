@@ -234,7 +234,7 @@
               </div>
             </a>
           </li>
-
+{{--
           <li class="{!! Request::path()=="dashboard"?'active':'' !!}">
             <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -244,7 +244,7 @@
               </div>
             </a>
           </li>
-
+--}}
 {{--
            <li class="{!! Request::path()=="roles"?'active':'' !!}">
             <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i>

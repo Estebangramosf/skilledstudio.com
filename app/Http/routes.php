@@ -23,7 +23,7 @@ Route::auth();
 
 Route::get('test', 'HomeController@test');
 
-Route::get('dashboard', 'UserController@dashboard');
+//Route::get('dashboard', 'UserController@dashboard');
 
 
 
@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
         //return view('welcome');
     //});
 
-    Route::get('dashboard', 'UserController@dashboard');
+    //Route::get('dashboard', 'UserController@dashboard');
 
     Route::get('profile', 'UserController@profile');//aqui tiene que tomar el id de Auth -> la sesión
 
