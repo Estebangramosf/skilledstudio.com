@@ -19,6 +19,7 @@
     RewriteEngine On
     RewriteBase /
     RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteCond %{HTTP_HOST} ^skilledstudio.com [NC]
     RewriteRule ^(.*)$ https:/www.%{HTTP_HOST}/$1 [R=301,L]
 
     #RewriteCond %{HTTP_HOST} ^skilledstudio.com [NC]
