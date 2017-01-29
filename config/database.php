@@ -56,7 +56,7 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'skilledstudio'),
+            'database' => env('DB_DATABASE', 'skilledstudio_com'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'skilledstudio2016#'),
             'charset' => 'utf8',
