@@ -39,11 +39,8 @@ return [
     |
     */
 
-<<<<<<< HEAD
+
     'url' => env('APP_URL', 'https://www.skilledstudio.com'),
-=======
-    'url' => env('APP_URL', 'https://localhost'),
->>>>>>> a792a1d851fe240b1e96f596fa7e61ba136de41a
 
     /*
     |--------------------------------------------------------------------------
