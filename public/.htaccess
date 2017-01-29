@@ -2,7 +2,7 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews
         Options -Indexes
-	      #Options +FollowSymLinks
+	#Options +FollowSymLinks
     </IfModule>
 
     RewriteEngine On
@@ -15,9 +15,15 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-    RewriteCond %{HTTP_HOST} ^dev.skilledstudio.com [NC]
 
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
+    #RewriteCond %{HTTP_HOST} ^skilledstudio.com [NC]
+    #RewriteCond %{HTTP_HOST} ^dev.skilledstudio.com [NC]
+    #RewriteRule ^(.*)$ https://www.skilledstudio.com/$1 [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
