@@ -10,18 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-URL::forceSchema("https");
+//URL::forceSchema("https");
 Route::get('quienessomos', 'FrontController@QuienesSomos');
 
 Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostController');
 
-Route::group(['middleware'=>'httpsprotocol'], function(){
+//Route::group(['middleware'=>'httpsprotocol'], function(){
 
     //Route::post('login', ['uses'=>'AuthController@login','https'=>true]);
     Route::auth();
 
-});
+//});
 
 
 
