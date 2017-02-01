@@ -61,7 +61,7 @@
               <a class="page-scroll" href="{!! url('/register') !!}">Registro</a>
             </li>
           @else
-            <li><a href="{{ url('/dashboard') }}"><i class="fa fa-btn fa-sign-out"></i>Menú</a></li>
+            <li><a href="{{ url('/posts') }}"><i class="fa fa-btn fa-sign-out"></i>Volver al sitio</a></li>
             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Salir</a></li>
           @endif
 
