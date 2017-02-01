@@ -82,6 +82,7 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         'C' => 
         array (
             'Cviebrock\\ImageValidator\\' => 25,
+            'Cron\\' => 5,
             'Collective\\Html\\' => 16,
             'ClassPreloader\\' => 15,
             'Carbon\\' => 7,
@@ -215,6 +216,10 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         array (
             0 => __DIR__ . '/..' . '/cviebrock/image-validator/src',
         ),
+        'Cron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
@@ -266,13 +271,6 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
         ),
-        'C' => 
-        array (
-            'Cron' => 
-            array (
-                0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -290,6 +288,7 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontController.php',
         'App\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ModeratorController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModeratorController.php',
@@ -300,6 +299,7 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\HttpsProtocol' => __DIR__ . '/../..' . '/app/Http/Middleware/HttpsProtocol.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\roles\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/roles/AdminMiddleware.php',
@@ -307,6 +307,8 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         'App\\Http\\Middleware\\roles\\RoleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/roles/RoleMiddleware.php',
         'App\\Http\\Middleware\\roles\\UserMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/roles/UserMiddleware.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
+        'App\\Http\\Requests\\comments\\CommentCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/comments/CommentCreateRequest.php',
+        'App\\Http\\Requests\\comments\\CommentUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/comments/CommentUpdateRequest.php',
         'App\\Http\\Requests\\galleries\\GalleryCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/galleries/GalleryCreateRequest.php',
         'App\\Http\\Requests\\galleries\\GalleryUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/galleries/GalleryUpdateRequest.php',
         'App\\Http\\Requests\\multimedia\\MultimediaCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/multimedia/MultimediaCreateRequest.php',
@@ -327,6 +329,7 @@ class ComposerStaticInit3f5108cd89f968207c785ff704b1630c
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
+        'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'ClassPreloader\\ClassList' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassList.php',
         'ClassPreloader\\ClassLoader' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassLoader.php',
         'ClassPreloader\\ClassNode' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassNode.php',
