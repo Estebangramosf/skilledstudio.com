@@ -45,7 +45,34 @@
                   {{-- DEPRECATED *<25-12-2016 --}}
                   {{--{!!Form::label('Descripción:')!!}--}}
                   {{--{!!Form::textarea('postbody',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}--}}
-                  <h4>{{$multimedia->body}}</h4>
+
+                  <h4>
+                    <?php
+
+                    $multimedia->body =
+                      preg_replace("/((http|https|www)[^\s]+)/",
+                        '<a target=\"_blank\" href="$1">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/href=\"www/",
+                        'href="http://www',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/(@[^\s]+)/",
+                        '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/( #[^\s]+)/",
+                        '<a class="hashtag" target=\"_blank\" href="https://twitter.com/hashtag/$1?src=tren">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/( &[^\s]+)/",
+                        '<a class="searchTwitter" target=\"_blank\" href="https://twitter.com/search?q=$1">$0</a>',
+                        $multimedia->body);
+
+                    ?>
+                    {!!strip_tags($multimedia->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+                  </h4>
                 </div><!-- -->
               </div><!-- -->
             </div>

@@ -15,7 +15,7 @@ Route::get('quienessomos', 'FrontController@QuienesSomos');
 
 Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostController');
-
+Route::resource('multimedia', 'MultimediaController');
 //Route::group(['middleware'=>'httpsprotocol'], function(){
 
     //Route::post('login', ['uses'=>'AuthController@login','https'=>true]);
@@ -39,10 +39,11 @@ Route::resource('moderators', 'ModeratorController');
 
 //Route::resource('comments', 'CommentController');
 Route::resource('posts.comments', 'CommentController');
+Route::resource('multimedia.comments', 'MultimediaCommentController');
 
 /*
 Route::resource('roles', 'RoleController');
-Route::resource('multimedia', 'MultimediaController');
+
 Route::resource('galleries', 'GalleryController');
 */
 

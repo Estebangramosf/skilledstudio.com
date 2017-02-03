@@ -13,8 +13,11 @@
             </h1>
             <ol class="breadcrumb">
               <li class="active">
-                <i class="fa fa-dashboard"></i> Multimedia ·
-                <a class="btn-link" href="{{url('/multimedia/create')}}">Nuevo contenido multimedia</a>
+                <i class="fa fa-dashboard"></i> Multimedia
+                @if(Auth::check()&&Auth::user()->role!='user'&&Auth::user()->role!='admin')
+                  ·
+                  <a class="btn-link" href="{{url('/multimedia/create')}}">Nuevo contenido multimedia</a>
+                @endif
               </li>
             </ol>
           </div>
@@ -40,7 +43,7 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
 
-                      Imagen del post
+                      Video del contenido multimedia
 
                     </div>
 
@@ -51,14 +54,48 @@
                       </div><!-- -->
                       <hr>
                       <div class="form-group has-feedback has-feedback-left">
-                        <h4>{{$multimedia->body}}</h4>
+                        <h4>
+                          <?php
+
+                              $multimedia->body =
+                                preg_replace("/((http|https|www)[^\s]+)/",
+                                  '<a target=\"_blank\" href="$1">$0</a>',
+                                  $multimedia->body);
+                              $multimedia->body =
+                                preg_replace("/href=\"www/",
+                                  'href="http://www',
+                                  $multimedia->body);
+                              $multimedia->body =
+                                preg_replace("/(@[^\s]+)/",
+                                  '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                                  $multimedia->body);
+                              $multimedia->body =
+                                preg_replace("/( #[^\s]+)/",
+                                  '<a class="hashtag" target=\"_blank\" href="https://twitter.com/hashtag/$1?src=tren">$0</a>',
+                                  $multimedia->body);
+                              $multimedia->body =
+                                preg_replace("/( &[^\s]+)/",
+                                  '<a class="searchTwitter" target=\"_blank\" href="https://twitter.com/search?q=$1">$0</a>',
+                                  $multimedia->body);
+
+                          ?>
+                          {!!strip_tags($multimedia->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+
+                        </h4>
                       </div><!-- -->
 
-                    </div><!-- .col-xs\sm\md\lg-8 -->
-
-                    <div align="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                      <a href="{{url('/multimedia/'.$multimedia->id.'/edit')}}" style="" class="btn btn-link">Editar</a>
-                    </div>
+                    </div><!-- .col-xs\sm\md\lg-8 -->		      
+                    @if(Auth::check()&&$multimedia->user_id==Auth::user()->id)
+                      <div align="" class="">
+                        <a href="{{url('/multimedia/'.$multimedia->id.'/edit')}}" style="" class="btn btn-link">
+                          {{Html::image('/img/glyphicons/glyphicons/png/glyphicons-31-pencil.png',
+                            $alt="Photo", $attributes = array('style'=>
+                            'width:15px;height:15px;')) }}
+                          Editar
+                        </a>
+                      </div>
+                    @endif		    
+		    
                   </div><!-- .row -->
                 </div><!-- .list-group-item -->
                 <div class="list-group-item">

@@ -267,7 +267,6 @@
             </a>
           </li>
 
-{{--
           <li class="{!! Request::path()=="multimedia"?'active':'' !!}">
             <a href="{!! url('/multimedia') !!}"><i class="fa fa-fw fa-dashboard"></i>
               <div align="center">
@@ -277,18 +276,19 @@
               </div>
             </a>
           </li>
+          {{--
 
-          <li class="{!! Request::path()=="galleries"?'active':'' !!}">
-            <a href="{!! url('/galleries') !!}"><i class="fa fa-fw fa-dashboard"></i>
-              <div align="center">
-                <img class="out-dashboard-item" style="float:left;"
-                     src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">
-                Galerias
-              </div>
-            </a>
-          </li>
+                    <li class="{!! Request::path()=="galleries"?'active':'' !!}">
+                      <a href="{!! url('/galleries') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                        <div align="center">
+                          <img class="out-dashboard-item" style="float:left;"
+                               src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">
+                          Galerias
+                        </div>
+                      </a>
+                    </li>
 
---}}
+          --}}
 
           {{--
           <li>
