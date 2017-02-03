@@ -61,7 +61,7 @@ class MultimediaController extends Controller
         try
         {
             $this->multimedia = Multimedia::findOrFail($id);
-            return view('multimedia.show', ['multimedia'=>$this->multimedia /*,'comments'=>$this->post->comments*/]);
+            return view('multimedia.show', ['multimedia'=>$this->multimedia,'comments'=>$this->multimedia->comments]);
         }
         catch(ModelNotFoundException $e)
         {

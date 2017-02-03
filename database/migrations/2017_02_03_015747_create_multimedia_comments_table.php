@@ -17,7 +17,7 @@ class CreateMultimediaCommentsTable extends Migration
             $table->string('title',255);
             $table->string('body',2000);
             $table->integer('user_id');
-            $table->integer('post_id');
+            $table->integer('multimedia_id');
             $table->timestamps();
         });
     }

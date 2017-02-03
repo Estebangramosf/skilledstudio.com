@@ -15,7 +15,7 @@ class MultimediaComment extends Model
     return $this->belongsTo(User::class);
   }
 
-  public function multimedias(){
+  public function multimedia(){
     return $this->belongsTo(Multimedia::class);
   }
 }
