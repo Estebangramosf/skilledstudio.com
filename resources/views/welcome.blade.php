@@ -160,7 +160,7 @@
           </div>
           <br><br>
           <a href="{{url('/posts')}}" class="btn btn-default btn-lg">
-            Ver todos los últimos posts
+            Buscar más noticias
           </a>
         </div>
       </div>
@@ -216,7 +216,7 @@
             {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios.'))}}
           </p>
           <a href="#!" class="btn btn-default btn-lg">
-            Conoce a nuestro Equipo
+            Ver más sobre el desarrollo
           </a>
         </div>
       </div>
@@ -297,15 +297,15 @@
             </a>
           </li>
           <li>
-            <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://trello.com/demboradevelopment" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/soundcloud.png') !!}" alt="">
+                <img width="96" height="96" style="border-radius: 5px;" class="media-object social-images" src="{!! asset('img/socialIcons/trello.png') !!}" alt="">
               </span>
             </a>
           </li>
 
         </ul>
-        <p style="color:#fc6000;" >contacto : <a style="color:#fc6000;"  href="mailto:leandro@skilledstudio.com">leandro@skilledstudio.com</a>
+        <p style="color:#fc6000;" >contacto : <a style="color:#fc6000;"  href="mailto:info@skilledstudio.com">info@skilledstudio.com</a>
         </p>
       </div>
 
