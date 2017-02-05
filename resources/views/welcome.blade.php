@@ -99,21 +99,27 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section class="container content-section text-center">
-    <div id="about">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+<div id="about">
+  <br>
+  <br>
+  <div>
+    <!-- About Section -->
+    <div class="container content-section text-center">
+      <div>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
 
-          <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
-            {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
-          </h3>
+            <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
+              {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
+            </h3>
 
-          <h4>Coming Soon.</h4>
+            <h4>Coming Soon.</h4>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
   <!-- Download Section -->
   <section id="news" class="content-section text-center">
@@ -133,7 +139,7 @@
                   <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
                     {{Html::image('/posts_images/'.$image->image,
                       $alt="Photo", $attributes = array('style'=>
-                      'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                      'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive'))}}
                   </a>
 
                 @endforeach
@@ -142,7 +148,7 @@
                   <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
                     {{Html::image('/img/backgrounds/iconoCargando.gif',
                       $alt="Photo", $attributes = array('style'=>
-                      'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                      'width:100%;height:100%;max-width:300px;max-height:300px;'))}}
                   </a>
                 @endif
 
