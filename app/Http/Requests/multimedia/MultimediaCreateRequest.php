@@ -24,6 +24,8 @@ class MultimediaCreateRequest extends Request
     public function rules()
     {
         return [
+          //'youtube_link'=>'required|url|regex:/watch\?v=([a-zA-Z0-9\-_]+)/',
+          'youtube_link' =>  array("required", "regex:/watch\?v=([a-zA-Z0-9\-_]+)/"),
           'title'=>'required',
           'body'=>'required'
         ];

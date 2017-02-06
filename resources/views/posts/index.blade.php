@@ -31,17 +31,12 @@
             @include('alerts.allAlerts')
           </div><!-- -->
 
-
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             @foreach($posts as $key => $post)
-
               <div class="list-group">
-
                 <div class="list-group-item">
-
                   <div class="row">
-
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" align="middle">
 
                       @foreach($post->image as $key => $image)
@@ -137,12 +132,18 @@
                       <a href="{{url('/posts/'.$post->id)}}">
                         · <small>Ver comentarios</small>
                       </a>
+                    @else
+                      <a href="{{url('/posts/'.$post->id)}}">
+                        · <small>¡Se el primero en comentar!</small>
+                      </a>
                     @endif
                   </span>
                 </div><!-- .list-group-item -->
 
               </div><!-- .list-group -->
-              <hr>
+              @if($key+1 < $posts->count())
+                <hr>
+              @endif
             @endforeach
 
             {{--

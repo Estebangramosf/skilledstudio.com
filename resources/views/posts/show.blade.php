@@ -187,7 +187,7 @@
                         </h6>
                       </div>
 
-                      @if($key == 0 || $key+1 < $comments->count())
+                      @if($key+1 < $comments->count())
                         <hr>
                       @endif
                     </div>

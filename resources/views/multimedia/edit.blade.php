@@ -24,7 +24,10 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {!!Form::model($multimedia, ['method'=>'PUT', 'route' => ['multimedia.update', $multimedia->id] ])!!}
+            {!!Form::model($multimedia,[
+              'method'=>'PUT',
+              'id'=>'multimedia_edit',
+              'route' => ['multimedia.update', $multimedia->id] ])!!}
             @include('multimedia.forms.fieldsCreateEdit')
           </div><!-- -->
 

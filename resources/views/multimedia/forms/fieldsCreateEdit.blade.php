@@ -13,12 +13,37 @@
   <div class="list-group-item">
 
     <div class="form-group has-feedback has-feedback-left">
-      {!!Form::label('Titulo:')!!}
-      {!!Form::text('title',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo de contenido multimedia','maxlenght'=>'255'])!!}
+      {!!Form::label('Enlace del Video Youtube:')!!}
+      {!!Form::url('youtube_link',null,
+        ['class'=>'form-control',
+        'placeholder'=>'Ingrese el titulo de contenido multimedia',
+        'maxlenght'=>'255',
+        //'pattern' => 'https?://www\.youtube\.com\watch?/(.+)',
+        //'pattern' => 'http://www\.youtube\.com\watch?/(.+)|https://www\.youtube\.com\watch?/(.+)',
+        //'pattern'=>'https?://www.youtube.+',
+        //'pattern'=>'https?://www\.youtube.com\/watch+',
+        'pattern'=>'http://www\.youtube\.com\/(.+)|https://www\.youtube\.com\/(.+)',
+        'required'=>'true',
+        'id'=>'youtube_link'])!!}
     </div><!-- /div .list-group-item -->
+
+    <div class="form-group has-feedback has-feedback-left">
+      {!!Form::label('Titulo:')!!}
+      {!!Form::text('title',null,
+        ['class'=>'form-control',
+        'placeholder'=>'Ingrese el titulo de contenido multimedia',
+        'required'=>'true',
+        'maxlenght'=>'255'])!!}
+    </div><!-- /div .list-group-item -->
+
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::label('Contenido:')!!}
-      {!!Form::textarea('body',null,['class'=>'form-control','placeholder'=>'Ingrese descripción del contenido multimedia','rows' => '5','maxlenght'=>'5000'])!!}
+      {!!Form::textarea('body',null,
+        ['class'=>'form-control',
+        'placeholder'=>'Ingrese descripción del contenido multimedia',
+        'rows' => '5',
+        'required'=>'true',
+        'maxlenght'=>'5000'])!!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left -->
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::submit('Enviar', ['class'=>'btn btn-success'])!!}

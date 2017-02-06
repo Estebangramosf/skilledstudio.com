@@ -8,7 +8,7 @@ class Multimedia extends Model
 {
   protected $table = "multimedia";
   protected $fillable = [
-    'title','body','user_id',
+    'title','body','user_id','youtube_link'
   ];
 
   public function user(){

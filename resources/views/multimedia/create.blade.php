@@ -25,7 +25,7 @@
             @include('alerts.allAlerts')
           </div><!-- -->
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {!!Form::open(['route'=>'multimedia.store', 'method'=>'POST'])!!}
+            {!!Form::open(['route'=>'multimedia.store', 'method'=>'POST', 'id'=>'multimedia_create'])!!}
             @include('multimedia.forms.fieldsCreateEdit')
           </div><!-- -->
 

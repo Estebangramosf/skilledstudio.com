@@ -15,6 +15,7 @@ class CreateMultimediaTable extends Migration
         Schema::dropIfExists('multimedia');
         Schema::create('multimedia', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('youtube_link', 1000);
             $table->string('title',255);
             $table->string('body',5000);
             $table->integer('user_id');

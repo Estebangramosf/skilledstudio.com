@@ -517,8 +517,29 @@
       $(this).attr('href', $(this).attr('href').replace('&',''));
     });
   //},1000);
-</script>
+</script><!-- https://www.youtube.com/watch?v=Zl1tte139c4 -->
+{!!Html::script('js/jqueryValidate/dist/jquery.validate.js')!!}
+<script>
 
+   $('#multimedia_create').validate({
+    rules: {
+      youtube_link:{
+        url: {
+          required:true,
+          url:true,
+          //pattern:'https?://www.youtube.+'
+        }
+      }
+    },
+    messages: {
+      youtube_link:{
+        url: 'Debe ingresar una url para el video',
+        //pattern: 'Ingrese el siguiente formato https://www.youtube.com/'
+      }
+    }
+
+  });
+</script>
 
 </body>
 
