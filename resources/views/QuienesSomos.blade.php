@@ -85,7 +85,11 @@
                           <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
                           <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
             --}}
-            <img width="35%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
+            <img width="35%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt=""/>
+            <br>
+            <a href="#group-gallery" class="btn btn-circle page-scroll">
+              <i class="fa fa-angle-double-down animated"></i>
+            </a>
 
             <h2>Quienes Somos</h2>
             <span style="font-size: 1.6em;">
@@ -116,6 +120,65 @@
       </div>
     </section>
   --}}
+
+
+    <section id="group-gallery" class="container"  style="padding-top: 30px;">
+      <div class="row">
+        <div class="col-sm-1 col-md-1">
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+          <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
+            <a href="/w3images/lights.jpg">
+              <img src="{{asset('equiposkst/1leandro.png')}}" class="img-circle" alt="Lights" width="304" height="236">
+              <div align="middle" class="caption">
+                <p>Leandro</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+          <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
+            <a href="/w3images/nature.jpg">
+              <img src="{{asset('equiposkst/2maximiliano.png')}}" class="img-circle" alt="Nature" width="304" height="236">
+              <div align="middle" class="caption">
+                <p>Maximiliano</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+          <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
+            <a href="#!">
+              <img src="{{asset('equiposkst/3colin.png')}}" class="img-circle" alt="Fjords" width="304" height="236">
+              <div align="middle" class="caption">
+                <p>Colin</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+          <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
+            <a href="#!">
+              <img src="{{asset('equiposkst/4jason.png')}}" class="img-circle" alt="Fjords" width="304" height="236">
+              <div align="middle" class="caption">
+                <p>Jason</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+          <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;  ">
+            <a href="#!">
+              <img src="{{asset('equiposkst/5ignacion.png')}}" class="img-circle" alt="Fjords" width="304" height="236">
+              <div align="middle" class="caption">
+                <p>Ignacio</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
 
   <!-- Map Section -->

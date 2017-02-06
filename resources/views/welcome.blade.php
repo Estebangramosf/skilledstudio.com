@@ -52,7 +52,9 @@
           <li>
             <a class="page-scroll" href="#joincommunity">Comunidad</a>
           </li>
-
+          <li>
+            <a class="page-scroll" href="{!! url('/quienessomos') !!}">¿Quienes Somos?</a>
+          </li>
           @if (Auth::guest())
             <li>
               <a class="page-scroll" href="{!! url('/login') !!}">Acceso</a>
@@ -113,7 +115,7 @@
               {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
             </h3>
 
-            <h4>Coming Soon.</h4>
+            <h4>Coming Soon</h4>
           </div>
         </div>
       </div>
@@ -127,7 +129,7 @@
       <div class="container">
         <div class="col-lg-12 ">
           <h2>Noticias</h2>
-          <p>¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!.</p>
+          <p>¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!</p>
 
           <div class="row">
 
@@ -219,7 +221,7 @@
           </div>
 
           <p>
-            {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios.'))}}
+            {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
           </p>
           <a href="#!" class="btn btn-default btn-lg">
             Ver más sobre el desarrollo
@@ -252,7 +254,7 @@
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>&Uacute;nete a Nuestra Comunidad</h2>
-          <a href="#!" class="btn btn-default btn-lg">
+          <a href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn btn-default btn-lg">
             &Uacute;nete a nuestra comunidad
           </a>
         </div>
@@ -267,7 +269,7 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
-            <span style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales.</span>
+            <span style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales</span>
           </div>
         </div>
         <br>
