@@ -35,6 +35,8 @@
           <li class="hidden">
             <a href="#page-top"></a>
           </li>
+
+          {{--
           <li>
             <a class="page-scroll" href="#about">Dembora</a>
           </li>
@@ -44,14 +46,13 @@
           <li>
             <a class="page-scroll" href="#develop">Desarrollo</a>
           </li>
-          {{--
-                    <li>
-                      <a class="page-scroll" href="#multimedia">Multimedia</a>
-                    </li>
-          --}}
+          <li>
+            <a class="page-scroll" href="#multimedia">Multimedia</a>
+          </li>
           <li>
             <a class="page-scroll" href="#joincommunity">Comunidad</a>
           </li>
+          --}}
 
           @if (Auth::guest())
             <li>

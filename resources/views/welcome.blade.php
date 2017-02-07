@@ -42,6 +42,9 @@
             <a class="page-scroll" href="#news">Noticias</a>
           </li>
           <li>
+            <a class="page-scroll" href="#multimedia">Multimedia</a>
+          </li>
+          <li>
             <a class="page-scroll" href="#develop">Desarrollo</a>
           </li>
 {{--
@@ -115,7 +118,7 @@
               {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
             </h3>
 
-            <h4>Coming Soon</h4>
+            <h4>Pronto</h4>
           </div>
         </div>
       </div>
@@ -134,35 +137,40 @@
           <div class="row">
 
             @foreach($posts as $key => $post)
-              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              @if($key < 4)
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 
-                @foreach($post->image as $key => $image)
+                  @foreach($post->image as $key => $image)
 
-                  <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
-                    {{Html::image('/posts_images/'.$image->image,
-                      $alt="Photo", $attributes = array('style'=>
-                      'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive'))}}
+
+                    <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/posts_images/'.$image->image,
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive'))}}
+                    </a>
+
+
+
+                  @endforeach
+
+                  @if(count($post->image)==0)
+                    <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/img/backgrounds/iconoCargando.gif',
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:100%;height:100%;max-width:300px;max-height:300px;'))}}
+                    </a>
+                  @endif
+
+                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
+                  <h6>{{substr($post->body, 0,40).'...'}}</h6>
+
+                  <a href="{{url('/posts/'.$post->id)}}"
+                     style="color:#fc6000;border:solid 1px #fc6000;"
+                     class="btn btn-default btn-xs">
+                    Ver más
                   </a>
-
-                @endforeach
-
-                @if(count($post->image)==0)
-                  <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
-                    {{Html::image('/img/backgrounds/iconoCargando.gif',
-                      $alt="Photo", $attributes = array('style'=>
-                      'width:100%;height:100%;max-width:300px;max-height:300px;'))}}
-                  </a>
-                @endif
-
-                <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
-                <h6>{{substr($post->body, 0,40).'...'}}</h6>
-
-                <a href="{{url('/posts/'.$post->id)}}"
-                   style="color:#fc6000;border:solid 1px #fc6000;"
-                   class="btn btn-default btn-xs">
-                  Ver más
-                </a>
-              </div>
+                </div>
+              @endif
             @endforeach
 
           </div>
@@ -175,17 +183,103 @@
     </div>
   </section>
 
+
+  <!-- Multimedia Section -->
+  <section id="multimedia" class="content-section text-center">
+    <div class="download-section" style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
+      <div class="container">
+        <div class="col-lg-12">
+          <h2>Multimedia</h2>
+
+          <div class="row">
+            @foreach($multimedias as $key => $multimedia)
+              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                <div class="embed-responsive embed-responsive-4by3">
+                  <iframe class="embed-responsive-item"
+                          src="{{str_replace('watch?v=', 'embed/',$multimedia->youtube_link)}}">
+                  </iframe>
+                  @if(!$multimedia->youtube_link)
+                    <a href="{{url('/multimedia/'.$multimedia->id)}}" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/img/backgrounds/iconoCargando.gif',
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                      <div class="caption">
+                        El video no se encuentra disponible
+                      </div>
+                    </a>
+                  @endif
+                </div>
+                <h3><a href="{{url('/multimedia/'.$multimedia->id)}}">{{substr($multimedia->title,0,25).'...'}}</a></h3>
+                <h6>{{substr($multimedia->body, 0,40).'...'}}</h6>
+
+                <a href="{{url('/multimedia/'.$multimedia->id)}}"
+                   style="color:#fc6000;border:solid 1px #fc6000;"
+                   class="btn btn-default btn-xs">
+                  Ver más
+                </a>
+              </div>
+            @endforeach
+          </div>
+
+          <p>¡VEN A DESCUBRIR TODOS LOS CONTENIDOS MULTIMEDIAS QUE ESCONDEN EL SECRETO DE LA MAGIA!</p>
+          <a href="{{url('/multimedia')}}" class="btn btn-default btn-lg">
+            Mira nuestros videos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Develop Section -->
   <section id="develop" class="content-section text-center">
     <div class="download-section" style="background: url(../img/backgrounds/Fondos7.png) no-repeat center center scroll;">
       <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-12">
           <h2>Desarrollo</h2>
 
           <div class="row">
 
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+            @foreach($posts as $key => $post)
+              @if($key >= 4)
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 
+                  @foreach($post->image as $key => $image)
+                    <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/posts_images/'.$image->image,
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive'))}}
+                    </a>
+                  @endforeach
+
+                  @if(count($post->image)==0)
+                    <a href="{{url('/posts/'.$post->id)}}" class="thumbnail" style="padding:0px;">
+                      {{Html::image('/img/backgrounds/iconoCargando.gif',
+                        $alt="Photo", $attributes = array('style'=>
+                        'width:100%;height:100%;max-width:300px;max-height:300px;'))}}
+                    </a>
+                  @endif
+
+                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
+                  <h6>{{substr($post->body, 0,40).'...'}}</h6>
+
+                  <a href="{{url('/posts/'.$post->id)}}"
+                     style="color:#fc6000;border:solid 1px #fc6000;"
+                     class="btn btn-default btn-xs">
+                    Ver más
+                  </a>
+                </div>
+              @endif
+            @endforeach
+
+    {{--
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <a href="#!" class="thumbnail" style="padding:0px;">
+                {{Html::image('/img/backgrounds/iconoCargando.gif',
+                  $alt="Photo", $attributes = array('style'=>
+                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
               <a href="#!" class="thumbnail" style="padding:0px;">
                 {{Html::image('/img/backgrounds/iconoCargando.gif',
                   $alt="Photo", $attributes = array('style'=>
@@ -207,23 +301,17 @@
                   $alt="Photo", $attributes = array('style'=>
                   'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
               </a>
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/img/backgrounds/iconoCargando.gif',
-                  $alt="Photo", $attributes = array('style'=>
-                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
-              </a>
 
             </div>
+
+    --}}
 
           </div>
 
           <p>
             {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
           </p>
-          <a href="#!" class="btn btn-default btn-lg">
+          <a href="{{url('/posts')}}" class="btn btn-default btn-lg">
             Ver más sobre el desarrollo
           </a>
         </div>
@@ -231,22 +319,7 @@
     </div>
   </section>
 
-{{--
-  <!-- Multimedia Section -->
-  <section id="multimedia" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
-      <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h2>Multimedia</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="#!" class="btn btn-default btn-lg">
-            Mira nuestras galerías
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
---}}
+
 
   <!-- Join Section -->
   <section id="joincommunity" class="content-section text-center">

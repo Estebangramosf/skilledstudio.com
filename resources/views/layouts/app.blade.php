@@ -327,52 +327,150 @@
         </ul>
       </div>
     @else
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-          <li class="">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <a href="#!">
-              <div align="center">
-                <small>
-                  Para ver todo el contenido de nuestro sitio te debes
-                </small>
-              </div>
+      @if(Request::path()=='login'||Request::path()=='register')
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <a href="#!">
+                <div align="center">
+                  <small>
+                    Para ver todo el contenido de nuestro sitio te debes
+                  </small>
+                </div>
 
-            </a>
-              <div align="center">
-                <a href="{!! url('/register') !!}" class="btn btn-primary btn-sm">
-                  Registrar
-                </a>
-              </div>
+              </a>
+                <div align="center">
+                  <a href="{!! url('/register') !!}" class="btn btn-primary btn-sm">
+                    Registrar
+                  </a>
+                </div>
 
+                <hr>
+              <a href="#!">
+                <div align="center">
+                  <small>
+                    Si ya posees una cuenta puedes
+                  </small>
+                </div>
+
+                <div align="center">
+                  <a href="{!! url('/login') !!}" class="btn btn-success btn-sm">
+                    Iniciar Sesión
+                  </a>
+                </div>
+              </a>
               <hr>
-            <a href="#!">
-              <div align="center">
-                <small>
-                  Si ya posees una cuenta puedes
-                </small>
-              </div>
+            </li>
 
-              <div align="center">
-                <a href="{!! url('/login') !!}" class="btn btn-success btn-sm">
-                  Iniciar Sesión
-                </a>
-              </div>
-            </a>
-            <hr>
-          </li>
+            <li class="">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <a href="{!! url('/') !!}">
+                <div align="middle">
+                  <small>SkilledStudio.com</small>
+                </div>
+              </a>
 
-          <li class="">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <a href="{!! url('/') !!}">
-              <div align="middle">
-                <small>SkilledStudio.com</small>
-              </div>
-            </a>
+            </li>
+          </ul>
+        </div>
+      @else
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
 
-          </li>
-        </ul>
-      </div>
+            {{--
+                      <li class="{!! Request::path()=="dashboard"?'active':'' !!}">
+                        <a href="{!! url('/dashboard') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                          <div align="center">
+                            <img class="out-dashboard-item" style="float:left;"
+                               src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-43-pie-chart.png') !!}" alt="">
+                            Dashboard
+                          </div>
+                        </a>
+                      </li>
+            --}}
+            {{--
+                       <li class="{!! Request::path()=="roles"?'active':'' !!}">
+                        <a href="{!! url('/roles') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                          <div align="center">
+                            <img class="out-dashboard-item" style="float:left;"
+                                 src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-137-cogwheel.png') !!}" alt="">
+                            Roles
+                          </div>
+                        </a>
+                      </li>
+            --}}
+
+            <li class="{!! Request::path()=="posts"?'active':'' !!}">
+              <a href="{!! url('/posts') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                <div align="center">
+                  <img class="out-dashboard-item" style="float:left;"
+                       src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-40-notes.png') !!}" alt="">
+                  Posts
+                </div>
+              </a>
+            </li>
+
+            <li class="{!! Request::path()=="multimedia"?'active':'' !!}">
+              <a href="{!! url('/multimedia') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                <div align="center">
+                  <img class="out-dashboard-item" style="float:left;"
+                       src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-9-film.png') !!}" alt="">
+                  Multimedia
+                </div>
+              </a>
+            </li>
+            {{--
+
+                      <li class="{!! Request::path()=="galleries"?'active':'' !!}">
+                        <a href="{!! url('/galleries') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                          <div align="center">
+                            <img class="out-dashboard-item" style="float:left;"
+                                 src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">
+                            Galerias
+                          </div>
+                        </a>
+                      </li>
+
+            --}}
+
+            {{--
+            <li>
+              <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+            </li>
+            <li>
+              <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+            </li>
+            <li>
+              <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+            </li>
+            <li>
+              <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+            </li>
+            <li>
+              <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+              <ul id="demo" class="collapse">
+                <li>
+                  <a href="#">Dropdown Item</a>
+                </li>
+                <li>
+                  <a href="#">Dropdown Item</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+            </li>
+            <li>
+              <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+            </li>
+            --}}
+          </ul>
+        </div>
+      @endif
     @endif
 
 
