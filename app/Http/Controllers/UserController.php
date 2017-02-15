@@ -19,20 +19,22 @@ class UserController extends Controller
      */
     private $user;
     public function __construct(){
-        if($this->user = Auth::user()){
-            if(!$this->user->role=='Admin'){
-                Session::flash('mesagge-error', 'Usted no tiene privilegios para acceder a esta sección.');
-                return Redirect::to('/posts');
-            }
-        }else{
-            Session::flash('mesagge-error', 'Usted no tiene privilegios para acceder a esta sección.');
-            return Redirect::to('/posts');
-        }
+
     }
 
     public function index(){
         try{
-            return view('users.index', ['users'=>User::all()]);
+            if($this->user = Auth::user()){
+                if($this->user->role=='admin'){
+                    return view('users.index', ['users'=>User::all()]);
+                }else{
+                    Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                    return Redirect::to('/posts');
+                }
+            }else{
+                Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                return Redirect::to('/posts');
+            }
         }catch(Exception $e){
             return Redirect::to('/posts');
         }
@@ -45,7 +47,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //return view('users.create');
     }
 
     /**
@@ -81,7 +83,25 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            if($this->user = Auth::user()){
+                if($this->user->role=='admin'){
+
+                    $this->user = User::findOrFail($id);
+                    return view('users.edit', ['user' => $this->user]);
+
+                }else{
+                    Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                    return Redirect::to('/posts');
+                }
+            }else{
+                Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                return Redirect::to('/posts');
+            }
+        }catch(Exception $e){
+            return Redirect::to('/posts');
+        }
+
     }
 
     /**
@@ -93,7 +113,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try
+        {
+
+            if($this->user = Auth::user()){
+                if($this->user->role=='admin'){
+
+                    $this->user = User::findOrFail($id);
+                    $this->user->fill($request->all());
+                    $this->user->save();
+                    Session::flash('message', 'Usuario editado correctamente');
+                    return Redirect::to('/users');
+
+                }else{
+                    Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                    return Redirect::to('/posts');
+                }
+            }else{
+                Session::flash('message-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                return Redirect::to('/posts');
+            }
+        } // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('message-error', 'El rol a modificar no existe.');
+            return Redirect::to('/users');
+            //dd($e->getMessage());
+            //dd(get_class_methods($e)); // lists all available methods for exception object
+            //dd($e);
+        }
     }
 
     /**

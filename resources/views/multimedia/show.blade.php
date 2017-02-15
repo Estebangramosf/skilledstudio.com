@@ -37,16 +37,66 @@
                 </h4>
               </div><!-- /div .list-group-item -->
               <div class="list-group-item">
+                <div class="list-group-item">
+                  <div class="embed-responsive embed-responsive-4by3">
+
+                    <iframe class="embed-responsive-item"
+                            src="{{str_replace('watch?v=', 'embed/',$multimedia->youtube_link)}}">
+                    </iframe>
+                    <!-- src="https://www.youtube.com/embed/lgZBsWGaQY0"> -->
+                    <!-- src="https://www.youtube.com/embed/lgZBsWGaQY0?autoplay=1">-->
+                    @if(!$multimedia->youtube_link)
+                      <a href="{{url('/multimedia/'.$multimedia->id)}}" class="thumbnail" style="padding:0px;">
+                        {{Html::image('/img/backgrounds/iconoCargando.gif',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:100%;height:100%;max-width:300px;max-height:300px;')) }}
+                        <div class="caption">
+                          El video no se encuentra disponible
+                        </div>
+                      </a>
+                    @endif
+                  </div>
+                </div>
                 <div class="form-group has-feedback has-feedback-left">
                   {{-- DEPRECATED *<25-12-2016 --}}
                   {{--{!!Form::label('Nombre:')!!}--}}
-                  {{--{!!Form::text('posttitle',$parameters = $post->title,['class'=>'form-control', 'disabled'])!!}--}}
+                  {{--{!!Form::text('posttitle',$parameters = $multimedia->title,['class'=>'form-control', 'disabled'])!!}--}}
                   <h2>{{$multimedia->title}}</h2>
                 </div><!-- -->
+                <hr>
                 <div class="form-group has-feedback has-feedback-left">
+
+                  <h4>
+                    <?php
+
+                    $multimedia->body =
+                      preg_replace("/((http|https|www)[^\s]+)/",
+                        '<a target=\"_blank\" href="$1">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/href=\"www/",
+                        'href="http://www',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/(@[^\s]+)/",
+                        '<a target=\"_blank\" href="http://twitter.com/intent/user?screen_name=$1">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/( #[^\s]+)/",
+                        '<a class="hashtag" target=\"_blank\" href="https://twitter.com/hashtag/$1?src=tren">$0</a>',
+                        $multimedia->body);
+                    $multimedia->body =
+                      preg_replace("/( &[^\s]+)/",
+                        '<a class="searchTwitter" target=\"_blank\" href="https://twitter.com/search?q=$1">$0</a>',
+                        $multimedia->body);
+
+                    ?>
+                    {!!strip_tags($multimedia->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+                  </h4>
+
                   {{-- DEPRECATED *<25-12-2016 --}}
                   {{--{!!Form::label('Descripción:')!!}--}}
-                  {{--{!!Form::textarea('postbody',$parameters = $post->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}--}}
+                  {{--{!!Form::textarea('postbody',$parameters = $multimedia->body,['class'=>'form-control', 'disabled','rows' => '5'])!!}--}}
 
 
                 </div><!-- -->
