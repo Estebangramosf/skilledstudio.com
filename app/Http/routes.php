@@ -35,6 +35,7 @@ Route::get('test', 'HomeController@test');
 
 
 Route::resource('admins', 'AdminController');
+Route::resource('users', 'UserController');
 Route::resource('moderators', 'ModeratorController');
 
 //Route::resource('comments', 'CommentController');

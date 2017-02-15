@@ -276,6 +276,18 @@
               </div>
             </a>
           </li>
+          @if(Auth::user()->role==='admin')
+            <li class="{!! Request::path()=="users"?'active':'' !!}">
+              <a href="{!! url('/users') !!}"><i class="fa fa-fw fa-dashboard"></i>
+                <div align="center">
+                  <img class="out-dashboard-item" style="float:left;"
+                       src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-25-parents.png') !!}" alt="">
+                  Administrar Usuarios
+                </div>
+              </a>
+            </li>
+          @endif
+
           {{--
 
                     <li class="{!! Request::path()=="galleries"?'active':'' !!}">

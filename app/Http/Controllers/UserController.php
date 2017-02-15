@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -14,9 +17,25 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    private $user;
+    public function __construct(){
+        if($this->user = Auth::user()){
+            if(!$this->user->role=='Admin'){
+                Session::flash('mesagge-error', 'Usted no tiene privilegios para acceder a esta sección.');
+                return Redirect::to('/posts');
+            }
+        }else{
+            Session::flash('mesagge-error', 'Usted no tiene privilegios para acceder a esta sección.');
+            return Redirect::to('/posts');
+        }
+    }
+
+    public function index(){
+        try{
+            return view('users.index', ['users'=>User::all()]);
+        }catch(Exception $e){
+            return Redirect::to('/posts');
+        }
     }
 
     /**
