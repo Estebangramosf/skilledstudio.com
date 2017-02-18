@@ -311,7 +311,7 @@
           <p>
             {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
           </p>
-          <a href="{{url('/posts')}}" class="btn btn-default btn-lg">
+          <a href="{{url('https://trello.com/demboradevelopment')}}" target="_blank" class="btn btn-default btn-lg">
             Ver más sobre el desarrollo
           </a>
         </div>
