@@ -14,15 +14,16 @@
 
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::label('Titulo:')!!}
-      {!!Form::text('title',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del post','maxlenght'=>'255'])!!}
+      {!!Form::text('title',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del post','maxlength'=>'60'])!!}
     </div><!-- /div .list-group-item -->
     <div class="form-group has-feedback has-feedback-left">
       {!!Form::label('Contenido:')!!}
-      {!!Form::textarea('body',null,['class'=>'form-control','placeholder'=>'Ingrese contenido del post','rows' => '5','maxlenght'=>'5000'])!!}
+      {!!Form::textarea('body',null,['class'=>'form-control','placeholder'=>'Ingrese contenido del post','rows' => '5','maxlength'=>'5000'])!!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left -->
     <div class="form-group has-feedback has-feedback-left">
       <label class="btn btn-default btn-file">
-        <span class="glyphicon glyphicon-camera "></span>
+        <img class="out-dashboard-item"
+             src="{!! asset('img/glyphicons/glyphicons/png/glyphicons-12-camera.png') !!}" alt="">
         Buscar imagen ...
         <input type="file" style="display: none;" name="image" id="image" maxlength="1000" size="2048" />
         <span id="imagePathValue"></span>
