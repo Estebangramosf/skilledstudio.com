@@ -13,10 +13,12 @@
 
         <a class="navbar-brand" href="{{ url('/') }}">
           <span style="color: #c43d23;">
-            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;" class="brand-heading">{{ucfirst('Skilled')}}</span>
+            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;"
+                  class="brand-heading">{{ucfirst('Skilled')}}</span>
           </span>
           <span style="color: #d5822d;">
-            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;" class="brand-heading">{{ucfirst('Studio')}}</span>
+            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;"
+                  class="brand-heading">{{ucfirst('Studio')}}</span>
           </span>
         </a>
 
@@ -47,11 +49,11 @@
           <li>
             <a class="page-scroll" href="#develop">Desarrollo</a>
           </li>
-{{--
-          <li>
-            <a class="page-scroll" href="#multimedia">Multimedia</a>
-          </li>
---}}
+          {{--
+                    <li>
+                      <a class="page-scroll" href="#multimedia">Multimedia</a>
+                    </li>
+          --}}
           <li>
             <a class="page-scroll" href="#joincommunity">Comunidad</a>
           </li>
@@ -71,7 +73,6 @@
           @endif
 
 
-
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -86,10 +87,10 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
 
-{{--
-              <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
-              <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
---}}
+            {{--
+                          <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
+                          <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
+            --}}
             <img width="50%" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
 
             <p class="intro-text">
@@ -104,31 +105,33 @@
     </div>
   </header>
 
-<div id="about">
-  <br>
-  <br>
-  <div>
-    <!-- About Section -->
-    <div class="container content-section text-center">
-      <div>
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2">
+  <div id="about">
+    <br>
+    <br>
+    <br>
+    <div>
+      <!-- About Section -->
+      <div class="container content-section text-center">
+        <div>
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
 
-            <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
-              {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
-            </h3>
+              <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
+                {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
+              </h3>
 
-            <h4>Pronto</h4>
+              <h4>Pronto</h4>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Download Section -->
   <section id="news" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos.png) no-repeat center center scroll;">
+    <div class="download-section"
+         style="background: url(../img/backgrounds/Fondos.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12 ">
           <h2>Noticias</h2>
@@ -161,8 +164,8 @@
                     </a>
                   @endif
 
-                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
-                  <h6>{{substr($post->body, 0,40).'...'}}</h6>
+                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h3>
+                  {{--<h6>{{substr($post->body, 0,40).'...'}}</h6>--}}
 
                   <a href="{{url('/posts/'.$post->id)}}"
                      style="color:#fc6000;border:solid 1px #fc6000;"
@@ -186,10 +189,12 @@
 
   <!-- Multimedia Section -->
   <section id="multimedia" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
+    <div class="download-section"
+         style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12">
           <h2>Multimedia</h2>
+          <p>¡VEN A DESCUBRIR TODOS LOS CONTENIDOS MULTIMEDIAS QUE ESCONDEN EL SECRETO DE LA MAGIA!</p>
 
           <div class="row">
             @foreach($multimedias as $key => $multimedia)
@@ -209,8 +214,8 @@
                     </a>
                   @endif
                 </div>
-                <h3><a href="{{url('/multimedia/'.$multimedia->id)}}">{{substr($multimedia->title,0,25).'...'}}</a></h3>
-                <h6>{{substr($multimedia->body, 0,40).'...'}}</h6>
+                <h3><a href="{{url('/multimedia/'.$multimedia->id)}}">{{substr($multimedia->title,0,60)}}</a></h3>
+                {{--<h6>{{substr($multimedia->body, 0,40).'...'}}</h6>--}}
 
                 <a href="{{url('/multimedia/'.$multimedia->id)}}"
                    style="color:#fc6000;border:solid 1px #fc6000;"
@@ -220,8 +225,8 @@
               </div>
             @endforeach
           </div>
+          <br>
 
-          <p>¡VEN A DESCUBRIR TODOS LOS CONTENIDOS MULTIMEDIAS QUE ESCONDEN EL SECRETO DE LA MAGIA!</p>
           <a href="{{url('/multimedia')}}" class="btn btn-default btn-lg">
             Mira nuestros videos
           </a>
@@ -232,11 +237,14 @@
 
   <!-- Develop Section -->
   <section id="develop" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos7.png) no-repeat center center scroll;">
+    <div class="download-section"
+         style="background: url(../img/backgrounds/Fondos7.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12">
           <h2>Desarrollo</h2>
-
+          <p>
+            {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
+          </p>
           <div class="row">
 
             @foreach($posts as $key => $post)
@@ -259,8 +267,8 @@
                     </a>
                   @endif
 
-                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,25).'...'}}</a></h3>
-                  <h6>{{substr($post->body, 0,40).'...'}}</h6>
+                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h3>
+                  {{--<h6>{{substr($post->body, 0,40).'...'}}</h6>--}}
 
                   <a href="{{url('/posts/'.$post->id)}}"
                      style="color:#fc6000;border:solid 1px #fc6000;"
@@ -271,46 +279,44 @@
               @endif
             @endforeach
 
-    {{--
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/img/backgrounds/iconoCargando.gif',
-                  $alt="Photo", $attributes = array('style'=>
-                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
-              </a>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/img/backgrounds/iconoCargando.gif',
-                  $alt="Photo", $attributes = array('style'=>
-                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
-              </a>
-            </div>
+            {{--
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                      <a href="#!" class="thumbnail" style="padding:0px;">
+                        {{Html::image('/img/backgrounds/iconoCargando.gif',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                      </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                      <a href="#!" class="thumbnail" style="padding:0px;">
+                        {{Html::image('/img/backgrounds/iconoCargando.gif',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                      </a>
+                    </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/img/backgrounds/iconoCargando.gif',
-                  $alt="Photo", $attributes = array('style'=>
-                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
-              </a>
-            </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                      <a href="#!" class="thumbnail" style="padding:0px;">
+                        {{Html::image('/img/backgrounds/iconoCargando.gif',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                      </a>
+                    </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <a href="#!" class="thumbnail" style="padding:0px;">
-                {{Html::image('/img/backgrounds/iconoCargando.gif',
-                  $alt="Photo", $attributes = array('style'=>
-                  'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
-              </a>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                      <a href="#!" class="thumbnail" style="padding:0px;">
+                        {{Html::image('/img/backgrounds/iconoCargando.gif',
+                          $alt="Photo", $attributes = array('style'=>
+                          'width:auto;height:auto;max-width:100%;', 'class'=>'img-responsive')) }}
+                      </a>
 
-            </div>
+                    </div>
 
-    --}}
+            --}}
 
           </div>
 
-          <p>
-            {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
-          </p>
+          <br>
           <a href="{{url('https://trello.com/demboradevelopment')}}" target="_blank" class="btn btn-default btn-lg">
             Ver más sobre el desarrollo
           </a>
@@ -320,10 +326,10 @@
   </section>
 
 
-
   <!-- Join Section -->
   <section id="joincommunity" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos8.png) no-repeat center center scroll;">
+    <div class="download-section"
+         style="background: url(../img/backgrounds/Fondos8.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>&Uacute;nete a Nuestra Comunidad</h2>
@@ -337,12 +343,14 @@
 
   <!-- Contact Section -->
   <section id="contact" class="content-section text-center">
-    <div class="download-section" style="background: url(../img/backgrounds/Fondos3.5.png) no-repeat center center scroll;"  >
+    <div class="download-section"
+         style="background: url(../img/backgrounds/Fondos3.5.png) no-repeat center center scroll;">
       <div class="">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
-            <span style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales</span>
+            <span
+              style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales</span>
           </div>
         </div>
         <br>
@@ -350,43 +358,57 @@
         <ul class="list-inline banner-social-buttons">
 
           <li>
-            <a style="padding: 0px;" href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i
+                class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images"
+                     src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
               </span>
             </a>
           </li>
+
           <li>
-            <a style="padding: 0px;" href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://twitter.com/skilledstudio" target="_blank" class="btn"><i
+                class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/facebook.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images"
+                     src="{!! asset('img/socialIcons/twitter.png') !!}" alt="">
               </span>
             </a>
           </li>
+
           <li>
-            <a style="padding: 0px;" href="https://www.youtube.com/c/skilledstudio" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
+            <a style="padding: 0px;" href="https://trello.com/demboradevelopment" target="_blank" class="btn"><i
+                class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
+                <img width="96" height="96" style="border-radius: 5px;" class="media-object social-images"
+                     src="{!! asset('img/socialIcons/trello.png') !!}" alt="">
               </span>
             </a>
           </li>
+
+          <li>
+            <a style="padding: 0px;" href="https://www.youtube.com/c/skilledstudio" target="_blank" class="btn"><i
+                class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">
+                <img width="96" height="96" class="media-object social-images"
+                     src="{!! asset('img/socialIcons/youtube.png') !!}" alt="">
+              </span>
+            </a>
+          </li>
+
           <li>
             <a style="padding: 0px;" href="#!" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
               <span class="network-name">
-                <img width="96" height="96" class="media-object social-images" src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
-              </span>
-            </a>
-          </li>
-          <li>
-            <a style="padding: 0px;" href="https://trello.com/demboradevelopment" target="_blank" class="btn"><i class="fa fa-twitter fa-fw"></i>
-              <span class="network-name">
-                <img width="96" height="96" style="border-radius: 5px;" class="media-object social-images" src="{!! asset('img/socialIcons/trello.png') !!}" alt="">
+                <img width="96" height="96" class="media-object social-images"
+                     src="{!! asset('img/socialIcons/gplus.png') !!}" alt="">
               </span>
             </a>
           </li>
 
         </ul>
-        <p style="color:#fc6000;" >contacto : <a style="color:#fc6000;"  href="mailto:info@skilledstudio.com">info@skilledstudio.com</a>
+        <p style="color:#fc6000;">contacto : <a style="color:#fc6000;"
+                                                href="mailto:info@skilledstudio.com">info@skilledstudio.com</a>
         </p>
       </div>
 
@@ -396,7 +418,7 @@
   <!-- Map Section -->
   {{--<div id="map"></div>--}}
 
-  <!-- Footer -->
+    <!-- Footer -->
   <footer>
     <div class="container text-center">
       <p>Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
@@ -410,8 +432,6 @@
   <!--
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
   -->
-
-
 
 
   </body>
