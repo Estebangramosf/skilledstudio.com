@@ -39,7 +39,7 @@
                 <div class="list-group-item">
                   <div class="row">
                     <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
-                      <div class="embed-responsive embed-responsive-4by3">
+                      <div class="embed-responsive embed-responsive-16by9">
 
                         <iframe class="embed-responsive-item"
                                 src="{{str_replace('watch?v=', 'embed/',$multimedia->youtube_link)}}">
