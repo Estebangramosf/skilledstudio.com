@@ -145,7 +145,7 @@
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Carlos Jimenez'))}}</h3>
                   <hr>
                   <p>
-                    {{utf8_decode(utf8_encode('Audio Visual'))}}
+                    {{utf8_decode(utf8_encode('Audiovisual'))}}
                   </p>
                 </div>
               </a>

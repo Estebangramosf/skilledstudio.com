@@ -95,12 +95,12 @@
       <a class="navbar-brand" href="{{ url('/') }}">
           <span style="color: #c43d23;">
             <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;
-              text-shadow: 2px 3px 15px rgb(255, 82, 44);"
+              /*text-shadow: 2px 3px 15px rgb(255, 82, 44);*/"
                   class="brand-heading">{{ucfirst('Skilled')}}</span>
           </span>
           <span style="color: #d5822d;">
             <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;
-              text-shadow: 2px 3px 15px rgb(255, 156, 53);"
+              /*text-shadow: 2px 3px 15px rgb(255, 156, 53);*/"
                   class="brand-heading">{{ucfirst('Studio')}}</span>
           </span>
       </a>
