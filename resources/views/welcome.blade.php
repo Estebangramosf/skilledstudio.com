@@ -172,7 +172,7 @@
                     </a>
                   @endif
 
-                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h3>
+                  <h5><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h5>
                   {{--<h6>{{substr($post->body, 0,40).'...'}}</h6>--}}
 
                   <a href="{{url('/posts/'.$post->id)}}"
@@ -222,7 +222,8 @@
                     </a>
                   @endif
                 </div>
-                <h3><a href="{{url('/multimedia/'.$multimedia->id)}}">{{substr($multimedia->title,0,60)}}</a></h3>
+                <br>
+                <h5><a href="{{url('/multimedia/'.$multimedia->id)}}">{{substr($multimedia->title,0,60)}}</a></h5>
                 {{--<h6>{{substr($multimedia->body, 0,40).'...'}}</h6>--}}
 
                 <a href="{{url('/multimedia/'.$multimedia->id)}}"
@@ -275,7 +276,7 @@
                     </a>
                   @endif
 
-                  <h3><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h3>
+                  <h5><a href="{{url('/posts/'.$post->id)}}">{{substr($post->title,0,60)}}</a></h5>
                   {{--<h6>{{substr($post->body, 0,40).'...'}}</h6>--}}
 
                   <a href="{{url('/posts/'.$post->id)}}"
