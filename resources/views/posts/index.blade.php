@@ -90,10 +90,12 @@
                                 preg_replace("/( #[^\s]+)/",
                                   '<a class="hashtag" target=\"_blank\" href="https://twitter.com/hashtag/$1?src=tren">$0</a>',
                                   $post->body);
+                            /*
                               $post->body =
                                 preg_replace("/( &[^\s]+)/",
                                   '<a class="searchTwitter" target=\"_blank\" href="https://twitter.com/search?q=$1">$0</a>',
                                   $post->body);
+                            */
 
                           ?>
                           {!!strip_tags($post->body,'<ul><li><ol><img><a><p><span><strong><blockquote><b><pre><em><h1><h2><h3><h4><h5><h6><sup><sub><code>')!!}<!--etiquetas a las que escapa strip_tags-->

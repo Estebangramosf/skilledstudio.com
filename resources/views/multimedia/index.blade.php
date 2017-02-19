@@ -92,6 +92,7 @@
                                   $0
                               </a>',
                               $multimedia->body);
+                          /*
                           $multimedia->body =
                             preg_replace("/( &[^\s]+)/",
                               '<a
@@ -101,6 +102,7 @@
                                   $0
                               </a>',
                               $multimedia->body);
+                          */
                         ?>
                         {!!strip_tags($multimedia->body,'<ul><li><ol><img><a><p><span><strong><blockquote><b><pre><em><h1><h2><h3><h4><h5><h6><sup><sub><code>')!!}
                           <!-- <'a'> => etiquetas a las que escapa strip_tags-->
