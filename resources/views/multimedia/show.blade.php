@@ -155,7 +155,7 @@
                               $comment->body);
 
                           ?>
-                          {!!strip_tags($comment->body,'<a>')!!}<!--etiquetas a las que escapa strip_tags-->
+                          {!!strip_tags($comment->body,'<ul><li><ol><img><a><p><span><strong><blockquote><b><pre><em><h1><h2><h3><h4><h5><h6><sup><sub><code>')!!}<!--etiquetas a las que escapa strip_tags-->
 
 
 
