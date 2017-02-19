@@ -13,11 +13,13 @@
 
         <a class="navbar-brand" href="{{ url('/') }}">
           <span style="color: #c43d23;">
-            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;"
+            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;
+              text-shadow: 2px 3px 15px rgb(255, 82, 44);"
                   class="brand-heading">{{ucfirst('Skilled')}}</span>
           </span>
           <span style="color: #d5822d;">
-            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;"
+            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;
+              text-shadow: 2px 3px 15px rgb(255, 156, 53);"
                   class="brand-heading">{{ucfirst('Studio')}}</span>
           </span>
         </a>
@@ -58,7 +60,7 @@
             <a class="page-scroll" href="#joincommunity">Comunidad</a>
           </li>
           <li>
-            <a class="page-scroll" href="{!! url('/quienessomos') !!}">¿Quienes Somos?</a>
+            <a class="page-scroll" href="{!! url('/quienessomos') !!}">¿Qui&eacute;nes Somos?</a>
           </li>
           @if (Auth::guest())
             <li>
@@ -94,11 +96,14 @@
             <img width="50%" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt="">
 
             <p class="intro-text">
-
+              <br>
+              <br>
             </p>
             <a href="#about" class="btn btn-circle page-scroll">
               <i class="fa fa-angle-double-down animated"></i>
             </a>
+            <br>
+            <br>
           </div>
         </div>
       </div>
@@ -109,6 +114,7 @@
     <br>
     <br>
     <br>
+    <br>
     <div>
       <!-- About Section -->
       <div class="container content-section text-center">
@@ -116,11 +122,13 @@
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
 
-              <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;">
+              <h3 style="text-transform: none;font-family: Coolvetica;color:#d5822d;
+              text-shadow: 0 0 10px rgba(255, 145, 0, 0.93);
+              ">
                 {{utf8_decode(utf8_encode('En un mundo dominado por  fuerzas elementales,  Samin, un joven aprendiz de chamán, tras la muerte de su maestro deberá emprender un viaje para hallar respuestas. La búsqueda no será fácil, Samin se  verá obligado a desafiar a diferentes criaturas elementales para así obtener la verdad. Con el paso del tiempo, Samin irá  descubriendo que su destino ya estaba escrito.'))}}
               </h3>
 
-              <h4>Pronto</h4>
+              <h4 style="text-shadow: 0 0 5px rgb(255, 255, 249);">Pronto</h4>
             </div>
           </div>
         </div>
@@ -134,8 +142,8 @@
          style="background: url(../img/backgrounds/Fondos.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12 ">
-          <h2>Noticias</h2>
-          <p>¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!</p>
+          <h2 style="text-shadow: 0 0 5px rgb(255, 255, 249);">Noticias</h2>
+          <p style="text-shadow: 0 0 5px rgb(255, 255, 249);">¡VEN A DESCUBRIR TODOS LOS MISTERIOS QUE ESCONDE DEMBORA, EL SECRETO DE LA MAGIA!</p>
 
           <div class="row">
 
@@ -193,8 +201,8 @@
          style="background: url(../img/backgrounds/Fondos4.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12">
-          <h2>Multimedia</h2>
-          <p>¡VEN A DESCUBRIR TODOS LOS CONTENIDOS MULTIMEDIAS QUE ESCONDEN EL SECRETO DE LA MAGIA!</p>
+          <h2 style="text-shadow: 0 0 5px rgb(255, 255, 249);">Multimedia</h2>
+          <p style="text-shadow: 0 0 5px rgb(255, 255, 249);">¡VEN A DESCUBRIR TODOS LOS CONTENIDOS MULTIMEDIAS QUE ESCONDEN EL SECRETO DE LA MAGIA!</p>
 
           <div class="row">
             @foreach($multimedias as $key => $multimedia)
@@ -241,8 +249,8 @@
          style="background: url(../img/backgrounds/Fondos7.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-12">
-          <h2>Desarrollo</h2>
-          <p>
+          <h2 style="text-shadow: 0 0 5px rgb(255, 255, 249);">Desarrollo</h2>
+          <p style="text-shadow: 0 0 5px rgb(255, 255, 249);">
             {{utf8_decode(utf8_encode('Dembora es un videojuego  de plataforma  que conecta  la fantasía con la magia y que además nos invita a reconectarnos con la esencia precolombina.  Dembora se dirige a un público con ganas de descubrir nuevas experiencia y que deseen envolverse en un mundo  mágico  cargado de misterios'))}}
           </p>
           <div class="row">
@@ -332,7 +340,7 @@
          style="background: url(../img/backgrounds/Fondos8.png) no-repeat center center scroll;">
       <div class="container">
         <div class="col-lg-8 col-lg-offset-2">
-          <h2>&Uacute;nete a Nuestra Comunidad</h2>
+          <h2 style="text-shadow: 0 0 5px rgb(255, 255, 249);">&Uacute;nete a Nuestra Comunidad</h2>
           <a href="https://www.facebook.com/skilledstudio/?fref=ts" target="_blank" class="btn btn-default btn-lg">
             &Uacute;nete a nuestra comunidad
           </a>
@@ -348,9 +356,9 @@
       <div class="">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-            <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
+            <h2 style="text-shadow: 0 0 5px rgb(255, 255, 249);">SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
             <span
-              style="font-size: 1.8em;">Para que puedas sumergirte en un mundo dominado por fuerzas elementales</span>
+              style="font-size: 1.8em;text-shadow: 0 0 5px rgb(255, 255, 249);">Para que puedas sumergirte en un mundo dominado por fuerzas elementales</span>
           </div>
         </div>
         <br>
@@ -421,7 +429,7 @@
     <!-- Footer -->
   <footer>
     <div class="container text-center">
-      <p>Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
+      <p style="text-shadow: 0 0 5px rgb(255, 255, 249);">Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
     </div>
   </footer>
 

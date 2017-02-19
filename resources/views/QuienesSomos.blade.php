@@ -13,12 +13,17 @@
 
         <a class="navbar-brand" href="{{ url('/') }}">
           <span style="color: #c43d23;">
-            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;" class="brand-heading">{{ucfirst('Skilled')}}</span>
+            <span style="font-family: Coolvetica;font-size: 1.9em; text-transform: capitalize;
+              text-shadow: 2px 3px 15px rgb(255, 82, 44);"
+                  class="brand-heading">{{ucfirst('Skilled')}}</span>
           </span>
           <span style="color: #d5822d;">
-            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;" class="brand-heading">{{ucfirst('Studio')}}</span>
+            <span style="font-family: Coolvetica;text-transform: capitalize;font-size: 1.9em;
+              text-shadow: 2px 3px 15px rgb(255, 156, 53);"
+                  class="brand-heading">{{ucfirst('Studio')}}</span>
           </span>
         </a>
+
 
         {{--
         <a class="navbar-brand page-scroll" href="#page-top">
@@ -86,14 +91,24 @@
                           <span style="font-family: Coolvetica;color:#c43d23;" class="brand-heading">Skilled</span>
                           <span style="font-family: Coolvetica;color:#d5822d;" class="brand-heading">Studio</span>
             --}}
-            <img width="35%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt=""/>
+            <img width="45%" style="padding-bottom: 10px;" src="{!! asset('img/backgrounds/Demborafinal.png') !!}" alt=""/>
             <br>
+{{--
             <a href="#group-gallery" class="btn btn-circle page-scroll">
               <i class="fa fa-angle-double-down animated"></i>
             </a>
-
-            <h2>Quienes Somos</h2>
-            <span style="font-size: 1.6em;">
+--}}
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 style="text-shadow: 0 0 5px rgba(255, 255, 249, 0.68);">Qui&eacute;nes Somos</h2>
+            <br>
+            <br>
+            <span style="
+              font-size: 1.8em;
+              text-shadow: 0 0 5px rgba(255, 255, 249, 0.68);
+              ">
               SKILLED STUDIO <br> Somos una empresa independiente de desarrollo de videojuegos, ubicada en Santiago de Chile. Contamos con un equipo de más de 20 profesionales. Nuestra misión es otorgar un servicio de calidad para satisfacer las expectativas de los jugadores. Estamos comprometidos en realizar videojuegos únicos que destaquen en originalidad y contenido.
             </span>
 
@@ -188,7 +203,7 @@
     <!-- Footer -->
   <footer>
     <div class="container text-center">
-      <p>Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
+      <p style="text-shadow: 0 0 5px rgba(255, 255, 249, 0.68);">Copyright &copy; Dembora&SkilledStudio {{date('Y')}}</p>
     </div>
   </footer>
 
