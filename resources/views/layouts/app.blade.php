@@ -559,7 +559,16 @@
 {!!Html::script('js/plugins/morris/raphael.min.js')!!}
 {!!Html::script('js/plugins/morris/morris.min.js')!!}
 {!!Html::script('js/plugins/morris/morris-data.js')!!}
+{!!Html::script('js/tinymce/js/tinymce/tinymce.min.js')!!}
+<script>tinymce.init({
+    selector:'textarea',
+    plugins : 'advlist autolink link lists charmap print preview advcode contextmenu emoticons insertdatetime insert',
+    //contextmenu: "link image inserttable | cell row column deletetable",
+    toolbar: "advlist autolink link lists charmap print preview advcode contextmenu emoticons insertdatetime"
 
+
+
+  });</script>
 <script>
   $('#image').change(function(){
 
