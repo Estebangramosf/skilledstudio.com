@@ -25,7 +25,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Leandro-Peña-Director-General.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Leandro Peña'))}}</h3>
                   <hr>
                   <p>
@@ -41,7 +41,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Ricardo-Peña-Co-Fundador.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Ricardo Peña'))}}</h3>
                   <hr>
                   <p>
@@ -58,7 +58,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Cristian-Castro-Director-de-Musica.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Cristian Castro'))}}</h3>
                   <hr>
                   <p>
@@ -74,7 +74,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Cristian-Rodríguez-Director-de-Guion.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Cristian Rodríguez'))}}</h3>
                   <hr>
                   <p>
@@ -90,7 +90,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Ariel-Contreras-Productor-Musical.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Ariel Contreras'))}}</h3>
                   <hr>
                   <p>
@@ -126,7 +126,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Bastian-Gomez-Compositor.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Bastián Gómez'))}}</h3>
                   <hr>
                   <p>
@@ -141,7 +141,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Carlos-Jimenez-Audio-Visual.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Carlos Jimenez'))}}</h3>
                   <hr>
                   <p>
@@ -158,7 +158,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Ignacio-Larrain-Orquestador-y-Compositor.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Ignacio Larraín'))}}</h3>
                   <hr>
                   <p>
@@ -174,7 +174,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Jason-Vega-Director-de-Programacion.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Jason Vega'))}}</h3>
                   <hr>
                   <p>
@@ -190,7 +190,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Marco-Araya-Programador.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Marco Araya'))}}</h3>
                   <hr>
                   <p>
@@ -226,7 +226,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Colin-Moore-Director-Diseño-de-Niveles.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Colin Moore'))}}</h3>
                   <hr>
                   <p>
@@ -242,7 +242,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Maximiliano-Serin-Director-de-Diseño.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Maximiliano Serin'))}}</h3>
                   <hr>
                   <p>
@@ -258,7 +258,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Juan-Vega-Director-De-Ilustracion.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Juan'))}}<br>{{utf8_decode(utf8_encode('Vega'))}}</h3>
                   <hr>
                   <p>
@@ -274,7 +274,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Roberto-Mazuela-Ilustrador-y-VFX.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Roberto Mazuela'))}}</h3>
                   <hr>
                   <p>
@@ -290,7 +290,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Pablo-Solar-Ilustrador.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Pablo Solar'))}}</h3>
                   <hr>
                   <p>
@@ -325,7 +325,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Alan-Morales-Ilustrador.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Alan Morales'))}}</h3>
                   <hr>
                   <p>
@@ -341,7 +341,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Leslie-San-Francisco-Directora-De-Marketing.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Leslie San Francisco'))}}</h3>
                   <hr>
                   <p>
@@ -357,7 +357,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Ignacio-Barthelemiez-Director-de-Animacion-3D.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Ignacio Barthelemiez'))}}</h3>
                   <hr>
                   <p>
@@ -373,7 +373,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Paula-Gonzales-Animacion-3D.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Paula Gonzales'))}}</h3>
                   <hr>
                   <p>
@@ -389,7 +389,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Grace-Barrios-Animacion-3D.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Grace Barrios'))}}</h3>
                   <hr>
                   <p>
@@ -428,7 +428,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Daniel-Escobar-Director-de-Modelado-3D.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Daniel Escobar'))}}</h3>
                   <hr>
                   <p>
@@ -444,7 +444,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Leonardo-Velasquez-Modelador-3D.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Leonardo Velasquez'))}}</h3>
                   <hr>
                   <p>
@@ -461,7 +461,7 @@
             <div class="thumbnail" style="background: transparent;background-color: transparent;border: transparent;">
               <a href="#!">
                 <img src="{{asset('equiposkst/Aramíz-Sáez-Traductora.png')}}" class="img-circle" alt="Lights" width="304" height="236">
-                <div align="middle" class="caption" style="color:#FFF;text-shadow: 0px 0px 8px rgb(255, 255, 255);">
+                <div align="middle" class="caption" style="color:#FFF;/*text-shadow: 0px 0px 8px rgb(255, 255, 255);*/">
                   <h3 style="text-transform: capitalize;">{{utf8_decode(utf8_encode('Aramíz Sáez'))}}</h3>
                   <hr>
                   <p>
